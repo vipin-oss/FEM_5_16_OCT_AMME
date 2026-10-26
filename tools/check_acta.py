@@ -30,7 +30,12 @@ print('NOTE: static checks only. PDF compilation and visual inspection still req
 letter = (root / 'cover_letter_ActaMechanica.tex').read_text()
 title = re.search(r'\\title\[[^]]*\]\{([^\n]+)\}', s).group(1)
 assert title in re.sub(r'\s+', ' ', letter), 'Cover-letter/manuscript title mismatch'
-assert 'vipin@gurugramuniversity.ac.in' in letter and 'vipin@gurugramuniversity.ac.in' in s
+assert 'p\_anjali@blr.amrita.edu' in letter and 'p\_anjali@blr.amrita.edu' in s
+authors = re.findall(r'\\author(\*?)\[(\d+)\]\{\\fnm\{([^}]+)\} \\sur\{([^}]+)\}\}', s)
+assert authors == [('', '1', 'Vipin', 'Gupta'), ('', '2', 'Sandeep', 'Kumar'), ('', '3', 'Mohd', 'Vasiulla'), ('', '4', 'Arun Kumar', 'Yadav'), ('*', '5', 'Anjali', 'Patel')], 'Author order/corresponding marker mismatch'
+assert 'Corresponding author, on behalf of all authors' in letter
+assert 'Anjali Patel' in letter
+assert 'Dr. Vipin Gupta' not in letter
 for value in ('35.05', '57.75', '-0.22', '+0.19', '-3.43865', '-1.49960', '+0.19321'):
     assert value in letter and value in s, f'Cover-letter value mismatch: {value}'
 assert 'Applied Mathematics and Mechanics' not in letter
