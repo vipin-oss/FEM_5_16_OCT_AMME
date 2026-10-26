@@ -1,0 +1,15 @@
+# LaTeX intermediate files (keep final PDFs and source files)
+*.aux
+*.bbl
+*.blg
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+
+# Downloadable source bundle; sources are tracked separately
+/ActaMechanica_source_package.zip

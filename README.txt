@@ -22,3 +22,13 @@ set to the values used in the supplied AMM example and can be changed in the
 preamble if the journal requests different submission metadata. The manuscript
 and cover-letter sources were not compiled to PDF in this workspace because a
 LaTeX toolchain is not installed here.
+
+Acta Mechanica version
+---------------------
+See ACTA_MECHANICA_NOTES.md for the new Springer Nature two-column source,
+numbered mathematics/physics references, build commands, and author-review checklist.
+Main file: manuscript_ActaMechanica.tex
+Build: make acta
+Static checks: make check
+The AMM originals are preserved. The Acta version has not been compiled here;
+a compiled, visually inspected PDF must be added before journal submission.
