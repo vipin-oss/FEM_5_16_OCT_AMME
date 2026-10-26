@@ -8,7 +8,7 @@
 \emergencystretch=2em
 \raggedbottom
 \begin{document}
-\title[Anisotropic thermal expansion and voltage polarity]{Anisotropic thermal expansion and voltage-polarity reversal in a thermopiezoelectric BaTiO$_3$ microcantilever}
+\title[Thermal expansion and voltage polarity]{Thermal expansion and voltage polarity in a BaTiO$_3$ microcantilever: A coupled plane-strain analysis}
 \author[1]{\fnm{Anjali} \sur{Patel}}
 \author[2]{\fnm{Sandeep} \sur{Kumar}}
 \author[3]{\fnm{Mohd} \sur{Vasiulla}}
@@ -19,20 +19,34 @@
 \affil[3]{\orgdiv{Department of Mathematics, School of Computer Science \& Artificial Intelligence}, \orgname{SR University}, \orgaddress{\city{Warangal}, \postcode{506371}, \state{Telangana}, \country{India}}}
 \affil[4]{\orgdiv{School of Basic and Applied Sciences}, \orgname{K.R. Mangalam University}, \orgaddress{\city{Gurugram}, \country{India}}}
 \affil*[5]{\orgdiv{Department of Mathematics}, \orgname{Gurugram University}, \orgaddress{\city{Gurugram}, \postcode{122505}, \country{India}}}
-\abstract{Mechanical constraints can alter both the magnitude and polarity of the electrical response of an anisotropic thermopiezoelectric solid. This study examines this effect in a tetragonal barium titanate microcantilever subjected to a steady through-thickness temperature difference under plane strain. A finite-element model based on a single electric enthalpy retains the full three-dimensional thermal-stress contraction and uses the fixed-strain pyroelectric coefficient. A simplified thermal-load reduction that omits the constrained transverse expansion underestimates the axial and through-thickness thermal-stress coefficients by 35.05\% and 57.75\%, respectively. Retaining this expansion changes the predicted piezoelectric-thermal voltage from $-0.22$~V to $+0.19$~V. The mesh-converged open-circuit voltages are $-3.43865$~V for the pyroelectric-only case, $-1.49960$~V for the coupled case and $+0.19321$~V for the piezoelectric-thermal case. Verification includes the exact one-dimensional pyroelectric limit, mesh convergence and discrete variational consistency checks. The results connect voltage polarity to constrained anisotropic thermal deformation and show why free-sample secondary-pyroelectric estimates cannot determine the response of this boundary-value problem.}
+\abstract{This paper studies the influence of anisotropic thermal expansion on the coupled piezoelectric--pyroelectric response of a tetragonal barium titanate microcantilever subjected to a steady through-thickness temperature difference. A plane-strain finite-element model is formulated from a single electric enthalpy, retaining the full three-dimensional thermal-stress contraction and the fixed-strain pyroelectric coefficient. The analysis separates the direct pyroelectric and thermally induced piezoelectric mechanisms to examine their contributions to the open-circuit voltage. The results show that neglecting constrained transverse thermal expansion substantially underestimates the thermal loading and can predict the wrong voltage polarity. Retaining this contribution changes the piezoelectric-thermal voltage from approximately $-0.22$~V to $+0.19$~V. The coupled response also demonstrates that piezoelectric feedback modifies the direct pyroelectric contribution, so the separately computed limiting cases cannot simply be added. The numerical solution is verified using an exact one-dimensional pyroelectric limit, mesh convergence and algebraic and variational consistency checks. A sensitivity analysis examines the dependence of voltage polarity on the thermal-expansion coefficients. The findings highlight the role of mechanical compatibility and constitutive consistency in predicting the electrical response of anisotropic thermopiezoelectric microstructures.}
 \keywords{Anisotropic thermoelasticity, Plane strain, Thermopiezoelectricity, Voltage polarity, Barium titanate, Finite element method}
 \maketitle
 \section*{Nomenclature}
-\begin{tabularx}{\columnwidth}{@{}lX@{}}
-$\bm u$, $\phi$ & Displacement vector; electric potential\\
-$\varepsilon_{ij}$, $\gamma_{xz}$ & Strain tensor; engineering shear strain\\
-$\sigma_{ij}$, $D_i$ & Stress tensor; electric displacement\\
-$E_i$, $\theta$ & Electric field; temperature increment\\
-$C_{ijkl}$, $e_{kij}$ & Elastic stiffness; piezoelectric tensor\\
-$\kappa_{ij}$, $p_i$ & Permittivity; primary pyroelectric coefficient\\
-$\alpha_{ij}$, $\beta_{ij}$ & Thermal-expansion tensor; thermal-stress coefficient\\
-$\mu_{ijkl}$, $\ell$ & Flexoelectric tensor; internal material length\\
-$L$, $h$, $V_{\mathrm{oc}}$ & Span; thickness; open-circuit voltage\\
+\begin{tabularx}{\linewidth}{@{}lX@{}}
+\toprule
+\textbf{Symbol} & \textbf{Description}\\
+\midrule
+$\bm u$ & Displacement vector\\
+$\phi$ & Electric potential\\
+$\varepsilon_{ij}$ & Strain tensor\\
+$\gamma_{xz}$ & Engineering shear strain\\
+$\sigma_{ij}$ & Stress tensor\\
+$D_i$ & Electric displacement\\
+$E_i$ & Electric field\\
+$\theta$ & Temperature increment\\
+$C_{ijkl}$ & Elastic stiffness tensor\\
+$e_{kij}$ & Piezoelectric tensor\\
+$\kappa_{ij}$ & Permittivity tensor\\
+$p_i$ & Primary pyroelectric coefficient\\
+$\alpha_{ij}$ & Thermal-expansion tensor\\
+$\beta_{ij}$ & Thermal-stress coefficient\\
+$\mu_{ijkl}$ & Flexoelectric tensor\\
+$\ell$ & Internal material length\\
+$L$ & Cantilever span\\
+$h$ & Cantilever thickness\\
+$V_{\mathrm{oc}}$ & Open-circuit voltage\\
+\bottomrule
 \end{tabularx}
 
 \section{Introduction}
