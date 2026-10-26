@@ -1,34 +1,26 @@
-AMM-formatted manuscript source package
+Acta Mechanica submission source package
 =======================================
 
-Files
------
-manuscript_AMM.tex   AMM-formatted manuscript (Anjali Patel first; Vipin Gupta corresponding)
-cover_letter_AMM.tex AMM cover letter, signed by corresponding author Vipin Gupta
-Shangda1226.sty      Supplied AMM style file; abstract environment closure corrected
-references.bib       Bibliography database
-figures/             All eight figures referenced by the manuscript
+Main manuscript: manuscript_ActaMechanica.tex
+Cover letter:    cover_letter_ActaMechanica.tex
+Bibliography:    references.bib
+Template:        sn-jnl.cls and sn-mathphys-num.bst
+Figures:         figures/ (all eight manuscript figures)
 
-Compile (from this directory)
------------------------------
-pdflatex manuscript_AMM.tex
-bibtex manuscript_AMM
-pdflatex manuscript_AMM.tex
-pdflatex manuscript_AMM.tex
-pdflatex cover_letter_AMM.tex
+Overleaf
+--------
+Pull the latest GitHub changes, select manuscript_ActaMechanica.tex as the
+Main document, use pdfLaTeX, then Recompile from scratch.
+To compile the cover letter, temporarily select cover_letter_ActaMechanica.tex.
 
-The AMM running-header fields (year, volume, issue, first page, and DOI) are
-set to the values used in the supplied AMM example and can be changed in the
-preamble if the journal requests different submission metadata. The manuscript
-and cover-letter sources were not compiled to PDF in this workspace because a
-LaTeX toolchain is not installed here.
+Local build
+-----------
+make acta   (requires a full TeX Live/MiKTeX installation)
+make check  (Python 3 static checks; no LaTeX compiler needed)
 
-Acta Mechanica version
----------------------
-See ACTA_MECHANICA_NOTES.md for the new Springer Nature two-column source,
-numbered mathematics/physics references, build commands, and author-review checklist.
-Main file: manuscript_ActaMechanica.tex
-Build: make acta
-Static checks: make check
-The AMM originals are preserved. The Acta version has not been compiled here;
-a compiled, visually inspected PDF must be added before journal submission.
+Review status
+-------------
+See ACTA_MECHANICA_NOTES.md and ACTA_SECOND_PASS_REVIEW.md for template
+provenance, author-review items, bibliography gaps and modelling limitations.
+Static checks do not replace PDF compilation and visual review.
+No compiled or visually inspected submission PDF has been produced here.

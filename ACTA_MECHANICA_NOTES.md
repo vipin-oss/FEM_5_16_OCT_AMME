@@ -5,7 +5,7 @@
 - `cover_letter_ActaMechanica.tex`: retargeted cover letter.
 - `sn-jnl.cls`, `sn-mathphys-num.bst`: template dependencies.
 - `references.bib`, `figures/`: original bibliography and eight figures, unchanged.
-- Original AMM manuscript, cover letter and style are retained unchanged.
+- Only the Acta Mechanica submission sources and their supporting files are retained.
 
 ## Basis and provenance
 Acta Mechanica guidelines: https://link.springer.com/journal/707/submission-guidelines
@@ -22,7 +22,7 @@ against the template downloadable from the current publisher guidelines.
 ## Changes
 - New mechanics-focused title, abstract, keywords and contribution paragraph.
 - Preserved author order, affiliations and corresponding-author email.
-- Replaced AMM headers/assigned-looking publication metadata with Springer author macros.
+- Replaced legacy headers/assigned-looking publication metadata with Springer author macros.
 - Replaced superscript citations with numbered bracket citations; the class selects
   `sn-mathphys-num.bst`, which renders DOI fields as full https://doi.org/ links.
 - Wide figures/tables use two-column floats; wide mathematical displays use `cuted`
@@ -31,22 +31,22 @@ against the template downloadable from the current publisher guidelines.
 - Clarified that the constitutive reduction is established, not a new law, and that
   BFS continuity is not required by the classical model used for reported results.
 - Added explicit scope/limitations and structured existing declarations.
-- Corrected one missing inline-math closing `$` inherited from the AMM source.
+- Corrected one missing inline-math closing `$` inherited from the earlier source.
 - No experiments, benchmarks, author roles or new scientific results were invented.
 
 ## Build
 With a complete TeX Live/MiKTeX installation, run `make acta` (or upload the source
 package to Overleaf and select `manuscript_ActaMechanica.tex` as main document).
 Required packages include `cuted` and the dependencies of `sn-jnl.cls`.
-Run `make check` for static reference/label/environment/figure checks and verification
-that the displayed mathematics matches the original manuscript.
+Run `make check` for static reference/label/environment/figure checks and
+cover-letter consistency checks.
 
 ## Validation status and final checks
 Static checks pass. No LaTeX compiler is installed here. An attempted compiler
 installation was blocked by network restrictions on the release-asset host.
 **No compiled PDF or visual-layout validation has been produced.** Inspect equation
 strip placement, column breaks, tables, figure sizes and bibliography after compilation.
-The source ZIP is a review/build package, not a complete submission until a PDF is added.
+The source files are a review/build package, not a complete submission until a PDF is added.
 
 Before submission, authors must confirm:
 1. All author names, affiliations, funding and competing-interest statements.
