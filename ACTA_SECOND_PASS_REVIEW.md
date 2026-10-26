@@ -22,7 +22,7 @@
 
 ## Outstanding checks — do not treat as submission clearance
 1. **No PDF compilation/visual check has been possible.** Confirm cover-letter page
-   count, mathematical strips, floats, two-column layout and bibliography in Overleaf
+   count, equations, floats, current single-column layout and bibliography in Overleaf
    or a full LaTeX installation before uploading to the journal.
 2. **28 cited article entries lack a DOI field.** Missing DOI is not proof of an
    invalid reference. Check these against publisher records and add verified DOIs where

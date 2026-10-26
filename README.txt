@@ -1,6 +1,7 @@
 Acta Mechanica submission source package
 =======================================
 
+Layout:          Single-column working version
 Main manuscript: manuscript_ActaMechanica.tex
 Cover letter:    cover_letter_ActaMechanica.tex
 Bibliography:    references.bib
@@ -24,3 +25,8 @@ See ACTA_MECHANICA_NOTES.md and ACTA_SECOND_PASS_REVIEW.md for template
 provenance, author-review items, bibliography gaps and modelling limitations.
 Static checks do not replace PDF compilation and visual review.
 No compiled or visually inspected submission PDF has been produced here.
+
+Supplementary material
+----------------------
+No separate supplementary-material file or dataset is included. The eight figures
+in figures/ belong to the main manuscript.
