@@ -21,7 +21,9 @@ against the template downloadable from the current publisher guidelines.
 
 ## Changes
 - New mechanics-focused title, abstract, keywords and contribution paragraph.
-- Preserved author order, affiliations and corresponding-author email.
+- Author order updated at the authors' request: Vipin Gupta first, Anjali Patel
+  last and corresponding (p_anjali@blr.amrita.edu); middle authors unchanged.
+  Affiliation numbers follow the revised author order. Cover letter updated accordingly.
 - Replaced legacy headers/assigned-looking publication metadata with Springer author macros.
 - Replaced superscript citations with numbered bracket citations; the class selects
   `sn-mathphys-num.bst`, which renders DOI fields as full https://doi.org/ links.
