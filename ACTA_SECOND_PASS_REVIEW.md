@@ -15,9 +15,10 @@
 - 58 unique internal labels; referenced labels resolve.
 - All eight figure files are present.
 - Environment nesting and dollar-delimiter count checks pass.
-- Displayed mathematics is identical to the AMM original.
+- Displayed mathematics was checked against the earlier source during conversion;
+  the legacy manuscript has since been removed.
 - The cover-letter title, corresponding email and numerical claims match the manuscript.
-- No old AMM journal name or manuscript number remains in the new cover letter.
+- The cover letter is addressed only to Acta Mechanica.
 
 ## Outstanding checks — do not treat as submission clearance
 1. **No PDF compilation/visual check has been possible.** Confirm cover-letter page
