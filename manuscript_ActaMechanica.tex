@@ -1,10 +1,9 @@
 % Acta Mechanica submission source: Springer Nature mathematics/physics numeric style.
-% iicol is the journal-recommended two-column formatting option.
-\documentclass[pdflatex,iicol,sn-mathphys-num]{sn-jnl}
+% Single-column working version; journal guidelines recommend iicol for submission.
+\documentclass[pdflatex,sn-mathphys-num]{sn-jnl}
 \usepackage{graphicx}
 \usepackage{amsmath,amssymb,amsfonts,bm,amsthm}
 \usepackage{mathrsfs,booktabs,multirow,array,tabularx,dcolumn}
-\usepackage{cuted}
 \graphicspath{{figures/}}
 \emergencystretch=2em
 \raggedbottom
@@ -191,7 +190,6 @@ $e\bm\varepsilon$ give the corresponding tensor contractions. With the index map
 $11\to1$, $33\to2$, $13\to3$, and after deleting the rows and columns of the tetragonal
 tensors that vanish under plane strain, the active stiffness, piezoelectric and
 permittivity blocks used in \eqref{eq:elementmats} are
-\begin{strip}
 \begin{equation}
 C=\begin{bmatrix}C_{11}&C_{13}&0\\C_{13}&C_{33}&0\\0&0&C_{44}\end{bmatrix},
 \qquad
@@ -200,7 +198,6 @@ e=\begin{bmatrix}0&0&e_{15}\\e_{31}&e_{33}&0\end{bmatrix},
 \kappa=\begin{bmatrix}\kappa_{11}&0\\0&\kappa_{33}\end{bmatrix},
 \label{eq:voigtblocks}
 \end{equation}
-\end{strip}
 taken from the full $6\times6$ and $3\times6$ tensors reported by Zgonik et al.
 ~\cite{Zgonik1994}.
 
@@ -208,20 +205,17 @@ taken from the full $6\times6$ and $3\times6$ tensors reported by Zgonik et al.
 
 The constitutive relations follow from a single electric enthalpy density per unit
 volume,
-\begin{strip}
 \begin{equation}
 H(\varepsilon,E,\theta)=\tfrac12 C_{ijkl}\varepsilon_{ij}\varepsilon_{kl}
 -e_{kij}\varepsilon_{ij}E_k-\tfrac12\kappa_{ij}E_iE_j-\beta_{ij}\varepsilon_{ij}\theta
 -p_iE_i\theta,
 \label{eq:H}
 \end{equation}
-\end{strip}
 where $\beta_{ij}:=C_{ijkl}\alpha_{kl}$ is the thermal-stress coefficient and
 $\alpha_{ij}$ the linear thermal-expansion tensor. The independent variables are the
 total strain $\varepsilon$, the electric field $E$ and the temperature increment
 $\theta$, which is the electric-enthalpy form used in piezoelectricity
 ~\cite{Tiersten1969b,Yang2005b}. Differentiation gives
-\begin{strip}
 \begin{equation}
 \sigma_{ij}=\frac{\partial H}{\partial\varepsilon_{ij}}
 =C_{ijkl}(\varepsilon_{kl}-\alpha_{kl}\theta)-e_{kij}E_k,
@@ -230,7 +224,6 @@ D_i=-\frac{\partial H}{\partial E_i}
 =e_{ikl}\varepsilon_{kl}+\kappa_{ij}E_j+p_i\theta,
 \label{eq:constitutive}
 \end{equation}
-\end{strip}
 The thermal term appears as an eigenstrain in the stress, so that the material responds
 to the elastic part of the total strain. The minus sign in
 $D_i=-\partial H/\partial E_i$ gives positive contributions from the three electric
@@ -248,7 +241,6 @@ the material data are selected.
 
 For tetragonal $4mm$ symmetry, $\alpha_{xx}=\alpha_{yy}=\alpha_1$ and
 $\alpha_{zz}=\alpha_3$, and the full three-dimensional normal-stress block is
-\begin{strip}
 \begin{equation}
 \begin{Bmatrix}\sigma_{xx}\\\sigma_{yy}\\\sigma_{zz}\end{Bmatrix}
 =
@@ -271,12 +263,10 @@ C_{13}&C_{13}&C_{33}
 \begin{Bmatrix}\alpha_1\\\alpha_1\\\alpha_3\end{Bmatrix}.
 \label{eq:beta3d}
 \end{equation}
-\end{strip}
 Plane strain sets the \emph{total} strain $\varepsilon_{yy}$ to zero, not the thermal
 eigenstrain $\alpha_1\theta$. The thermal expansion in the $y$ direction therefore
 still contributes to $\sigma_{xx}$ and $\sigma_{zz}$ through $C_{12}$ and $C_{13}$ in
 \eqref{eq:beta3d}. The thermal-stress vector used in the plane-strain problem is
-\begin{strip}
 \begin{equation}
 \beta_{\mathrm{PS}}
 =
@@ -285,7 +275,6 @@ still contributes to $\sigma_{xx}$ and $\sigma_{zz}$ through $C_{12}$ and $C_{13
 0\big]^{\!\top},
 \label{eq:betaPS}
 \end{equation}
-\end{strip}
 obtained by taking the $xx$ and $zz$ components of \eqref{eq:beta3d} after the full
 three-dimensional contraction has been formed. A simplified reduction applies the
 two-component plane-strain stiffness directly to $[\alpha_1,\alpha_3,0]^\top$ and
@@ -297,7 +286,7 @@ whereas the simplified reduction gives
 $[4.3623,\,1.7705,\,0]^\top\times10^{6}\,\text{Pa\,K}^{-1}$
 (Table~\ref{tab:beta}).
 
-\begin{table*}[t]
+\begin{table}[t]
 \centering
 \caption{Plane-strain thermal-stress vector: simplified reduction versus the full
 three-dimensional contraction, both evaluated at the same thermal-expansion
@@ -315,7 +304,7 @@ $\beta_{zz}$ & $1.7705\times10^{6}$ & $4.1903\times10^{6}$ & $57.75\%$ \\
 \bottomrule
 \end{tabular}%
 }
-\end{table*}
+\end{table}
 
 Table~\ref{tab:beta} compares the two forms of the thermal-stress vector at the same
 thermal-expansion coefficients. The simplified reduction retains about two thirds of
@@ -372,7 +361,7 @@ constant over this 10~K interval, which lies inside the 298--343~K range of the
 thermal-expansion data (Section~\ref{sec:materials}) and matches the 300~K
 pyroelectric coefficient (Table~\ref{tab:materials}).
 
-\begin{figure*}[t]
+\begin{figure}[t]
   \centering
   \includegraphics[width=\linewidth]{Fig1_model_schematic}
   \caption{Model configuration. (a) Specimen geometry ($L=10\,\mu$m, $h=1\,\mu$m;
@@ -382,7 +371,7 @@ pyroelectric coefficient (Table~\ref{tab:materials}).
   thermal stress, deformation and piezoelectric charge, and the direct pyroelectric
   route.}
   \label{fig:fig01_model_schematic}
-\end{figure*}
+\end{figure}
 
 Figure~\ref{fig:fig01_model_schematic} summarizes the model. Panel (a) shows the
 specimen, 10~$\mu$m long and 1~$\mu$m thick, clamped at its left end and free at its
@@ -450,7 +439,6 @@ K_{u\phi}^{\!\top} & -K_{\phi\phi}
 \label{eq:global}
 \end{equation}
 with
-\begin{strip}
 \begin{align}
 K_{uu}&=\int_\Omega B_\varepsilon^{\!\top}CB_\varepsilon\,dA, &
 K_{u\phi}&=\int_\Omega B_\varepsilon^{\!\top}e^{\!\top}B_\phi\,dA, &
@@ -459,7 +447,6 @@ f_u&=\int_\Omega B_\varepsilon^{\!\top}\beta_{\mathrm{PS}}\,\theta\,dA, &
 f_\phi&=-\int_\Omega B_\phi^{\!\top}\bm p\,\theta\,dA.& &
 \label{eq:elementmats}
 \end{align}
-\end{strip}
 The negative sign in the electrical block follows from
 $\bm E=-B_\phi q_\phi$. The resulting system is symmetric and indefinite, with a
 positive-definite mechanical energy block and a negative-semidefinite electrical
@@ -475,7 +462,6 @@ The mechanical fields are interpolated with the 16-function Bogner--Fox--Schmit
 basis ~\cite{Bogner1965}. On the reference element
 $\xi,\eta\in[-1,1]$, each mechanical component ($u$ or $w$) is represented by a
 tensor-product cubic Hermite interpolation,
-\begin{strip}
 \begin{align}
 u(\xi,\eta)=\sum_{a=1}^{4}\Big[&
 H_0(-\xi_a\xi)H_0(-\eta_a\eta)\,u_a
@@ -484,7 +470,6 @@ H_0(-\xi_a\xi)H_0(-\eta_a\eta)\,u_a
 +\xi_a\eta_aH_1(-\xi_a\xi)H_1(-\eta_a\eta)\,u_{,\xi\eta}^a\Big],
 \label{eq:bfs-interp}
 \end{align}
-\end{strip}
 where the sum runs over the four corner nodes $a$, with
 $\xi_a,\eta_a\in\{-1,+1\}$ denoting the reference coordinates of node $a$.
 The functions $H_0$ and $H_1$ are the cubic Hermite functions satisfying
@@ -522,7 +507,6 @@ $\bm\varepsilon=(\varepsilon_{xx},\varepsilon_{zz},\gamma_{xz})^\top
 =B_\varepsilon q_u$ has $B_\varepsilon\in\mathbb{R}^{3\times32}$, constructed from
 \eqref{eq:bfs-interp} and the Jacobian-scaled derivatives
 $N_{,x}=J_x^{-1}N_{,\xi}$ and $N_{,z}=J_z^{-1}N_{,\eta}$:
-\begin{strip}
 \begin{align}
 (B_\varepsilon)_{1,\,0:15}&=N_{,x}^\top,\quad
 (B_\varepsilon)_{1,\,16:31}=\bm0;\notag\\
@@ -532,7 +516,6 @@ $N_{,x}=J_x^{-1}N_{,\xi}$ and $N_{,z}=J_z^{-1}N_{,\eta}$:
 (B_\varepsilon)_{3,\,16:31}=N_{,x}^\top,
 \label{eq:Beps}
 \end{align}
-\end{strip}
 Row~1 ($\varepsilon_{xx}=u_{,x}$) acts only on the $u$ degrees of freedom,
 row~2 ($\varepsilon_{zz}=w_{,z}$) only on the $w$ degrees of freedom, and row~3
 ($\gamma_{xz}=u_{,z}+w_{,x}$) on both, following the kinematics of
@@ -567,7 +550,6 @@ For the cubic Hermite basis on a rectangular element, this quadrature rule integ
 the polynomial entries of $B_\varepsilon^{\!\top}CB_\varepsilon$ exactly, so the
 corresponding element integrals have no quadrature error beyond round-off. The
 element matrices and mechanical load vector are
-\begin{strip}
 \begin{align}
 K_{uu}
 &=\sum_{g=1}^{16}w_gJ_xJ_z\,
@@ -589,7 +571,6 @@ B_\varepsilon^{\!\top}\beta_{\mathrm{PS}}\,\theta_g
 \in\mathbb{R}^{32},
 \label{eq:elemsums}
 \end{align}
-\end{strip}
 with
 $f_\phi=-\sum_g w_gJ_xJ_z\,B_\phi^{\!\top}\bm p\,\theta_g\in\mathbb{R}^4$
 (Eq.~\eqref{eq:elementmats}). The electrical load $f_\phi$ contains no additional
@@ -625,7 +606,7 @@ obtained in this work by fitting the lattice parameters reported by Nakatani et 
 ~\cite{Nakatani2016}, and the primary pyroelectric coefficient is the 300~K value
 reported by Eklund and Karttunen ~\cite{EklundKarttunen2023}.
 
-\begin{table*}[t]
+\begin{table}[t]
 \centering
 \small
 \caption{Material constants of tetragonal $4mm$ BaTiO$_3$ poled along $z$ used in
@@ -650,7 +631,7 @@ $\alpha_3$ & $-4.3\times10^{-6}$ & K$^{-1}$ & fitted, 298--343~K \\
 $p_3$ & $-3.41\times10^{-4}$ & C\,m$^{-2}$K$^{-1}$ & primary (fixed strain), 300~K \\
 \bottomrule
 \end{tabular}
-\end{table*}
+\end{table}
 
 The relative magnitudes of the material constants are relevant to the coupled response.
 The off-diagonal elastic constants $C_{12}$ and $C_{13}$ are about half of $C_{11}$,
@@ -668,7 +649,7 @@ components discussed in Sections~\ref{sec:planestrain} and~\ref{sec:polarity}. T
 primary pyroelectric coefficient is negative, so the direct pyroelectric contribution
 has the corresponding sign for a positive temperature increment.
 
-\begin{table*}[t]
+\begin{table}[t]
 \centering
 \caption{Tetragonal-phase lattice parameters of BaTiO$_3$ directly reported by
 Nakatani et al. ~\cite{Nakatani2016}, Table 1, used as the raw regression data for
@@ -684,7 +665,7 @@ $T$ (K) & $a$ (\AA) & $c$ (\AA) \\
 343 & 3.9962 & 4.0363 \\
 \bottomrule
 \end{tabular}
-\end{table*}
+\end{table}
 
 The thermal-expansion coefficients were obtained by ordinary least-squares fits to the
 tetragonal-phase lattice parameters $a(T)$ and $c(T)$ reported by Nakatani et al.\
@@ -782,7 +763,6 @@ open-circuit condition give
 $D_z=\kappa_{33}E_z+p_3\theta=0$, so that
 $E_z=-p_3\theta/\kappa_{33}$. Integrating through the thickness with
 $\theta(z)=\Delta T\,z/h$ gives
-\begin{strip}
 \begin{equation}
 V_{\mathrm{pyro}}^{\mathrm{1D}}=\phi(h)-\phi(0)
 =-\int_0^h E_z\,dz
@@ -792,12 +772,10 @@ V_{\mathrm{pyro}}^{\mathrm{1D}}=\phi(h)-\phi(0)
 \bar\theta=\frac{\Delta T}{2}.
 \label{eq:Vpyro}
 \end{equation}
-\end{strip}
 With $p_3=-3.41\times10^{-4}\,\text{C m}^{-2}\text{K}^{-1}$,
 $\bar\theta=5$~K, $h=1.0\times10^{-6}$~m and
 $\kappa_{33}=4.95834517752\times10^{-10}$~F\,m$^{-1}$
 ($=56\,\varepsilon_0$, with $\varepsilon_0=8.854187817\times10^{-12}$~F\,m$^{-1}$),
-\begin{strip}
 \begin{align}
 p_3\bar\theta h
 &=(-3.41\times10^{-4})(5)(1.0\times10^{-6})
@@ -808,7 +786,6 @@ V_{\mathrm{pyro}}^{\mathrm{1D}}
 =-3.438647248\,\text{V},
 \label{eq:Vpyronum}
 \end{align}
-\end{strip}
 The units
 $(\text{C\,m}^{-2}\text{K}^{-1})(\text{K})(\text{m})/
 (\text{F\,m}^{-1})$ reduce to volts. The finite-element voltage of Case~D agrees
@@ -823,7 +800,7 @@ temperature difference.
 \subsection{Mesh convergence}
 \label{sec:mesh-convergence}
 
-\begin{table*}[t]
+\begin{table}[t]
 \centering
 \caption{Mesh convergence, relative change from the previous mesh level.}
 \label{tab:mesh}
@@ -839,7 +816,7 @@ $64\times32$ (19305) & $+3.3\times10^{-12}\%$ & $-0.056\%$ & $+0.086\%$ \\
 $80\times40$ (29889) & $-2.2\times10^{-11}\%$ & $-0.031\%$ & $+0.045\%$ \\
 \bottomrule
 \end{tabular}
-\end{table*}
+\end{table}
 
 Six uniform meshes, from $8\times4$ to $80\times40$ elements, were used for each case
 (Table~\ref{tab:mesh}). Case~D is independent of the mesh to round-off because its
@@ -870,7 +847,7 @@ remaining discretization error. Case~E shows the larger relative changes because
 voltage is smaller in magnitude; in absolute terms, its changes remain smaller than
 those of Case~A at every mesh level.
 
-\begin{figure*}[t]
+\begin{figure}[t]
   \centering
   \includegraphics[width=\linewidth]{Fig2_mesh_convergence}
   \caption{Mesh convergence of Cases D, A and E over six refinement levels
@@ -878,7 +855,7 @@ those of Case~A at every mesh level.
   of freedom. (b) Relative change from the previous level (circles) and
   extrapolation-based error estimate (diamonds), on a logarithmic scale.}
   \label{fig:fig02_mesh_convergence}
-\end{figure*}
+\end{figure}
 
 Figure~\ref{fig:fig02_mesh_convergence} shows the same convergence study graphically.
 In panel (a), the three voltages remain nearly unchanged over the refinement range.
@@ -898,7 +875,7 @@ integral quantity determined by the net charge on the electrode.
 \subsection{Verification checks}
 \label{sec:checks}
 
-\begin{table*}[t]
+\begin{table}[t]
 \centering
 \small
 \caption{Numerical verification: eleven checks of the discrete governing equations,
@@ -927,7 +904,7 @@ Analytical 1D voltage ($-3.438647248$~V) & \multicolumn{3}{l}{reference value, E
 \bottomrule
 \end{tabular}%
 }
-\end{table*}
+\end{table}
 
 Table~\ref{tab:verify} lists eleven verification checks, all satisfied within their
 specified tolerances, together with two reference values used later. The first two
@@ -946,7 +923,6 @@ discrete implementation of the governing equations and their coupling.
 \paragraph{Energy balance}
 At the solved state of Case~A ($80\times40$ mesh), the discrete electric enthalpy
 splits into the five active terms of \eqref{eq:H} integrated over the domain,
-\begin{strip}
 \begin{align}
 \Pi=\ &
 \underbrace{4.6528\times10^{-8}}_{\mbox{\normalsize elastic, $\tfrac12\varepsilon^\top C\varepsilon$}}
@@ -958,7 +934,6 @@ splits into the five active terms of \eqref{eq:H} integrated over the domain,
 =-1.9941\times10^{-8}\ \text{J\,m}^{-1},
 \label{eq:energyaudit}
 \end{align}
-\end{strip}
 
 The strain-gradient and flexoelectric terms are zero in all reported cases. The sum
 agrees with an independent evaluation of the discrete potential,
@@ -981,7 +956,7 @@ the solution $q=K^{-1}f$ depends affinely on the scale factor. The computed volt
 follow a straight line to within $5.7\times10^{-15}$~V, with a slope of
 $-1.7004$~V per unit scale factor.
 
-\begin{figure*}[t]
+\begin{figure}[t]
   \centering
   \includegraphics[width=\linewidth]{Fig3_p3_linearity}
   \caption{Dependence of the Case A voltage on the pyroelectric coefficient at fixed
@@ -989,7 +964,7 @@ $-1.7004$~V per unit scale factor.
   with the straight line through the $p=0$ and $p=1$ solutions. (b) Deviation from the
   straight line on an enlarged scale.}
   \label{fig:fig08_p3_sensitivity}
-\end{figure*}
+\end{figure}
 
 Figure~\ref{fig:fig08_p3_sensitivity}(a) shows the computed voltage varying linearly
 with the $p_3$ scale factor, from a small positive value at zero pyroelectric
@@ -1016,7 +991,7 @@ coupling, would not preserve this same affine dependence.
 \subsection{Open-circuit voltages of the three cases}
 \label{sec:voltages}
 
-\begin{table*}[t]
+\begin{table}[t]
 \centering
 \caption{Open-circuit voltages on the $80\times40$ mesh (29{,}889 degrees of freedom)
 with the estimated discretization uncertainty.}
@@ -1030,7 +1005,7 @@ A & piezoelectric + pyroelectric & $-1.49960$ & $\pm0.09\%$ \\
 E & piezoelectric + thermal (no pyroelectric) & $+0.19321$ & $\pm0.15\%$ \\
 \bottomrule
 \end{tabular}
-\end{table*}
+\end{table}
 
 Table~\ref{tab:results} gives the open-circuit voltages for the three cases. The
 pyroelectric response alone (Case~D) produces $-3.43865$~V, with the sign determined
@@ -1048,14 +1023,14 @@ As shown in Section~\ref{sec:p3lin}, piezoelectric coupling also modifies the
 pyroelectric contribution itself. Thus, the two mechanisms partially oppose one
 another in the coupled response.
 
-\begin{figure*}[t]
+\begin{figure}[t]
   \centering
   \includegraphics[width=\linewidth]{Fig4_voltages_decomposition}
   \caption{Open-circuit voltages and their decomposition. (a) Converged voltages of
   Cases D, A and E ($80\times40$ mesh) and of the zero-temperature case. (b) Comparison
   on a common $16\times8$ mesh showing $V_D+V_E\neq V_A$.}
   \label{fig:fig03_cases_and_decomposition}
-\end{figure*}
+\end{figure}
 
 Figure~\ref{fig:fig03_cases_and_decomposition}(a) presents the converged voltages as
 stems from zero. The pyroelectric-only stem is the longest and points downward, the
@@ -1078,7 +1053,7 @@ therefore not reproduce the coupled device voltage.
 \subsection{Solved fields}
 \label{sec:fields}
 
-\begin{figure*}[t]
+\begin{figure}[t]
   \centering
   \includegraphics[width=\linewidth]{Fig5_solved_fields.png}
   \caption{Solved fields of Case A ($48\times24$ mesh), evaluated from the
@@ -1086,7 +1061,7 @@ therefore not reproduce the coupled device voltage.
   electric field $E_z$. (c) Longitudinal strain $\varepsilon_{xx}$. (d) Displacement
   magnitude $|\mathbf{u}|$.}
   \label{fig:fig04_solved_fields}
-\end{figure*}
+\end{figure}
 
 Figure~\ref{fig:fig04_solved_fields} shows the solved fields for Case~A over the
 specimen. In panel (a), the potential is zero on the grounded bottom face and reaches
@@ -1182,7 +1157,6 @@ the fitted $\alpha_1$ and $\alpha_3$ (Section~\ref{sec:materials}), the sensitiv
 of the voltage to the fitting uncertainty was examined. The two coefficients are
 fitted separately to the $a(T)$ and $c(T)$ data and are treated as independent.
 Perturbations are propagated as
-\begin{strip}
 \begin{equation}
 V_E(\alpha_1+\delta_1,\alpha_3+\delta_3)\approx
 V_E(\alpha_1,\alpha_3)
@@ -1192,7 +1166,6 @@ V_E(\alpha_1,\alpha_3)
 \delta_i=n_i\,\mathrm{SE}(\alpha_i),
 \label{eq:uncertaintyprop}
 \end{equation}
-\end{strip}
 with $\mathrm{SE}(\alpha_1)=1.6459\times10^{-6}\,\text{K}^{-1}$ and
 $\mathrm{SE}(\alpha_3)=3.2611\times10^{-6}\,\text{K}^{-1}$, by direct re-solution of
 the $80\times40$ model at the perturbed values. Over one standard deviation in both
@@ -1211,14 +1184,14 @@ its lowest value of $\alpha_1$ lies about 6.6 standard deviations below the fitt
 value. Figures~\ref{fig:fig05_alpha_grid_3d}--\ref{fig:fig07_sign_evidence} show the
 nine solved points directly, without interpolation.
 
-\begin{figure*}[t]
+\begin{figure}[t]
   \centering
   \includegraphics[width=\linewidth]{Fig6_alpha_grid_3d}
   \caption{Voltages on the $3\times3$ grid of scaled thermal-expansion coefficients,
   shown as stems over the $(\alpha_1,\alpha_3)$ plane with a zero-reference plane.
   (a) Case E. (b) Case A.}
   \label{fig:fig05_alpha_grid_3d}
-\end{figure*}
+\end{figure}
 
 Figure~\ref{fig:fig05_alpha_grid_3d}(a) shows the Case~E voltage as stems over the
 $(\alpha_1,\alpha_3)$ plane. The stems increase in height as $\alpha_1$ increases
@@ -1236,13 +1209,13 @@ becomes less negative as $\alpha_1$ increases because the opposing
 piezoelectric-thermal contribution increases. The pyroelectric contribution therefore
 remains the dominant contribution to the sign of the combined voltage over this grid.
 
-\begin{figure*}[t]
+\begin{figure}[t]
   \centering
   \includegraphics[width=\linewidth]{Fig7_alpha_grid_maps}
   \caption{The same $3\times3$ grid as annotated maps. (a) Case A. (b) Case E. (c)
   Case D for all nine coefficient pairs.}
   \label{fig:fig06_alpha_grid_heatmap}
-\end{figure*}
+\end{figure}
 
 Figure~\ref{fig:fig06_alpha_grid_heatmap} gives the same results as annotated maps,
 which make the regular dependence easier to inspect. In panels (a) and (b), the
@@ -1261,14 +1234,14 @@ all nine points as a flat line at the analytical value. The pyroelectric-only vo
 is independent of the thermal expansion, confirming that thermal expansion affects
 the voltage through the piezoelectric route.
 
-\begin{figure*}[t]
+\begin{figure}[t]
   \centering
   \includegraphics[width=\linewidth]{Fig8_sign_of_caseE}
   \caption{Sign of the Case E voltage over the $3\times3$ grid. (a) The nine values in
   increasing order, labelled by their $\alpha_1$ and $\alpha_3$ scale factors. (b) The
   same values against $\alpha_1$, with the fitted (nominal) pair marked.}
   \label{fig:fig07_sign_evidence}
-\end{figure*}
+\end{figure}
 
 Figure~\ref{fig:fig07_sign_evidence} focuses on the sign of the Case~E voltage. Panel
 (a) arranges the nine values in increasing order. Eight are positive, ranging from
@@ -1292,7 +1265,6 @@ A simple estimate of the piezoelectric-thermal voltage replaces $p_3$ in
 \eqref{eq:Vpyro} by the free-sample secondary combination
 $2e_{31}\alpha_1+e_{33}\alpha_3$
 ($-59\,\mu\text{C\,m}^{-2}\text{K}^{-1}$, Section~\ref{sec:materials}):
-\begin{strip}
 \begin{equation}
 V_{\mathrm{piezo\text{-}th}}^{\mathrm{1D}}
 \approx
@@ -1303,7 +1275,6 @@ V_{\mathrm{piezo\text{-}th}}^{\mathrm{1D}}
 =-0.598\,\text{V},
 \label{eq:Vpt}
 \end{equation}
-\end{strip}
 Since this is a free-sample estimate, the free permittivity
 $\varepsilon_{33}^T=132.4\,\varepsilon_0$ may be used instead of the clamped value,
 which gives $-0.253$~V. Both estimates have the sign opposite to the finite-element

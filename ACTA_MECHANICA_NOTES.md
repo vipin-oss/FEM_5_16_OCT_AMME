@@ -1,7 +1,7 @@
 # Acta Mechanica conversion — author review required
 
 ## Files
-- `manuscript_ActaMechanica.tex`: main source; Springer Nature `sn-jnl`, `iicol`, `sn-mathphys-num`.
+- `manuscript_ActaMechanica.tex`: main source; Springer Nature `sn-jnl`, single-column working layout, `sn-mathphys-num`.
 - `cover_letter_ActaMechanica.tex`: retargeted cover letter.
 - `sn-jnl.cls`, `sn-mathphys-num.bst`: template dependencies.
 - `references.bib`, `figures/`: original bibliography and eight figures, unchanged.
@@ -25,8 +25,8 @@ against the template downloadable from the current publisher guidelines.
 - Replaced legacy headers/assigned-looking publication metadata with Springer author macros.
 - Replaced superscript citations with numbered bracket citations; the class selects
   `sn-mathphys-num.bst`, which renders DOI fields as full https://doi.org/ links.
-- Wide figures/tables use two-column floats; wide mathematical displays use `cuted`
-  strips so existing equations need not be shrunk into narrow columns.
+- The current working version uses single-column figures, tables and equations.
+  Two-column strip wrappers and the `cuted` dependency have been removed.
 - Kept every mathematical display and numerical result unchanged.
 - Clarified that the constitutive reduction is established, not a new law, and that
   BFS continuity is not required by the classical model used for reported results.
@@ -37,7 +37,7 @@ against the template downloadable from the current publisher guidelines.
 ## Build
 With a complete TeX Live/MiKTeX installation, run `make acta` (or upload the source
 package to Overleaf and select `manuscript_ActaMechanica.tex` as main document).
-Required packages include `cuted` and the dependencies of `sn-jnl.cls`.
+Required packages include the dependencies of `sn-jnl.cls`.
 Run `make check` for static reference/label/environment/figure checks and
 cover-letter consistency checks.
 
@@ -45,7 +45,7 @@ cover-letter consistency checks.
 Static checks pass. No LaTeX compiler is installed here. An attempted compiler
 installation was blocked by network restrictions on the release-asset host.
 **No compiled PDF or visual-layout validation has been produced.** Inspect equation
-strip placement, column breaks, tables, figure sizes and bibliography after compilation.
+placement, page breaks, tables, figure sizes and bibliography after compilation.
 The source files are a review/build package, not a complete submission until a PDF is added.
 
 Before submission, authors must confirm:
@@ -62,3 +62,9 @@ Before submission, authors must confirm:
 ## Second-pass review
 See `ACTA_SECOND_PASS_REVIEW.md` for wording corrections, bibliography gaps and
 a mechanical boundary-condition point requiring author confirmation.
+
+## Working layout and supplementary material
+The current source uses a single-column working layout at the authors' request.
+The journal recommends `iicol` for submission; recheck its guidelines at submission.
+No separate supplementary-material document or dataset is included in this repository.
+The eight files in `figures/` are main-manuscript figures, not supplementary material.
