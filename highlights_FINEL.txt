@@ -1,0 +1,4 @@
+- Full three-dimensional thermal-stress contraction is retained under plane strain.
+- Omitting constrained transverse expansion reverses piezoelectric-thermal voltage polarity.
+- The calculation separates direct pyroelectric and thermally induced piezoelectric effects.
+- An exact pyroelectric limit, mesh convergence and consistency checks assess the model.
