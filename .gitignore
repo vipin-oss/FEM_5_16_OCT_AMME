@@ -10,6 +10,3 @@
 *.fls
 *.fdb_latexmk
 *.synctex.gz
-
-# Downloadable source bundle; sources are tracked separately
-/ActaMechanica_source_package.zip
