@@ -68,3 +68,11 @@ Branch: `revision/finel-submission-2026-11`
 - **Limitations:** These are parsed CSV vs source comparisons, not new solver runs. The ±1σ interval requires logs/scripts beyond the two available CSV files; figure graphical labels/data were not pixel-inspected. Thus this is not an exhaustive 'every number' pass and is NOT T7.
 - No data or manuscript number changed.
 - Status: TARGETED CHECK PASSED; FULL SWEEP UNVERIFIED.
+
+## T6 — Cover letter and author declarations (REVIEW ONLY)
+- Read current `cover_letter_FINEL.txt` and `manuscript_FINEL.tex` declaration paragraphs.
+- Cover letter states the paper's actual contributions (constitutive-consistency benchmark and comparisons), notes both co-authored FINEL papers are not validation, disclaims new FE elements/flexoelectric simulations and mentions limitations. No unsupported acceptance/novelty claim detected.
+- The bracketed originality/Acta Mechanica/coauthor/suggested-reviewer paragraph is still present and **unchanged**. Reproducibility repository DOI placeholder in manuscript is unchanged.
+- Manuscript competing interests and funding text require author review; author contributions and generative-AI disclosure are author-only. Elsevier's updated policy specifically requires a declaration for substantive AI assistance (https://www.elsevier.com/en-in/about/policies-and-standards/generative-ai-policies-for-journals).
+- No content changes made, because these are factual confirmations authors alone can give. FINEL live Guide for Authors remained inaccessible (403); journal-specific cover-letter fields cannot be certified.
+- Status: LANGUAGE/SCOPE CHECK PASSED; AUTHOR DECLARATIONS BLOCKING.
