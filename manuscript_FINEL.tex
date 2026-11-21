@@ -2,6 +2,8 @@
 \usepackage[T1]{fontenc}
 \usepackage[a4paper,margin=1in]{geometry}
 \usepackage{graphicx}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
 \usepackage{amsmath,amssymb,amsfonts,bm,amsthm}
 \usepackage{newtxtext,newtxmath}
 \usepackage{setspace}
@@ -1190,6 +1192,26 @@ thermal-expansion coefficients and the variation of the combined voltage enters 
 the piezoelectric-thermal part. Within the tested range, the sign of the
 piezoelectric-thermal voltage therefore depends on the thermal anisotropy of
 tetragonal BaTiO$_3$.
+
+Figure~\ref{fig:alpha-surface} displays the nine Case~E finite-element voltages
+of Fig.~\ref{fig:alphagrid} as a three-dimensional surface. The surface is
+planar because the governing discrete system is linear in the prescribed
+thermal-expansion coefficients; the surface between data points is an
+interpolation of the existing $48\times24$ results, not a separate set
+of simulations.
+
+The affine relation fitted to these nine computed values gives
+$V_E=0$ when $\alpha_3\simeq-0.47006\,\alpha_1$ (both coefficients expressed
+in the same units). Figure~\ref{fig:alpha-polarity} compares this boundary
+with the sampled parameter pairs and the coordinatewise one-standard-error
+range about the fitted coefficients. The nominal pair and its
+one-standard-error rectangle remain on the positive-voltage side. The
+dashed boundary outside the sampled grid represents an extrapolation of
+the linear constitutive model and should not be interpreted as additional
+finite-element calculations.
+
+\input{figures/Fig7_alpha_surface.tex}
+\input{figures/Fig8_polarity_boundary.tex}
 
 \subsection{Comparison with a one-dimensional estimate}
 \label{sec:estimate}
