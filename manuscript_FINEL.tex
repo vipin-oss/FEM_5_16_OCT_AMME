@@ -386,12 +386,7 @@ pyroelectric coefficient (Table~\ref{tab:materials}).
 \begin{figure}[t]
   \centering
   \includegraphics[width=\linewidth]{Fig1_model_schematic}
-  \caption{Model configuration. (a) Specimen geometry ($L=10\,\mu$m, $h=1\,\mu$m;
-  not to scale) with clamped root, poling direction, prescribed temperature gradient,
-  grounded bottom electrode and open-circuit top electrode. (b) The two routes from
-  the prescribed temperature to the open-circuit voltage: the mechanical route through
-  thermal stress, deformation and piezoelectric charge, and the direct pyroelectric
-  route.}
+  \caption{Cantilever model. (a) Geometry and boundary conditions. (b) Mechanical and direct pyroelectric contributions to the open-circuit voltage.}
   \label{fig:fig01_model_schematic}
 \end{figure}
 
@@ -605,7 +600,7 @@ the prescribed pyroelectric term in \eqref{eq:constitutive}.
 The element blocks are assembled into the global sparse system through the usual
 connectivity map ~\cite{Bathe1996}. The unknowns contain displacements, displacement
 derivatives, and electric potentials, whose magnitudes differ by several orders.
-The resulting raw system is therefore poorly conditioned. Before solution, the
+The unscaled system is poorly conditioned. Before solution, the
 reduced system is scaled by a diagonal congruence transformation,
 \[
 K\to S^{-1}KS^{-1},\qquad
@@ -700,7 +695,7 @@ over the 45~K window, and its fit gives
 $\alpha_3=\alpha_c=-4.34\times10^{-6}\,\text{K}^{-1}$ with a standard error of
 $3.26\times10^{-6}\,\text{K}^{-1}$. The two values are rounded to
 $\alpha_1=+21.8\times10^{-6}\,\text{K}^{-1}$ and
-$\alpha_3=-4.3\times10^{-6}\,\text{K}^{-1}$ for the model. The resulting voltage sensitivity is examined below.
+$\alpha_3=-4.3\times10^{-6}\,\text{K}^{-1}$ for the model. Voltage sensitivity to these fitted coefficients is examined with the numerical results.
 
 Table~\ref{tab:nakatani-raw} shows the different thermal responses of the two axes.
 Between 298 and 343~K, the $a$ parameter increases, whereas the $c$ parameter remains
@@ -818,7 +813,7 @@ temperature difference.
 
 \begin{table}[t]
 \centering
-\caption{Open-circuit voltages (V) on six uniform meshes for the BFS discretization with the classical clamp (degrees of freedom after constraints) and for the independent biquadratic (Q9) discretization with the same element counts. Case~D equals the exact value $-3.43865$~V on every mesh to $10^{-12}$ relative error.}
+\caption{Open-circuit voltages (V) for BFS and Q9 discretizations on six meshes. BFS degrees of freedom follow the classical root constraint; Case~D equals $-3.43865$~V on each mesh.}
 \label{tab:mesh}
 \small
 \begin{tabular}{@{}lrrrrr@{}}
@@ -850,7 +845,7 @@ produce a local boundary-layer error.
 \begin{figure}[t]
   \centering
   \includegraphics[width=\linewidth]{Fig2_mesh_convergence}
-  \caption{Mesh convergence of the open-circuit voltage for Cases~A and~E. (a,b) Voltage against the number of degrees of freedom. (c,d) Magnitude of the relative change from the previous mesh on a logarithmic scale. Case~D is mesh independent and is omitted.}
+  \caption{Mesh convergence for Cases~A and~E. (a,b) Voltage versus degrees of freedom; (c,d) relative changes between successive meshes.}
   \label{fig:fig02_mesh_convergence}
 \end{figure}
 
@@ -859,10 +854,7 @@ produce a local boundary-layer error.
 
 \begin{table}[t]
 \centering
-\caption{Selected numerical consistency checks for the BFS formulation with
-the classical displacement clamp. The first four residuals are relative
-errors or relative norms; the last three are expressed in the units shown.
-All reported values satisfy their respective criteria.}
+\caption{Numerical consistency checks for BFS with the classical clamp. The first four residuals are relative quantities; the remaining three include units.}
 \label{tab:verify}
 \small
 \begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}Xrr@{}}
@@ -887,7 +879,7 @@ Top-electrode potential variation (V)
 \end{tabularx}
 \end{table}
 
-Table~\ref{tab:verify} reports representative consistency checks of the finite-element implementation. Additional tests of the thermal-load kernel, linear electric-potential field, zero-$p_3$ limit and linearity with respect to $p_3$ were also satisfied. These checks concern numerical consistency rather than independent experimental validation. The unscaled global matrix has condition number $2.5\times10^{31}$ on the $16\times8$ mesh, reduced to $4.7\times10^{6}$ after diagonal scaling. These algebraic and limiting-case checks do not by themselves verify the full coupled thermo-electro-mechanical solution, which is examined in the following two subsections.
+Table~\ref{tab:verify} gives the numerical consistency checks. Additional tests covered the thermal-load kernel, linear electric potential, the zero-$p_3$ limit and linearity in $p_3$. These checks are not experimental validation. The unscaled global matrix has condition number $2.5\times10^{31}$ on the $16\times8$ mesh, reduced to $4.7\times10^{6}$ after diagonal scaling. These algebraic and limiting-case checks do not by themselves verify the full coupled thermo-electro-mechanical solution, which is examined in the following two subsections.
 
 \subsection{Analytical traction-free interior solution}
 \label{sec:midspan}
@@ -911,7 +903,7 @@ For $\ell=0$ and $\mu_{ijkl}=0$ the variational problem contains only first deri
 \begin{table}[t]
 \centering
 \small
-\caption{Effect of the root constraint ($80\times40$ mesh, full thermal-stress contraction). $\varepsilon_{xx}$ is the nodal value at the root top face; $w_{\mathrm{tip}}$ is the deflection at mid-thickness of the free end (Case~E).}
+\caption{Effect of root constraints on voltages, root strain and tip deflection ($80\times40$ mesh).}
 \label{tab:rootbc}
 \begin{tabular}{@{}lrrrr@{}}
 \toprule
@@ -929,7 +921,7 @@ The all-derivative constraint changes the voltages by 0.11\% (Case~A) and 0.13\%
 \begin{figure}[t]
   \centering
   \includegraphics[width=\linewidth]{Fig9_root_constraint_and_span}
-  \caption{(a) Case~E voltage against span with the classical clamp, and the analytical interior-limit value from~\eqref{eq:midspan}. (b) Case~E voltage with the simplified and the full thermal-stress contraction for three treatments of the root ($80\times40$ mesh).}
+  \caption{Case~E voltage: (a) span dependence and analytical interior limit; (b) simplified and full thermal-stress contractions under three root constraints ($80\times40$ mesh).}
   \label{fig:rootspan}
 \end{figure}
 
@@ -946,10 +938,7 @@ $-1.6909$~V per unit scale factor.
 \begin{figure}[t]
   \centering
   \includegraphics[width=\linewidth]{Fig3_p3_linearity}
-  \caption{Dependence of the Case A voltage on the pyroelectric coefficient at fixed
-  stiffness ($16\times8$ mesh). (a) Computed voltages against the $p_3$ scale factor,
-  with the straight line through the $p=0$ and $p=1$ solutions. (b) Deviation from the
-  straight line on an enlarged scale.}
+  \caption{Case~A voltage versus the $p_3$ scaling factor ($16\times8$ mesh). (a) Computed values and linear fit; (b) residuals.}
   \label{fig:fig08_p3_sensitivity}
 \end{figure}
 
@@ -1011,9 +1000,7 @@ piezoelectric coupling, which is active in Case~A.
 \begin{figure}[t]
   \centering
   \includegraphics[width=\linewidth]{Fig4_voltages_decomposition}
-  \caption{Open-circuit voltages and their decomposition. (a) Converged voltages of
-  Cases D, A and E ($80\times40$ mesh) and of the zero-temperature case. (b) Comparison
-  on a common $16\times8$ mesh showing $V_D+V_E\neq V_A$.}
+  \caption{Open-circuit voltages. (a) Cases~D, A and E ($80\times40$ mesh). (b) Separate-case sum and coupled result ($16\times8$ mesh).}
   \label{fig:fig03_cases_and_decomposition}
 \end{figure}
 
@@ -1038,10 +1025,7 @@ therefore not reproduce the coupled device voltage.
 \begin{figure}[t]
   \centering
   \includegraphics[width=\linewidth]{Fig5_solved_fields}
-  \caption{Solved fields of Case A ($80\times40$ mesh, classical clamp), shown as nodal values
-  (element-averaged for $E_z$). The vertical axis is stretched. (a) Electric potential.
-  (b) Through-thickness electric field $E_z$. (c) Longitudinal strain $\varepsilon_{xx}$.
-  (d) Displacement magnitude $|\mathbf{u}|$.}
+  \caption{Case~A fields ($80\times40$ mesh): (a) potential; (b) $E_z$; (c) $\varepsilon_{xx}$; (d) displacement magnitude. Vertical scale exaggerated; $E_z$ is element-averaged.}
   \label{fig:fig04_solved_fields}
 \end{figure}
 
@@ -1163,9 +1147,7 @@ the same at all nine points, $-3.43865$~V, because it does not involve thermal e
 \begin{figure}[t]
   \centering
   \includegraphics[width=\linewidth]{Fig6_alpha_grid}
-  \caption{Open-circuit voltage on the $3\times3$ grid of thermal-expansion
-  coefficients ($48\times24$ mesh, classical clamp). The central cell is the fitted pair.
-  (a) Case E. (b) Case A.}
+  \caption{Open-circuit voltage on the $3\times3$ thermal-expansion grid ($48\times24$ mesh): (a) Case~E; (b) Case~A. Centre: fitted coefficients.}
   \label{fig:alphagrid}
 \end{figure}
 
@@ -1201,17 +1183,8 @@ not statistical confidence bounds.
 \begin{figure}[t]
 \centering
 \includegraphics[width=\linewidth]{Fig8_polarity_boundary.pdf}
-\caption{Polarity of the piezoelectric--thermal response on the $48\times24$
- classical-clamp mesh. (a) The nine simulated thermal-expansion pairs and
- the $V_E=0$ boundary implied by their affine dependence; the dashed
- continuation lies outside the sampled parameter domain. (b) The three
- computed $V_E$ values at the nominal $\alpha_1$, together with the affine
- response and its predicted zero at $\alpha_3\approx-10.25\times10^{-6}$~K$^{-1}$.
- Blue circles mark computed pairs, the red square marks the negative-voltage
- case, and the black star marks the nominal pair. Solid lines indicate
- the sampled parameter range; dashed lines extend the fixed-mesh affine model
- without additional finite-element runs.}
-\label{fig:alpha-polarity}
+\caption{Case~E polarity ($48\times24$ mesh). (a) Simulated parameter pairs and $V_E=0$ boundary; (b) voltage versus $\alpha_3$ at nominal $\alpha_1$. Circles: simulations; square: negative case; star: nominal pair. Dashed lines: extrapolations.}
+  \label{fig:alpha-polarity}
 \end{figure}
 
 \subsection{Comparison with a one-dimensional estimate}
@@ -1308,21 +1281,20 @@ producing the larger change per unit variation.
 \end{itemize}
 
 The out-of-plane constraint affects the predicted voltage even in this
-linear, plane-strain model. The numerical results apply to the specified
-microcantilever and ideal electrodes. Predictions for practical sensors
-or energy-conversion devices would require device-specific material data,
-geometry and experimental tests.
+linear, plane-strain model. The results apply to the specified microcantilever with ideal electrodes.
+Predictions for practical sensors and energy-conversion devices would require
+device-specific material data, geometry and experimental tests.
 
 
 \subsection*{Scope and limitations}
 The polarity predictions apply to the stated linear constitutive model,
 plane-strain kinematics, prescribed steady temperature field and ideal electrode
 conditions. They should not be interpreted as geometry-independent material
-properties. The exact pyroelectric limit, the analytical interior solution, the independent biquadratic
-discretization and the discrete consistency checks verify the implementation of the stated
-model, but they do not validate the model against experiment or against a
-three-dimensional or commercial-code solution, and the root region is checked only against
-a second discretization of the same equations. A three-dimensional or plane-stress comparison and
+properties. The exact pyroelectric limit, analytical interior solution, independent
+biquadratic discretization and consistency checks test the numerical
+implementation. They do not provide experimental or three-dimensional
+validation. The root region was compared only with a second discretization
+of the same governing equations. A three-dimensional or plane-stress comparison and
 experimental device-level characterization remain outside the present study.
 The calculations do not establish sensor sensitivity, harvested power or conversion
 efficiency. Although a higher-order extension is described, the reported voltages
