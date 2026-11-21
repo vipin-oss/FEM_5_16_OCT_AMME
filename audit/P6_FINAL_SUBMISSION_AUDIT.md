@@ -43,3 +43,6 @@ cd .. && python3 figure_code/make_figures.py
 
 ## Supervisor status after T2–T7 (21 Nov 2026)
 T1 PASS; T2 PARTIAL (guide 403); T3 metadata complete, claims checked against abstracts; T4: 3 of 4 proposed edits applied, 1 rejected (it changed a technical claim: the sign depends on α3 as well, flipping at α3≈−10.3e-6); T5 targeted check passed; T6 review only; T7 PASS (all verification scripts reproduce the stored logs exactly; `unit_tests.py` exit 0; rebuild clean). Decision unchanged: **NOT READY** (author-only items + full visual review).
+
+## Update after author decisions (21 Nov 2026, 11:30 IST)
+Funding (HSHEC/HSRF, Sanction Letter 14/66-2026 SPD/HSHEC/HSRF-38) and competing-interest (none) statements written per the authors' instruction. CRediT and AI-use disclosure are to be entered by the authors in the submission portal. The cover letter now states the manuscript is unpublished and not under consideration elsewhere — the authors must confirm that this is true. Only the archive DOI placeholder remains in the manuscript. Decision unchanged: NOT READY until the DOI, the Fig. 1 approval and the full PDF review are done.

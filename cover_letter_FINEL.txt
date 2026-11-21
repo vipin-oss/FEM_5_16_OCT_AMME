@@ -8,7 +8,7 @@ The numerical work consists of a Bogner-Fox-Schmit discretization, an independen
 
 Two related papers by members of our group have been published in this journal (doi:10.1016/j.finel.2026.104681 and doi:10.1016/j.finel.2026.104685). They concern strain-gradient elasticity and are cited only for the interpolation background; they are not used as validation of the present calculation.
 
-[Authors to confirm before submission: the manuscript is original, has not been published, and is not under consideration elsewhere, including Acta Mechanica, for which an earlier version was prepared; all authors have approved the submission; funding and competing-interest statements are as given in the manuscript; suggested reviewers, if any.]
+The manuscript has not been published and is not under consideration for publication elsewhere.
 
 Thank you for considering this manuscript.
 
