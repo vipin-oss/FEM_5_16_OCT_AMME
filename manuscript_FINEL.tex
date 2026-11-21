@@ -867,29 +867,35 @@ Figure~\ref{fig:fig02_mesh_convergence} shows the convergence of the BFS discret
 
 \begin{table}[t]
 \centering
-\small
-\caption{Algebraic and variational checks of the BFS implementation (classical clamp). All tolerances were met; the scripts are part of the reproducibility archive.}
+\caption{Selected numerical consistency checks for the BFS formulation with
+the classical displacement clamp. The first four residuals are relative
+errors or relative norms; the last three are expressed in the units shown.
+All reported values satisfy their respective criteria.}
 \label{tab:verify}
-\begin{tabularx}{\linewidth}{@{}Xlrl@{}}
+\small
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}Xrr@{}}
 \toprule
-Check & Purpose & Residual & Tolerance \\
+Verification quantity & Residual & Criterion \\
 \midrule
-Exact recovery of a linear displacement field (element) & basis consistency & $3.6\times10^{-15}$ & $<10^{-12}$ \\
-Load-kernel check for a linear field & basis consistency & $2.9\times10^{-15}$ & $<10^{-12}$ \\
-Linear potential field (element $K_{\phi\phi}$) & basis consistency & $2.0\times10^{-16}$ & $<10^{-12}$ \\
-Symmetry of the reduced coupled matrix & reciprocity & $2.4\times10^{-17}$ & $<10^{-12}$ \\
-$4\times4$ against $6\times6$ Gauss rule (element $K_{uu}$) & quadrature exactness & $3.7\times10^{-16}$ & $<10^{-12}$ \\
-Case D against exact 1D result, $16\times8$ & analytical agreement & $1.5\times10^{-13}$ & $<10^{-10}$ \\
-Zero thermal expansion, Case E & null limit & exact 0 & $<10^{-12}$ \\
-Zero $p_3$: Case A $-$ Case E & null limit & exact 0 & $<10^{-10}$ \\
-$p_3$ linearity at fixed $K$ (max.\ residual, V) & algebraic structure & $4.9\times10^{-15}$ & $<10^{-9}$ \\
-Net charge on floating electrode (C\,m$^{-1}$) & open-circuit condition & $1.9\times10^{-22}$ & $<10^{-18}$ \\
-Spread of top-electrode potential (V) & equipotential & exact 0 & $<10^{-12}$ \\
+Linear displacement-field energy consistency
+ & $3.6\times10^{-15}$ & $<10^{-12}$ \\
+Reduced coupled-matrix symmetry
+ & $2.4\times10^{-17}$ & $<10^{-12}$ \\
+$4\times4$ versus $6\times6$ Gauss quadrature ($K_{uu}$)
+ & $3.7\times10^{-16}$ & $<10^{-12}$ \\
+Case D versus analytical pyroelectric voltage
+ & $1.5\times10^{-13}$ & $<10^{-10}$ \\
+Zero thermal expansion, Case E (V)
+ & $0$ & $<10^{-12}$ \\
+Floating-electrode net charge (C\,m$^{-1}$)
+ & $1.9\times10^{-22}$ & $<10^{-18}$ \\
+Top-electrode potential variation (V)
+ & $0$ & $<10^{-12}$ \\
 \bottomrule
 \end{tabularx}
 \end{table}
 
-Table~\ref{tab:verify} lists the checks. They test the basis, the symmetry of the coupled system implied by the single enthalpy, the quadrature, the exact one-dimensional pyroelectric limit, the null limits and the electrode conditions. The unscaled global matrix has condition number $2.5\times10^{31}$ on the $16\times8$ mesh, and $4.7\times10^{6}$ after diagonal scaling, so the scaling of Section~\ref{sec:assembly} is required. None of these checks tests the coupled thermo-electro-mechanical solution as a whole; this is done in the next two subsections.
+Table~\ref{tab:verify} reports representative consistency checks of the finite-element implementation. Additional tests of the thermal-load kernel, linear electric-potential field, zero-$p_3$ limit and linearity with respect to $p_3$ were also satisfied. The corresponding scripts are retained in the project repository under \texttt{program/verification/}. The unscaled global matrix has condition number $2.5\times10^{31}$ on the $16\times8$ mesh, reduced to $4.7\times10^{6}$ after diagonal scaling (Section~\ref{sec:assembly}). These algebraic and limiting-case checks do not by themselves verify the full coupled thermo-electro-mechanical solution, which is examined in the following two subsections.
 
 \subsection{Analytical traction-free interior solution}
 \label{sec:midspan}
