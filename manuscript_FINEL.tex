@@ -895,7 +895,7 @@ Top-electrode potential variation (V)
 \end{tabularx}
 \end{table}
 
-Table~\ref{tab:verify} reports representative consistency checks of the finite-element implementation. Additional tests of the thermal-load kernel, linear electric-potential field, zero-$p_3$ limit and linearity with respect to $p_3$ were also satisfied. The corresponding scripts are retained in the project repository under \texttt{program/verification/}. The unscaled global matrix has condition number $2.5\times10^{31}$ on the $16\times8$ mesh, reduced to $4.7\times10^{6}$ after diagonal scaling (Section~\ref{sec:assembly}). These algebraic and limiting-case checks do not by themselves verify the full coupled thermo-electro-mechanical solution, which is examined in the following two subsections.
+Table~\ref{tab:verify} reports representative consistency checks of the finite-element implementation. Additional tests of the thermal-load kernel, linear electric-potential field, zero-$p_3$ limit and linearity with respect to $p_3$ were also satisfied. These checks concern numerical consistency rather than independent experimental validation. The unscaled global matrix has condition number $2.5\times10^{31}$ on the $16\times8$ mesh, reduced to $4.7\times10^{6}$ after diagonal scaling (Section~\ref{sec:assembly}). These algebraic and limiting-case checks do not by themselves verify the full coupled thermo-electro-mechanical solution, which is examined in the following two subsections.
 
 \subsection{Analytical traction-free interior solution}
 \label{sec:midspan}
@@ -1350,10 +1350,9 @@ No.~14/66-2026 SPD/HSHEC/HSRF-38).
 \subsection*{Declaration of competing interest}
 The authors declare that they have no known competing financial interests or personal relationships that could have appeared to influence the work reported in this paper.
 \subsection*{Data availability}
-The numerical inputs are specified in the manuscript. The finite-element scripts,
-calculated output data and figure-generation programs used for this study are
-retained in the project source files and are available from the corresponding
-author upon reasonable request.
+The numerical inputs and the results supporting the findings are reported in
+the manuscript, including its tables and figures. No supplementary files are
+submitted with this article.
 
 % Authors must confirm the description of the AI-assisted preparation and their review.
 \section*{Declaration of generative AI and AI-assisted technologies in the manuscript preparation process}
