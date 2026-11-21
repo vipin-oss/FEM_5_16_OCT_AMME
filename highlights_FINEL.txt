@@ -1,4 +1,0 @@
-- Plane-strain thermal stress in BaTiO3 needs the full 3D elastic contraction
-- The simplified reduction reverses the piezoelectric-thermal voltage polarity
-- An exact mid-span solution and a second discretization check the FE model
-- Fixing all root derivatives changes the open-circuit voltage by about 0.1%

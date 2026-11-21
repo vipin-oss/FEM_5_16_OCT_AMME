@@ -1,10 +1,15 @@
-Dear Editor,
+\documentclass[11pt]{letter}
+\usepackage[T1]{fontenc}
+\usepackage[margin=1in]{geometry}
+\begin{document}
+\begin{letter}{Editor\\Finite Elements in Analysis and Design}
+\opening{Dear Editor,}
 
 We submit the manuscript "Influence of anisotropic thermal expansion on voltage polarity in a thermopiezoelectric microcantilever" for consideration as a research article in Finite Elements in Analysis and Design.
 
 The paper concerns the consistency of a coupled finite-element model of a plane-strain barium titanate microcantilever under a steady through-thickness temperature difference. The model is derived from a single electric enthalpy with the fixed-strain pyroelectric coefficient. We show that the plane-strain thermal-stress vector must be formed from the full three-dimensional elastic contraction, and that the simplified reduction changes the sign of the piezoelectric-thermal open-circuit voltage (-0.22 V against +0.19 V for the configuration examined).
 
-The numerical work consists of a Bogner-Fox-Schmit discretization, an independent biquadratic discretization, an exact one-dimensional pyroelectric limit, an analytical traction-free interior solution of the coupled problem, a mesh-convergence study, and a test of the root boundary condition. The all-derivative root constraint used in earlier versions of the model is stiffer than a classical clamp; it changes the voltages by about 0.1% and does not change the conclusions. The paper does not introduce a new element, and it reports no flexoelectric or size-effect calculation. The assumptions (linear, plane strain, prescribed steady temperature, ideal electrodes) are stated in the text, and no experimental validation is claimed.
+The numerical work consists of a Bogner-Fox-Schmit discretization, an independent biquadratic discretization, an exact one-dimensional pyroelectric limit, an analytical traction-free interior solution of the coupled problem, a mesh-convergence study, and a test of the root boundary condition. The all-derivative root constraint used in earlier versions of the model is stiffer than a classical clamp; it changes the voltages by about 0.1\% and does not change the conclusions. The paper does not introduce a new element, and it reports no flexoelectric or size-effect calculation. The assumptions (linear, plane strain, prescribed steady temperature, ideal electrodes) are stated in the text, and no experimental validation is claimed.
 
 Two related papers by members of our group have been published in this journal (doi:10.1016/j.finel.2026.104681 and doi:10.1016/j.finel.2026.104685). They concern strain-gradient elasticity and are cited only for the interpolation background; they are not used as validation of the present calculation.
 
@@ -12,7 +17,6 @@ The manuscript has not been published and is not under consideration for publica
 
 Thank you for considering this manuscript.
 
-Sincerely,
-Anjali Patel
-Corresponding author
-p_anjali@blr.amrita.edu
+\closing{Sincerely,\\Anjali Patel\\Corresponding author\\p\_anjali@blr.amrita.edu}
+\end{letter}
+\end{document}
