@@ -34,15 +34,17 @@ An historical all-derivative simulation is also accessible through `tpfem.solve_
 
 ## Requirements and commands
 
-Python 3.11+ with NumPy, SciPy and Matplotlib. Run these commands from the **`program/` directory**, not from the repository root:
+Python 3.11+ with NumPy, SciPy and Matplotlib. Start from the **`program/` directory**, not from the repository root. The verification scripts use relative `results/` paths, so they **must run inside `program/verification/`**. Then return to `program/` for figure generation:
 
 ```bash
 python3 -m pip install -r requirements.txt
-python3 verification/unit_tests.py
-python3 verification/run_p2.py > verification/results/run_p2.log
-python3 verification/run_checks.py > verification/results/run_checks.log
-python3 verification/conv_stats.py > verification/results/conv_stats.log
-python3 verification/run_alpha_grid.py > verification/results/run_alpha_grid.log
+cd verification
+python3 unit_tests.py
+python3 run_p2.py > results/run_p2.log
+python3 run_checks.py > results/run_checks.log
+python3 conv_stats.py > results/conv_stats.log
+python3 run_alpha_grid.py > results/run_alpha_grid.log
+cd ..
 python3 figure_code/make_fig1.py
 python3 figure_code/make_figures.py
 ```
