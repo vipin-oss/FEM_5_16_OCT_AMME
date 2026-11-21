@@ -436,7 +436,7 @@ $\delta E_i=-\delta\phi_{,i}$ gives the coupled virtual-work statement
 \end{equation}
 With the interpolations $\bm u\approx N_uq_u$ and
 $\phi\approx N_\phi q_\phi$ over each Bogner--Fox--Schmit element
-(Section~\ref{sec:discretization}), the strain and electric field are
+, the strain and electric field are
 $\bm\varepsilon\approx B_\varepsilon q_u$ and
 $\bm E\approx-B_\phi q_\phi$. Substituting these relations and the matrix form of
 \eqref{eq:constitutive},
@@ -539,8 +539,7 @@ $N_{,x}=J_x^{-1}N_{,\xi}$ and $N_{,z}=J_z^{-1}N_{,\eta}$:
 \end{align}
 Row~1 ($\varepsilon_{xx}=u_{,x}$) acts only on the $u$ degrees of freedom,
 row~2 ($\varepsilon_{zz}=w_{,z}$) only on the $w$ degrees of freedom, and row~3
-($\gamma_{xz}=u_{,z}+w_{,x}$) on both, following the kinematics of
-Section~\ref{sec:theory}. The electric field is
+($\gamma_{xz}=u_{,z}+w_{,x}$) on both, following the plane-strain kinematics. The electric field is
 $\bm E=-B_\phi q_\phi$, with
 $B_\phi=(N_{\phi,x},N_{\phi,z})^\top\in\mathbb{R}^{2\times4}$ constructed from the
 bilinear basis. On the finest mesh ($80\times40$), the elements are five times longer
@@ -548,7 +547,7 @@ than they are thick, so the $z$ derivatives are about five times larger than the
 $x$ derivatives ($|N_{,z}|\sim8\times10^{7}\,\text{m}^{-1}$ against
 $|N_{,x}|\sim1.6\times10^{7}\,\text{m}^{-1}$). This difference, together with the
 different scales of the mechanical and electrical unknowns, motivates the scaling
-described in Section~\ref{sec:assembly}.
+applied during assembly.
 
 \subsection{Element matrices and Gauss--Legendre quadrature}
 
@@ -660,8 +659,7 @@ The relative magnitudes of the material constants are relevant to the coupled re
 The off-diagonal elastic constants $C_{12}$ and $C_{13}$ are about half of $C_{11}$,
 so thermal expansion constrained in one direction produces appreciable stress
 contributions in the other directions. This is the basis for retaining the full
-three-dimensional thermal contraction in the plane-strain reduction of
-Section~\ref{sec:planestrain}. Among the normal piezoelectric constants, $e_{33}$ is
+three-dimensional thermal contraction in the plane-strain reduction. Among the normal piezoelectric constants, $e_{33}$ is
 positive and substantially larger in magnitude than $e_{31}$, so the strain component
 along the poling direction provides the larger direct contribution to the electric
 displacement. The through-thickness permittivity $\kappa_{33}$ is about forty times
@@ -711,8 +709,7 @@ nearly constant and ends slightly below its initial value. The tetragonal cell
 therefore becomes less anisotropic over this temperature interval. For the cantilever,
 this corresponds to in-plane expansion together with a small contraction along the
 poling direction. The opposite signs of $\alpha_1$ and $\alpha_3$ therefore enter the
-thermal-stress response through the anisotropic elastic coupling discussed in
-Section~\ref{sec:planestrain}.
+thermal-stress response through the anisotropic elastic coupling.
 
 The primary pyroelectric coefficient
 $p_3=-3.41\times10^{-4}\,\text{C m}^{-2}\text{K}^{-1}$
@@ -813,8 +810,7 @@ $(\text{C\,m}^{-2}\text{K}^{-1})(\text{K})(\text{m})/
 (\text{F\,m}^{-1})$ reduce to volts. The finite-element voltage of Case~D agrees
 with \eqref{eq:Vpyronum} to a relative error of $1.5\times10^{-13}$
 (Table~\ref{tab:verify}). Because the closed-form solution does not involve $u$ or
-$w$, the Case~D voltage is independent of the mechanical mesh
-(Section~\ref{sec:mesh-convergence}). The result also sets the voltage scale of the
+$w$, the Case~D voltage is independent of the mechanical mesh. The result also sets the voltage scale of the
 device: the pyroelectric charge is distributed across a $1\,\mu$m thickness with the
 low through-thickness permittivity, giving a voltage of several volts for a 10~K
 temperature difference.
