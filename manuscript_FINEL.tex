@@ -65,23 +65,19 @@ Pyroelectric materials convert a change in temperature into an electrical signal
 through the temperature dependence of their spontaneous polarization. This property is
 used in infrared detectors, thermal imaging and devices that harvest energy from
 ambient or waste-heat temperature fluctuations ~\cite{Lang2005Pyro,Whatmore1986,Lubomirsky2012}.
-A microcantilever is mechanically compliant, so a small temperature difference
-across its thickness can produce a measurable bending response. Cantilevers of this
-type are also widely used as test structures for piezoelectric energy harvesting. Pyroelectric crystals also exhibit piezoelectricity because their crystal classes are non-centrosymmetric. A non-uniform temperature field in a pyroelectric device consequently
-acts in two ways: directly, through the pyroelectric coefficient, and indirectly,
-through the thermal strain it produces, which the piezoelectric effect converts into
-charge. Separating these two
-contributions, and finding how a given device geometry combines them, requires a fully
-coupled thermo-electro-mechanical boundary-value problem. The quantity computed here is
-the open-circuit voltage, the potential difference between the two electrodes when no
-net charge flows. It does not depend on an external load and is the quantity that a
-static voltmeter measures most directly.
+A temperature difference across a compliant microcantilever can cause bending.
+Pyroelectric crystals are also piezoelectric because they belong to non-centrosymmetric
+crystal classes. A non-uniform temperature field therefore contributes to the
+electrical response directly through the pyroelectric coefficient and indirectly through
+thermally induced strain and piezoelectric coupling. These contributions are calculated
+using a coupled thermo-electro-mechanical boundary-value problem. The quantity of
+interest is the open-circuit voltage between the electrodes under zero net charge.
 
 In a common treatment the two contributions are estimated separately. The pyroelectric
 voltage is obtained from a one-dimensional electrical argument, and the piezoelectric
 part, when it is considered, from a simple thermal-stress estimate that does not follow
-the full anisotropy of the thermal-expansion tensor. For the clamped cantilever studied here, this simplification changes not only the
-size of the piezoelectric-thermal voltage but also its sign. Coupled formulations in
+the full anisotropy of the thermal-expansion tensor. For the clamped cantilever studied here, this simplification changes the magnitude
+and sign of the piezoelectric-thermal voltage. Coupled formulations in
 which temperature enters as an independent field together with strain and electric
 field, known as thermopiezoelectricity, were developed by Mindlin and by Nowacki
 ~\cite{Mindlin1972,Nowacki1975}. These formulations provide the basis for device models
@@ -92,7 +88,23 @@ semiconductors ~\cite{Gupta2024WRCM,Gupta2025HFF} and in porous piezo-thermoelas
 solids ~\cite{Das2026KG}.
 
 
-Panda and Ray analysed functionally graded plates with piezoelectric fibre-composite actuators under static loading, both with and without thermal effects \cite{FINELPanda2008}. Dash and Singh studied nonlinear free vibration of piezoelectric laminated plates \cite{FINELDash2009}. Zhou and co-workers developed a state-space finite-element treatment of piezoelectric precision positioning that includes the secondary converse piezoelectric effect \cite{FINELZhou2015}. Palma and co-workers formulated coupled elasto-thermoelectric beam elements and compared reduced and three-dimensional solutions \cite{FINELPalma2017}; their thermoelectric transport setting differs from the pyroelectric--piezoelectric coupling studied here. More recent work includes reduced-order thermal--mechanical analysis of electronic modules \cite{FINELHassan2026}, and a second-order strain-gradient finite-element formulation with ellipsoidal nonlocal characteristic lengths by Gupta and co-workers \cite{FINELGupta2026}. Related $C^1$ Bogner--Fox--Schmit analysis of anisotropic strain-gradient boundary layers has also been reported by Rezk and co-workers \cite{FINELRezk2027}. Both strain-gradient studies concern higher-order mechanical models and do not validate the thermopiezoelectric voltage calculated here. This study examines the voltage-polarity error caused by omitting constrained transverse thermal expansion in the plane-strain reduction of a tetragonal crystal.
+Panda and Ray analysed functionally graded plates with piezoelectric fibre-composite
+actuators under static loading, with and without thermal effects \cite{FINELPanda2008}.
+Dash and Singh studied nonlinear free vibration of piezoelectric laminated plates
+\cite{FINELDash2009}. Zhou and co-workers developed a state-space finite-element
+formulation for piezoelectric precision positioning that accounts for the secondary
+converse piezoelectric effect \cite{FINELZhou2015}. Palma and co-workers compared
+reduced and three-dimensional coupled elasto-thermoelectric beam models
+\cite{FINELPalma2017}. Their model concerns thermoelectric transport, whereas the
+present analysis includes pyroelectric and piezoelectric coupling.
+
+Other finite-element applications include reduced-order thermal--mechanical analysis
+of electronic modules \cite{FINELHassan2026}, strain-gradient formulations with
+ellipsoidal nonlocal lengths \cite{FINELGupta2026}, and $C^1$ Bogner--Fox--Schmit
+analysis of anisotropic strain-gradient boundary layers \cite{FINELRezk2027}.
+The latter two studies address higher-order mechanical effects. The question examined
+here is how omitting constrained transverse thermal expansion affects voltage
+polarity in the plane-strain reduction of a tetragonal crystal.
 
 Barium titanate (BaTiO$_3$) is a suitable material for such a study. Its
 room-temperature tetragonal phase has a complete, independently measured set of
@@ -134,9 +146,8 @@ crystal with only the piezoelectric coupling active, is a finite-element treatme
 this tertiary mechanism for a specific geometry. Thermal-stress enhancement of the
 pyroelectric response has recently been demonstrated experimentally in a polymer/mica
 bimorph ~\cite{Su2026ThermalStressPyro}, where the stress comes from the
-thermal-expansion mismatch between two layers. The present work considers a different
-situation, a single tetragonal crystal under a through-thickness gradient, with
-particular attention to the polarity of the voltage.
+thermal-expansion mismatch between two layers. Here the specimen is a single tetragonal crystal under a through-thickness
+temperature gradient, and the quantity of interest is voltage polarity.
 
 Flexoelectricity couples polarization to strain gradients and can become important
 at small structural length scales. It is therefore
@@ -162,11 +173,10 @@ Finite-element analysis of piezoelectric structures goes back to Allik and Hughe
 followed by two- and three-dimensional device models ~\cite{Lerch1990,Tzou1993} and
 reviewed by Benjeddou ~\cite{Benjeddou2000a}. Studies of layered piezoelectric
 composites have further shown how material gradation and interface conditions control
-the coupled electromechanical response ~\cite{Gupta2025CS}. Thermopiezoelectric finite-element beam
-models have been used for the vibration and active control of piezolaminated beams
-under thermal disturbance ~\cite{Sanbi2014ThermoPyroBeam}; the present work addresses a
-different question, the static open-circuit voltage of a single crystal and its
-polarity. The higher-order extension of the formulation requires $C^1$
+the coupled electromechanical response ~\cite{Gupta2025CS}. Thermopiezoelectric finite-element beam models have also been used to study
+vibration and active control of piezolaminated beams under thermal loading
+~\cite{Sanbi2014ThermoPyroBeam}. The analysis here concerns static open-circuit
+voltage in a single crystal. The higher-order extension of the formulation requires $C^1$
 continuous mechanical interpolation. We use the classical
 Bogner--Fox--Schmit (BFS) rectangular element ~\cite{Bogner1965}, which supplies this continuity without the extra
 interface unknowns of mixed or penalty-based $C^0$ formulations. The reported
@@ -174,21 +184,17 @@ results have the flexoelectric contribution switched off; the BFS element is
 therefore an implementation choice for these classical coupled-field calculations,
 not a necessary consequence of their governing equations.
 
-The mechanics question addressed here is how constrained anisotropic thermal
-expansion changes the magnitude and sign of an electrical response. The
-three-dimensional contraction defining the thermal-stress tensor and the distinction
-between fixed-strain and free pyroelectric coefficients are established constitutive
-requirements; they are not proposed as new constitutive laws. The contribution of
-this study is to quantify their consequences for voltage polarity in a specified
-plane-strain boundary-value problem. We (i) retain the constrained transverse
-thermal expansion when constructing the thermal load; (ii) use a fixed-strain
-pyroelectric coefficient to avoid double counting strain-mediated polarization;
-(iii) propagate uncertainty in thermal-expansion coefficients obtained from
-single-crystal diffraction data; (iv) verify the discrete solution using an exact
-pyroelectric limit and algebraic identities; and (v) separate the electrical
-mechanisms through mesh-converged coupled and uncoupled calculations. These
-comparisons show why a free-sample estimate need not predict the sign of a
-constraint-dependent thermopiezoelectric response.
+This study calculates how the plane-strain constraint and anisotropic thermal
+expansion affect the open-circuit voltage of a tetragonal microcantilever. The thermal
+load is obtained by contracting the full three-dimensional stiffness and expansion
+tensors before imposing plane strain. A fixed-strain pyroelectric coefficient is used
+to avoid counting the strain-mediated contribution twice. The expansion coefficients
+are fitted to single-crystal diffraction data, and their uncertainties are propagated
+to the voltage. Mesh convergence, an exact pyroelectric limit and independent
+discretization checks are used to assess the numerical solution. Coupled and uncoupled
+calculations then identify the contribution responsible for the voltage polarity.
+Neither the thermal-stress contraction nor the distinction between fixed-strain and
+free pyroelectric coefficients is a new constitutive law.
 
 
 %======================================================================
@@ -769,9 +775,8 @@ Three cases are computed on the $10\,\mu\text{m}\times1\,\mu\text{m}$ specimen u
 10~K through-thickness temperature difference. Case~D includes the pyroelectric
 coupling only, Case~A includes both piezoelectric and pyroelectric couplings, and
 Case~E includes the piezoelectric coupling under the same thermal load with the
-pyroelectric coefficient set to zero. This section verifies the numerical solution
-against analytical, convergence, algebraic, and variational checks; the resulting
-voltages are examined subsequently.
+pyroelectric coefficient set to zero. The numerical solution is checked against analytical limits, mesh convergence
+and algebraic identities before the voltages are compared.
 
 \subsection{Analytical result for Case D}
 \label{sec:caseD}
@@ -1004,12 +1009,10 @@ $-1.49798$~V. The difference between Cases~D and~E reflects the different coupli
 paths. In Case~D, the temperature directly enters the electric displacement through
 the pyroelectric term. In Case~E, the temperature first produces a strain field
 through thermal expansion and mechanical compatibility, which then contributes to the
-electric response through the piezoelectric coupling. The two mechanisms therefore
-do not combine by simply adding the separately computed Case~D and Case~E voltages:
+electric response through the piezoelectric coupling. Adding the separately computed Case~D and Case~E voltages gives
 $V_D+V_E\approx-3.25$~V, whereas the coupled Case~A voltage is much less negative.
-Piezoelectric coupling also modifies the
-pyroelectric contribution itself. Thus, the two mechanisms partially oppose one
-another in the coupled response.
+This difference arises because piezoelectric coupling changes the pyroelectric
+contribution in Case~A. The two contributions partially oppose each other.
 
 \begin{figure}[t]
   \centering
@@ -1022,9 +1025,8 @@ another in the coupled response.
 
 Figure~\ref{fig:fig03_cases_and_decomposition}(a) compares the converged voltages.
 Case~D gives the largest negative voltage, Case~A is less negative, and Case~E
-produces a smaller positive voltage. The zero-temperature case
-remains exactly at zero. This confirms that the reported voltages arise from the
-prescribed temperature field rather than from a residual numerical offset. Panel~(b)
+produces a smaller positive voltage. The zero-temperature calculation gives
+zero voltage, as required by the thermal loading conditions. Panel~(b)
 repeats the comparison on a common $16\times8$ mesh and includes the sum $V_D+V_E$.
 This sum is about $-3.25$~V, whereas the solved Case~A voltage is about $-1.50$~V.
 The difference, about 1.75~V, is much larger than the magnitude of the
@@ -1315,20 +1317,12 @@ linearly on both thermal-expansion coefficients, with the $c$-axis coefficient
 producing the larger change per unit variation.
 \end{itemize}
 
-These results are relevant to thermo-electro-mechanical
-microdevices in which a temperature gradient is converted into an electrical signal.
-Directly, the model is relevant to pyroelectric infrared detectors, thermal-imaging
-pixels, temperature sensors, and microscale thermal sensing elements based on
-ferroelectric or piezoelectric materials. The predicted piezoelectric-thermal
-contribution is also relevant to devices in which thermal gradients generate mechanical
-strain and, consequently, an additional electrical response, including thermally
-responsive microcantilevers, resonant microsystems, and pyroelectric--piezoelectric
-energy-conversion elements. More generally, the results are useful for the
-interpretation and design of coupled thermo-electro-mechanical components in
-microelectromechanical systems (MEMS), where geometric constraint and anisotropic
-thermal expansion can affect not only the magnitude but also the polarity of the
-electrical output. The calculations provide a modelling framework
-for assessing these effects before experimental device-level characterization.
+The calculations concern a prescribed thermal gradient in a plane-strain
+microcantilever with ideal electrodes. They show that the out-of-plane constraint
+must be retained when predicting the piezoelectric contribution to its open-circuit
+voltage. Application to infrared detectors, temperature sensors or energy-conversion
+devices would require device-specific geometry, material data and experimental
+validation.
 
 
 \subsection*{Scope and limitations}
