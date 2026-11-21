@@ -1,3 +1,17 @@
+% Standalone compilation: run pdflatex abstract.tex.
+% In the main manuscript, define \FINELManuscriptMode before \input{abstract.tex}.
+\ifdefined\FINELManuscriptMode
+\else
+\documentclass[a4paper,11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{newtxtext,newtxmath}
+\begin{document}
+\fi
 \begin{abstract}
 The effect of constrained transverse thermal expansion on the open-circuit voltage of a tetragonal BaTiO$_3$ microcantilever is examined under a steady through-thickness temperature difference. A coupled plane-strain finite-element formulation is derived from electric enthalpy using the fixed-strain pyroelectric coefficient. The thermal-stress vector is obtained from the full three-dimensional elastic contraction before plane strain is imposed. Omitting the constrained expansion term underestimates the thermal-stress components by 35\% and 58\% and changes the predicted piezoelectric--thermal voltage from $+0.19$~V to $-0.22$~V. With both pyroelectric and piezoelectric couplings active, the voltage is $-1.50$~V. This combined response differs from the sum of the independently calculated limiting cases because piezoelectric coupling also changes the pyroelectric contribution. The solution is checked against an exact one-dimensional pyroelectric limit, an analytical traction-free interior solution, mesh convergence and an independent biquadratic discretization. The effect of the root constraint and sensitivity to the fitted thermal-expansion coefficients are also examined. These results identify the conditions under which an inconsistent plane-strain thermal-stress reduction predicts the wrong voltage polarity.
 \end{abstract}
+\ifdefined\FINELManuscriptMode
+\else
+\end{document}
+\fi
