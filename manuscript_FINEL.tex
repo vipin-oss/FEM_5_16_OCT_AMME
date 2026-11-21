@@ -1140,7 +1140,9 @@ the piezoelectric-thermal contribution.
 Because $V_E$ depends on $\beta_{\mathrm{PS}}$, and $\beta_{\mathrm{PS}}$ depends on
 the fitted $\alpha_1$ and $\alpha_3$ (Section~\ref{sec:materials}), the sensitivity
 of the voltage to the fitting uncertainty was examined. The two coefficients are
-fitted separately to the $a(T)$ and $c(T)$ data and are treated as independent.
+fitted separately to the $a(T)$ and $c(T)$ data. The reported marginal standard
+errors are used for coordinatewise perturbations; a joint covariance matrix
+is not inferred from these fits.
 Perturbations are propagated as
 \begin{equation}
 V_E(\alpha_1+\delta_1,\alpha_3+\delta_3)\approx
@@ -1193,24 +1195,20 @@ the piezoelectric-thermal part. Within the tested range, the sign of the
 piezoelectric-thermal voltage therefore depends on the thermal anisotropy of
 tetragonal BaTiO$_3$.
 
-Figure~\ref{fig:alpha-surface} displays the nine Case~E finite-element voltages
-of Fig.~\ref{fig:alphagrid} as a three-dimensional surface. The surface is
-planar because the governing discrete system is linear in the prescribed
-thermal-expansion coefficients; the surface between data points is an
-interpolation of the existing $48\times24$ results, not a separate set
-of simulations.
+Figure~\ref{fig:alpha-polarity} examines the voltage sign change without
+replotting the same affine response as a three-dimensional plane.
+Panel~(a) identifies the nine solved parameter pairs, including the sole negative
+Case~E value. At the fixed $48\times24$ classical-clamp mesh, these values obey
+$V_E=0$ when $\alpha_3\simeq-0.47006\,\alpha_1$, both coefficients being in the
+same units. Panel~(b) plots the three solved $V_E$ values at the nominal
+$\alpha_1$ and the corresponding affine dependence on $\alpha_3$.
+The model predicts a zero crossing at
+$\alpha_3\approx-10.25\times10^{-6}\,\text{K}^{-1}$,
+outside the original three-point $\alpha_3$ range. Solid lines cover
+sampled parameter intervals; dashed extensions follow algebraically from the
+fixed-mesh linear model and are not additional finite-element simulations.
+These plots do not establish a joint statistical confidence region.
 
-The affine relation fitted to these nine computed values gives
-$V_E=0$ when $\alpha_3\simeq-0.47006\,\alpha_1$ (both coefficients expressed
-in the same units). Figure~\ref{fig:alpha-polarity} compares this boundary
-with the sampled parameter pairs and the coordinatewise one-standard-error
-range about the fitted coefficients. The nominal pair and its
-one-standard-error rectangle remain on the positive-voltage side. The
-dashed boundary outside the sampled grid represents an extrapolation of
-the linear constitutive model and should not be interpreted as additional
-finite-element calculations.
-
-\input{figures/Fig7_alpha_surface.tex}
 \input{figures/Fig8_polarity_boundary.tex}
 
 \subsection{Comparison with a one-dimensional estimate}
