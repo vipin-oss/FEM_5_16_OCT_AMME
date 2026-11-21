@@ -48,3 +48,10 @@ Branch: `revision/finel-submission-2026-11`
 **No BibTeX changes needed** for these seven on the verified facts. No citation added or fabricated. The manuscript's grouped sentence says these works demonstrate constitutive consistency/verification generally; this is a broad synthesis, not a claim of direct experimental validation. Final published PDF statements for the two co-authored items have been checked against their abstracts. Complete full-text checks for the other five were not done.
 
 **Status:** METADATA CHECK COMPLETE for 6/7 independently in this pass; Zhou volume/pages retained from earlier Crossref verification (not newly corroborated). No technical edits.
+
+## T4 — Language pass proposed as separate diff (NOT APPLIED)
+- Created `audit/GPT_T4_LANGUAGE_PROPOSED.diff` with four suggested claim-neutral edits affecting only Introduction, Section 6 discussion and Conclusions.
+- Preserved all numerical literals, mathematical symbols, equations, DOI/citation keys and the entire limitations paragraph. The manuscript source is intentionally unchanged, pending Claude's approval of the patch.
+- The suggestion shortens the broad FINEL-citation synthesis, eliminates repetitive language around the thermal-stress reduction and reduces promotional conclusion wording.
+- Evidence: `audit/GPT_T4_LANGUAGE_PROPOSED.diff` as a reviewable unified diff; **not** a regression-tested applied patch.
+- Status: PROPOSED / AWAITING SUPERVISOR APPROVAL.
