@@ -1,19 +1,37 @@
 --- a/manuscript_FINEL.tex
 +++ b/manuscript_FINEL.tex
-@@ proposed language-only: Introduction @@
+@@ -96,5 +96,5 @@
+ 
+ 
 -These studies demonstrate the importance of constitutive consistency and verification in coupled numerical models. The present analysis specifically examines the polarity error caused by omitting the constrained transverse thermal expansion in a tetragonal crystal.
 +These studies use different numerical models and physical couplings. Here, we examine the voltage-polarity error caused by omitting constrained transverse thermal expansion in the plane-strain reduction of a tetragonal crystal.
-@@ proposed language-only: Section 6 discussion @@
+ 
+ Barium titanate (BaTiO$_3$) is a suitable material for such a study. Its
+@@ -1122,7 +1122,6 @@
+ The terms omitted by the simplified reduction are positive in both components, so the
+ full contraction increases the thermal load and shifts the resulting
 -piezoelectric-thermal voltage toward the positive direction. In the present model,
 -the sign of the piezoelectric-thermal voltage is therefore particularly sensitive to
 -the thermal-stress reduction.
 +piezoelectric-thermal voltage toward the positive direction. In this model,
 +the thermal-stress reduction determines the sign of the piezoelectric-thermal voltage.
-@@ proposed language-only: Conclusions @@
+ 
+ The sign cannot be inferred from the individual material coefficients alone. The
+@@ -1293,6 +1292,6 @@
+ \end{itemize}
+ 
 -The present results are relevant to a broader class of thermo-electro-mechanical
+-microdevices in which a temperature gradient is converted into an electrical signal.
 +These results are relevant to thermo-electro-mechanical
- microdevices in which a temperature gradient is converted into an electrical signal.
-@@ proposed language-only: Conclusions @@
++microdevices in which a temperature gradient is converted into an electrical signal.
+ Directly, the model is relevant to pyroelectric infrared detectors, thermal-imaging
+ pixels, temperature sensors, and microscale thermal sensing elements based on
+@@ -1305,6 +1304,6 @@
+ microelectromechanical systems (MEMS), where geometric constraint and anisotropic
+ thermal expansion can affect not only the magnitude but also the polarity of the
 -electrical output. The present calculations therefore provide a modelling framework
+-for assessing these effects before experimental device-level characterization.
 +electrical output. The calculations provide a modelling framework
- for assessing these effects before experimental device-level characterization.
++for assessing these effects before experimental device-level characterization.
+ 
+ 
