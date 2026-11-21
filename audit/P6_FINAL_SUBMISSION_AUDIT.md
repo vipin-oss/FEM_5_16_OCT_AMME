@@ -17,7 +17,7 @@
 - Energy/stationary-potential identity not re-verified (paragraph removed).
 
 ## MINOR
-- Fig. 1 uses Type 3 fonts and small text; α-grid and fields figures not colour-blind simulated.
+- Fig. 1 redrawn (TrueType fonts) — authors to confirm it matches their intended schematic; α-grid and fields figures not colour-blind simulated.
 - Span study re-run only to 100 µm (previous 200/500 µm statements removed).
 - Intro/Discussion still long; language edit not performed beyond the changed passages.
 - Table/figure float placement unchecked in the real class.

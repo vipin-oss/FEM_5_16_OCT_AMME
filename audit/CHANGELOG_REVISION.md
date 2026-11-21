@@ -12,3 +12,5 @@ Each item: original issue → evidence → change → verification.
 10. References: Zhou (volume, pages, claim), Gupta (volume), Panda (claim) corrected; see P3.
 11. Highlights rewritten to ≤85 characters; cover letter rewritten.
 12. Figures 2–6 regenerated, old 6–8 merged, new Fig. 9 added.
+13. Fig. 1 redrawn with TrueType fonts (same content); original archived.
+14. Hassan 2026 year kept as 2026 per GPT follow-up (ScienceDirect: Vol 253, January 2026); not independently re-verified here.

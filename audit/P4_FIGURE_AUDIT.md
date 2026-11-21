@@ -3,7 +3,7 @@ Original figures are archived in `figure_archive/original_submission/` (before);
 
 | # | Original | Finding | Action |
 |---|---|---|---|
-| 1 | model schematic (PDF) | Content correct. Type 3 fonts, small text, cream-coloured boxes, mentions "C¹ interpolation" (not required). No source code in repo. | Kept. **MINOR**: redraw with embedded TrueType fonts and larger text if the editorial system rejects Type 3 fonts. |
+| 1 | model schematic (PDF) | Content correct. Type 3 fonts, small text, cream-coloured boxes, mentions "C¹ interpolation" (not required). No source code in repo. | Redrawn (`figure_code/make_fig1.py`) with embedded TrueType fonts, larger text, white background and no 'C¹' wording; geometry, constraints and the two routes to V_oc are unchanged. No original vector source existed, so the redraw was checked visually against the original (archived in `figure_archive/original_submission/`); authors should confirm it. |
 | 2 | mesh convergence | Showed the all-derivative model only; "observed order" 1.3–1.5 is an artefact of the root over-constraint; Case D panel redundant. | Regenerated: A and E, BFS all-derivative / BFS classical / Q9, voltage and relative change, log axes. |
 | 3 | p3 linearity | Numerically correct for the old model; panel (b) shows round-off noise only. | Regenerated for the classical clamp (slope −1.6909); could be reduced to one sentence. |
 | 4 | voltages and decomposition | Values from old model. | Regenerated as bars with values; 80x40 and 16x8. |
