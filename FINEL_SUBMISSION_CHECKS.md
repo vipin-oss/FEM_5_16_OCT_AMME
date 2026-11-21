@@ -2,7 +2,7 @@ Submission target: Finite Elements in Analysis and Design (Elsevier).
 
 Use manuscript_FINEL.tex as the main Overleaf file. The original Acta Mechanica files remain unchanged. Figures are read from existing figures/.
 
-Six publisher-verified FINEL articles added, including one author-coauthored article (10.1016/j.finel.2026.104681). User mentioned a second own article; its exact DOI was not verified and it has NOT been fabricated or cited.
+Seven FINEL articles added, including both verified author-coauthored published articles: 10.1016/j.finel.2026.104681 and 10.1016/j.finel.2026.104685. Both full-text publisher PDFs are archived in the user's Google Drive folder Published_FINEL_Papers_2026. The two works concern strain-gradient elasticity; do not present them as validation of the current classical thermopiezoelectric calculation.
 
 Needs attention before submission:
 - Mechanical root-derivative boundary constraint: stronger than classical displacement clamp; test its effect.
