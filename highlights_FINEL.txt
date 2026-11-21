@@ -1,4 +1,4 @@
-- Full three-dimensional thermal-stress contraction is retained under plane strain.
-- Omitting constrained transverse expansion reverses piezoelectric-thermal voltage polarity.
-- The calculation separates direct pyroelectric and thermally induced piezoelectric effects.
-- An exact pyroelectric limit, mesh convergence and consistency checks assess the model.
+- Plane-strain thermal stress in BaTiO3 needs the full 3D elastic contraction
+- The simplified reduction reverses the piezoelectric-thermal voltage polarity
+- An exact mid-span solution and a second discretization check the FE model
+- Fixing all root derivatives changes the open-circuit voltage by about 0.1%

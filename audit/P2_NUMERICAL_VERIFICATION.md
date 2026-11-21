@@ -23,7 +23,13 @@ BFS-classical vs Q9 differ by 0.02% (A) and 0.03% (E): two independent discretiz
 Case E changes from −0.2155 V (simplified β) to +0.1932 V (full β). It persists under the classical clamp (−0.2156→+0.1935), under an independent Q9 discretization, and in the exact mid-span benchmark (−0.2164→+0.1975). **The shift is therefore a robust consequence of the reduction used, not a boundary-condition artefact.** But because the simplified reduction is mechanically inconsistent (P1), the result is a *correction of an inconsistent model*, not a physical sensitivity.
 
 ## Thermal-expansion sensitivity (Case E is linear in α)
-V_E = 0.01529·α1 + 0.03253·α3 (V per 1e-6 K⁻¹). Sign change at α3/α1 = −0.470, i.e. α3 ≈ −10.2e-6 for α1=21.8e-6. The ±1σ corners from the fit errors (α1 ±1.65, α3 ±3.26) give V_E between +0.087 and +0.300 V: positive in all corners. Caveat: the fit uses four lattice-parameter points, α3 is only ≈1.3σ from zero, and these are not independent samples.
+V_E = 0.01529·α1 + 0.03253·α3 (V per 1e-6 K⁻¹). Sign change at α3/α1 = −0.470, i.e. α3 ≈ −10.2e-6 for α1=21.8e-6. Over all four ±1σ corners (α1 ±1.646, α3 ±3.261) V_E lies between +0.062 and +0.325 V (80x40, classical clamp): positive in all corners, matching the manuscript's +0.062/+0.324. Caveat: the fit uses four lattice-parameter points, α3 is only ≈1.3σ from zero, and these are not independent samples.
 
 ## Limits of this verification
 No access to the authors' original code; original numerical values were reproduced, not read back. Energy-term audit, partition-of-unity, alpha regression and manuscript Figs 2–4, 6–8 were not regenerated here.
+
+## Additions after the first pass (all in `verification/results/`)
+- `unit_tests.log`: element-level linear-field recovery, load kernel, potential energy, symmetry, 4x4 vs 6x6 Gauss, null limits, Case D vs 1D, p3 linearity (slope −1.6909 V per unit scale, classical clamp). All PASS.
+- `conv_stats.log`: classical clamp converges non-monotonically with p_obs≈0.9–1.2 and changes <0.06% from 8x4 onward; the all-derivative constraint reproduces the manuscript's p_obs 1.35/1.31 (A), 1.46/1.53 (E) and Aitken limits −1.4985/−1.4982, +0.19349/+0.19343 exactly, i.e. the manuscript's "observed order" is a property of the over-constraint.
+- `run_alpha_grid.log`: 80x40 classical sensitivity (V_E = 0.01529 α1 + 0.03253 α3; ±1σ range +0.062…+0.325 V; 2σ V_A range −1.761…−1.236 V; zero crossing at α3≈−10.25e-6, 1.8σ) and the 3x3 grid (48x24).
+- Still NOT re-run: integrated-enthalpy/stationary-potential identity (energy terms of the original Eq. 18). That paragraph was removed from the manuscript rather than kept unverified.

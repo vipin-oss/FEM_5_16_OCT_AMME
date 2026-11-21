@@ -1,10 +1,14 @@
 Dear Editor,
 
-We submit the manuscript entitled “Influence of anisotropic thermal expansion on voltage polarity in a thermopiezoelectric microcantilever” for consideration as a research article in Finite Elements in Analysis and Design.
+We submit the manuscript "Influence of anisotropic thermal expansion on voltage polarity in a thermopiezoelectric microcantilever" for consideration as a research article in Finite Elements in Analysis and Design.
 
-The manuscript uses a coupled finite-element formulation derived from a single electric enthalpy to analyse the open-circuit response of a tetragonal barium titanate microcantilever under a steady temperature gradient. Its central finding is that a plane-strain reduction which omits constrained transverse thermal expansion can reverse the predicted polarity of the piezoelectric-thermal voltage. The simplified calculation gives -0.22 V and the full contraction gives +0.19 V for the configuration examined.
+The paper concerns the consistency of a coupled finite-element model of a plane-strain barium titanate microcantilever under a steady through-thickness temperature difference. The model is derived from a single electric enthalpy with the fixed-strain pyroelectric coefficient. We show that the plane-strain thermal-stress vector must be formed from the full three-dimensional elastic contraction, and that the simplified reduction changes the sign of the piezoelectric-thermal open-circuit voltage (-0.22 V against +0.19 V for the configuration examined).
 
-The study separates pyroelectric and strain-mediated piezoelectric effects, checks the exact one-dimensional pyroelectric limit, and reports mesh convergence and algebraic consistency checks. Its contribution concerns the consequences of constitutive reduction for numerical response predictions rather than a new element interpolation. We believe this is relevant to the journal’s interest in verifiable finite-element analysis of coupled boundary-value problems.
+The numerical work consists of a Bogner-Fox-Schmit discretization, an independent biquadratic discretization, an exact one-dimensional pyroelectric limit, an exact mid-span solution of the coupled problem, a mesh-convergence study, and a test of the root boundary condition. The all-derivative root constraint used in earlier versions of the model is stiffer than a classical clamp; it changes the voltages by about 0.1% and does not change the conclusions. The paper does not introduce a new element, and it reports no flexoelectric or size-effect calculation. The assumptions (linear, plane strain, prescribed steady temperature, ideal electrodes) are stated in the text, and no experimental validation is claimed.
+
+Two related papers by members of our group have been published in this journal (doi:10.1016/j.finel.2026.104681 and doi:10.1016/j.finel.2026.104685). They concern strain-gradient elasticity and are cited only for the interpolation background; they are not used as validation of the present calculation.
+
+[Authors to confirm before submission: the manuscript is original, has not been published, and is not under consideration elsewhere, including Acta Mechanica, for which an earlier version was prepared; all authors have approved the submission; funding and competing-interest statements are as given in the manuscript; suggested reviewers, if any.]
 
 Thank you for considering this manuscript.
 
