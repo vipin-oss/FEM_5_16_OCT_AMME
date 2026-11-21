@@ -61,23 +61,23 @@ $e_{kij}$ & Piezoelectric tensor & &\\
 \section{Introduction}
 %======================================================================
 
-Pyroelectric materials convert a change in temperature into an electrical signal
-through the temperature dependence of their spontaneous polarization. This property is
-used in infrared detectors, thermal imaging and devices that harvest energy from
-ambient or waste-heat temperature fluctuations ~\cite{Lang2005Pyro,Whatmore1986,Lubomirsky2012}.
-A temperature difference across a compliant microcantilever can cause bending.
-Pyroelectric crystals are also piezoelectric because they belong to non-centrosymmetric
-crystal classes. A non-uniform temperature field therefore contributes to the
-electrical response directly through the pyroelectric coefficient and indirectly through
-thermally induced strain and piezoelectric coupling. These contributions are calculated
-using a coupled thermo-electro-mechanical boundary-value problem. The quantity of
-interest is the open-circuit voltage between the electrodes under zero net charge.
+The spontaneous polarization of a pyroelectric material changes with
+temperature, producing an electrical response. This effect is used in
+infrared detectors, thermal imaging and devices that harvest energy
+from temperature fluctuations ~\cite{Lang2005Pyro,Whatmore1986,Lubomirsky2012}.
+A temperature gradient across a compliant cantilever also induces
+deformation. Since pyroelectric crystals are piezoelectric, the resulting
+strain contributes to the electric displacement alongside the direct
+pyroelectric term. We compute these contributions in a coupled
+thermo-electro-mechanical model and report the voltage between the
+electrodes under the open-circuit condition.
 
-In a common treatment the two contributions are estimated separately. The pyroelectric
-voltage is obtained from a one-dimensional electrical argument, and the piezoelectric
-part, when it is considered, from a simple thermal-stress estimate that does not follow
-the full anisotropy of the thermal-expansion tensor. For the cantilever examined here, the simplified estimate even reverses the
-predicted piezoelectric-thermal voltage. Coupled formulations in
+The two contributions are sometimes estimated separately:
+the pyroelectric voltage from a one-dimensional electrical model and
+the strain-mediated term from a simplified thermal-stress calculation.
+Such a calculation may omit parts of the anisotropic thermal expansion.
+For the cantilever studied here, this omission reverses the predicted
+piezoelectric-thermal voltage. Coupled formulations in
 which temperature enters as an independent field together with strain and electric
 field, known as thermopiezoelectricity, were developed by Mindlin and by Nowacki
 ~\cite{Mindlin1972,Nowacki1975}. These formulations provide the basis for device models
@@ -333,17 +333,17 @@ $\beta_{zz}$ & $1.7705\times10^{6}$ & $4.1903\times10^{6}$ & $57.75\%$ \\
 \end{tabularx}
 \end{table}
 
-Table~\ref{tab:beta} compares the two forms of the thermal-stress vector at the same
-thermal-expansion coefficients. The simplified reduction retains about two thirds of
-the axial component and less than half of the through-thickness component. The larger
+At the same thermal-expansion coefficients, the simplified reduction
+retains about two thirds of the axial thermal-stress component and less
+than half of its through-thickness component (Table~\ref{tab:beta}). The larger
 difference in $\beta_{zz}$ results from the omitted contribution involving
 $C_{13}\alpha_1$: the in-plane coefficient $\alpha_1$ is positive and relatively large,
 whereas the retained term $C_{33}\alpha_3$ is negative because the $c$ axis contracts
-on heating. Thus, the plane-strain constraint couples the in-plane thermal expansion
-to both stress components through the off-diagonal elastic constants. Omitting these
-contributions removes a substantial part of the thermal load. Both reductions give the
-same sign of $\beta$; the difference in magnitude leads to the different voltage
-response examined below.
+on heating. The off-diagonal elastic constants therefore carry the constrained
+transverse expansion into both in-plane thermal-stress components.
+The simplified reduction misses this load contribution. Although both
+reductions give thermal-stress components of the same sign, their
+different magnitudes lead to different voltage predictions.
 
 \subsection{Higher-order (flexoelectric) extension}
 \label{sec:flexo}
@@ -1117,9 +1117,8 @@ piezoelectric charge.
 \subsection{Origin of the non-uniform strain}
 \label{sec:clamp}
 
-The clamp at $x=0$ is the only external mechanical constraint in the model, so it is
-useful to examine whether it controls the non-uniform strain responsible for Case~E.
-To this end, Case~E was solved with the classical clamp for spans
+To determine whether the root clamp controls the non-uniform strain
+in Case~E, we repeated the calculation with the classical clamp for spans
 $L\in\{10,20,50,100\}\,\mu\text{m}$ with the thickness, thermal load and element length
 (0.125~$\mu$m along $x$) kept fixed. The voltage increases from $+0.1935$~V at
 $L=10\,\mu\text{m}$ to $+0.1971$~V at $100\,\mu\text{m}$, an increase of about 2\%, and
@@ -1127,11 +1126,9 @@ approaches the analytical interior-limit value of $+0.19754$~V. The
 remaining difference from that value is $4.1\times10^{-3}$, $2.0\times10^{-3}$,
 $8.1\times10^{-4}$ and $4.0\times10^{-4}$~V for the four spans, i.e. it decreases in
 proportion to $1/L$, consistent with a correction confined to a region of fixed size
-near the ends. The non-uniform strain therefore persists because of the temperature
-gradient itself. The temperature gradient gives neighbouring layers different free
-thermal strains. Compatibility between the
-layers, together with the plane-strain condition $\varepsilon_{yy}=0$, produces a strain
-field that varies through the thickness even away from the clamp. In the analytical traction-free interior solution, the stresses $\sigma_{xx}$ and
+near the ends. The temperature gradient gives neighbouring layers different free
+thermal strains. Compatibility and the condition $\varepsilon_{yy}=0$
+produce a through-thickness strain variation even away from the root. In the analytical traction-free interior solution, the stresses $\sigma_{xx}$ and
 $\sigma_{zz}$ vanish identically. This is
 consistent with the classical result that a linear temperature field leaves a free
 beam or plate nearly stress-free ~\cite{BoleyWeiner1997}. Over the spans examined, the non-uniform strain associated with the
@@ -1156,7 +1153,7 @@ full contraction increases the thermal load and shifts the resulting
 piezoelectric-thermal voltage toward the positive direction. For the chosen parameters, the thermal-stress reduction determines
 the sign of the piezoelectric-thermal voltage.
 
-The sign cannot be inferred from the individual material coefficients alone. The
+No single material coefficient determines the sign of the voltage. The
 vector $\beta_{\mathrm{PS}}$ combines the positive $a$-axis coefficient and the
 negative $c$-axis coefficient, weighted by elastic constants of similar magnitude
 (Eq.~\eqref{eq:betaPS}). The resulting strain is then coupled through the
@@ -1291,10 +1288,10 @@ magnitude and, in this case, its sign.
 \label{sec:conclusions}
 %======================================================================
 
-This paper developed a coupled finite-element model, based on a single electric
-enthalpy and a $C^1$ Bogner--Fox--Schmit element, for the open-circuit voltage of a
-plane-strain tetragonal BaTiO$_3$ microcantilever under a through-thickness temperature
-difference. The model treats the pyroelectric and piezoelectric-thermal mechanisms
+We used a coupled finite-element model based on electric enthalpy
+and a $C^1$ Bogner--Fox--Schmit element to calculate the open-circuit
+voltage of a plane-strain tetragonal BaTiO$_3$ cantilever subject to a
+through-thickness temperature difference. The model treats the pyroelectric and piezoelectric-thermal mechanisms
 together, forms the plane-strain thermal stress from the full three-dimensional
 contraction, and uses the fixed-strain pyroelectric coefficient. The main numerical findings are as follows.
 
