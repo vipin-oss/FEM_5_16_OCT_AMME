@@ -95,16 +95,18 @@ Dash and Singh studied nonlinear free vibration of piezoelectric laminated plate
 formulation for piezoelectric precision positioning that accounts for the secondary
 converse piezoelectric effect \cite{FINELZhou2015}. Palma and co-workers compared
 reduced and three-dimensional coupled elasto-thermoelectric beam models
-\cite{FINELPalma2017}. Their study concerns thermoelectric transport. The model considered here
-combines pyroelectric and piezoelectric coupling.
+\cite{FINELPalma2017}. That formulation deals with thermoelectric
+transport; the electrical response considered here arises from
+pyroelectricity and piezoelectricity.
 
 Other finite-element applications include reduced-order thermal--mechanical analysis
 of electronic modules \cite{FINELHassan2026}, strain-gradient formulations with
 ellipsoidal nonlocal lengths \cite{FINELGupta2026}, and $C^1$ Bogner--Fox--Schmit
 analysis of anisotropic strain-gradient boundary layers \cite{FINELRezk2027}.
-The latter two studies address higher-order mechanical effects. The question examined
-here is how omitting constrained transverse thermal expansion affects voltage
-polarity in the plane-strain reduction of a tetragonal crystal.
+The latter two studies address higher-order mechanical effects.
+Our calculations instead examine the voltage error caused by
+omitting transverse thermal expansion when imposing plane strain
+on a tetragonal crystal.
 
 Barium titanate (BaTiO$_3$) is a suitable material for such a study. Its
 room-temperature tetragonal phase has a complete, independently measured set of
@@ -125,9 +127,10 @@ A one-dimensional reduction misses this contribution. Even though transverse
 strain is zero under plane strain, transverse thermal expansion enters the
 in-plane stresses through the off-diagonal elastic constants.
 
-The choice of pyroelectric coefficient also matters. Pyroelectricity consists
-of a primary part, defined at fixed strain, and a secondary part caused by thermal
-expansion acting through the piezoelectric effect in a mechanically free sample. Their
+The constitutive equations require a distinction between primary and
+secondary pyroelectricity. The primary coefficient is defined at fixed
+strain. The secondary response arises from thermal expansion and
+piezoelectric coupling in a mechanically free specimen. Their
 sum is the total (free) coefficient usually reported from bulk measurements
 ~\cite{Lang2005Pyro,Tagantsev1991,Lubomirsky2012}. A constitutive law written in terms
 of strain, electric field and temperature requires the primary coefficient, because the
@@ -173,9 +176,10 @@ Finite-element analysis of piezoelectric structures goes back to Allik and Hughe
 followed by two- and three-dimensional device models ~\cite{Lerch1990,Tzou1993} and
 reviewed by Benjeddou ~\cite{Benjeddou2000a}. Studies of layered piezoelectric
 composites have further shown how material gradation and interface conditions control
-the coupled electromechanical response ~\cite{Gupta2025CS}. Thermopiezoelectric beam elements have also been applied to vibration and
-active control under thermal loading ~\cite{Sanbi2014ThermoPyroBeam}. Here the
-quantity calculated is the static open-circuit voltage of a single crystal. The higher-order extension of the formulation requires $C^1$
+the coupled electromechanical response ~\cite{Gupta2025CS}.
+Thermopiezoelectric beam elements have also been used for vibration
+and active control under thermal loading ~\cite{Sanbi2014ThermoPyroBeam}.
+The present calculations are static and concern a single crystal. The higher-order extension of the formulation requires $C^1$
 continuous mechanical interpolation. We use the classical
 Bogner--Fox--Schmit (BFS) rectangular element ~\cite{Bogner1965}, which supplies this continuity without the extra
 interface unknowns of mixed or penalty-based $C^0$ formulations. Flexoelectric coupling is disabled in all reported calculations. The BFS
@@ -1046,18 +1050,14 @@ E & piezoelectric + thermal (no pyroelectric) & $+0.19346$ & $\pm0.07\%$ \\
 \end{tabularx}
 \end{table}
 
-Table~\ref{tab:results} gives the open-circuit voltages for the three cases. The
-pyroelectric response alone (Case~D) produces $-3.43865$~V, with the sign determined
-by the negative primary pyroelectric coefficient. The piezoelectric-thermal response
-alone (Case~E) is $+0.19346$~V, about eighteen times smaller in magnitude and of
-opposite sign. When both mechanisms are active (Case~A), the voltage is
-$-1.49798$~V. The difference between Cases~D and~E reflects the different coupling
-paths. In Case~D, the temperature directly enters the electric displacement through
-the pyroelectric term. In Case~E, the temperature first produces a strain field
-through thermal expansion and mechanical compatibility, which then contributes to the
-electric response through the piezoelectric coupling. Adding the separate results gives $V_D+V_E\approx-3.25$~V, compared with
-$-1.50$~V for Case~A. The pyroelectric-only Case~D omits converse
-piezoelectric coupling, which is active in Case~A.
+The three coupling cases give different voltages (Table~\ref{tab:results}).
+Case~D, with only the direct pyroelectric term, yields $-3.43865$~V.
+Case~E gives $+0.19346$~V from thermally induced strain and the
+piezoelectric effect. The coupled Case~A voltage is $-1.49798$~V.
+Adding the separately calculated Case~D and Case~E voltages
+instead gives $V_D+V_E\approx-3.25$~V. This sum cannot reproduce
+Case~A because the Case~D calculation excludes the converse
+piezoelectric coupling present in the full model.
 
 \begin{figure}[t]
   \centering
@@ -1066,20 +1066,15 @@ piezoelectric coupling, which is active in Case~A.
   \label{fig:fig03_cases_and_decomposition}
 \end{figure}
 
-Figure~\ref{fig:fig03_cases_and_decomposition}(a) compares the three
-converged voltages and the zero-temperature case. With the thermal
-load removed, the computed voltage is exactly zero. Panel~(b)
-repeats the comparison on a common $16\times8$ mesh and includes the sum $V_D+V_E$.
-This sum is about $-3.25$~V, whereas the solved Case~A voltage is about $-1.50$~V.
-The difference, about 1.75~V, is much larger than the magnitude of the
-piezoelectric-thermal voltage alone. The reason is that Case~D is obtained without
-piezoelectric coupling, whereas in Case~A the pyroelectric field also produces a
-converse piezoelectric deformation and the associated piezoelectric charge. Because
-the system is linear in the thermal load, the coupled Case~A response can instead be
-viewed as the Case~E contribution plus a pyroelectric contribution evaluated with the
-piezoelectric coupling active. A separate one-dimensional pyroelectric estimate
-combined with an independently computed piezoelectric-thermal correction would
-therefore not reproduce the coupled device voltage.
+Figure~\ref{fig:fig03_cases_and_decomposition}(a) includes the
+zero-temperature calculation, which gives zero voltage.
+Panel~(b) uses the same $16\times8$ mesh for the separate-case
+sum and the fully coupled result. Their difference is about
+$1.75$~V. In Case~A, the field generated by the pyroelectric
+term also induces converse piezoelectric deformation and charge.
+The Case~A response can therefore be separated into Case~E and a
+pyroelectric contribution calculated with piezoelectric coupling
+active, but not into the independently solved Cases~D and~E.
 
 \subsection{Solved fields}
 \label{sec:fields}
@@ -1233,11 +1228,10 @@ same units. Panel~(b) plots the three solved $V_E$ values at the nominal
 $\alpha_1$ and the corresponding affine dependence on $\alpha_3$.
 The model predicts a zero crossing at
 $\alpha_3\approx-10.25\times10^{-6}\,\text{K}^{-1}$,
-outside the original three-point $\alpha_3$ range. Solid lines cover
-sampled parameter intervals; dashed extensions follow algebraically from the
-fixed-mesh linear model and are not additional finite-element simulations.
-The dashed extensions follow the fitted affine relation and are
-not statistical confidence bounds.
+outside the original three-point $\alpha_3$ range. Solid lines cover the sampled parameter intervals.
+The dashed lines extend the fixed-mesh affine relation beyond
+those intervals; they are neither additional finite-element
+solutions nor statistical confidence bounds.
 
 \begin{figure}[t]
 \centering
