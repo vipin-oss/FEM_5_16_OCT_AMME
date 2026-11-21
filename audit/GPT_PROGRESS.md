@@ -55,3 +55,16 @@ Branch: `revision/finel-submission-2026-11`
 - The suggestion shortens the broad FINEL-citation synthesis, eliminates repetitive language around the thermal-stress reduction and reduces promotional conclusion wording.
 - Evidence: `audit/GPT_T4_LANGUAGE_PROPOSED.diff` as a reviewable unified diff; **not** a regression-tested applied patch.
 - Status: PROPOSED / AWAITING SUPERVISOR APPROVAL.
+
+## T5 — Targeted source-to-numerics consistency
+- Retrieved source CSV `verification/results/voltages_all.csv`; independently compared 80×40 rows to headline manuscript/report values. Results:
+  - BFS classical full beta: D = -3.4386472481392962 V -> -3.43865 V; A = -1.4979788139247516 V -> -1.49798 V; E = +0.19345905551324877 V -> +0.19346 V.
+  - BFS classical simplified beta: E = -0.21557261593916693 V -> -0.2156 V.
+  - BFS all-derivative full beta: A = -1.4995979976849696 V -> -1.49960 V; E = +0.19321176103715737 V -> +0.19321 V.
+  - Q9 classical full beta: E = +0.1933927403392889 V -> +0.19339 V.
+- `verification/results/alpha_grid.csv`: nominal (alpha1 scale 1, alpha3 scale 1; 48×24) E = 0.19347637076881116 V and A = -1.4978876474094232 V. These are *coarser-mesh grid* results and need not equal the 80×40 headline exactly.
+- Cover letter rounded polarity comparison (-0.22, +0.19 V) is consistent with CSV; root-constraint effect described as 'about 0.1%' agrees with existing P6 values.
+- All seven FINEL citation keys appear in manuscript. No current headline-voltage mismatch detected.
+- **Limitations:** These are parsed CSV vs source comparisons, not new solver runs. The ±1σ interval requires logs/scripts beyond the two available CSV files; figure graphical labels/data were not pixel-inspected. Thus this is not an exhaustive 'every number' pass and is NOT T7.
+- No data or manuscript number changed.
+- Status: TARGETED CHECK PASSED; FULL SWEEP UNVERIFIED.
