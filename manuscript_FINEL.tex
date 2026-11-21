@@ -7,7 +7,7 @@
 \usepackage{amsmath,amssymb,amsfonts,bm,amsthm}
 \usepackage{newtxtext,newtxmath}
 \usepackage{setspace}
-\setstretch{1.0}
+\setstretch{1.15}
 \usepackage{mathrsfs,booktabs,multirow,array,tabularx,dcolumn}
 \usepackage{microtype}
 \usepackage{url}
@@ -373,7 +373,17 @@ activated in a future extension.
 \subsection{Boundary conditions}
 \label{sec:bcs}
 
-The cantilever is clamped at $x=0$. For the classical model used here ($\ell=0$, $\mu_{ijkl}=0$) the weak form contains first derivatives of the displacement only, and the clamp is the displacement condition $u=w=0$ on the root edge. In the BFS discretization this means $u=w=0$ together with the tangential derivatives $u_{,z}=w_{,z}=0$ at every root node; the derivatives $u_{,x}$, $w_{,x}$, $u_{,xz}$ and $w_{,xz}$ are not constrained by a classical clamp and are left free. Fixing all eight mechanical degrees of freedom at the root would in addition impose $\varepsilon_{xx}=0$ and zero rotation of the root edge, which is a stiffer, non-classical condition; its effect is quantified in Section~\ref{sec:rootbc}. The remaining edges are traction-free. The bottom face ($z=0$) is a grounded electrode, $\phi=0$. The top face
+The cantilever is clamped at $x=0$. In the classical model
+($\ell=0$, $\mu_{ijkl}=0$), the weak form contains only first
+derivatives of displacement. The root condition is therefore
+$u=w=0$. For the BFS basis, the tangential derivatives
+$u_{,z}=w_{,z}=0$ are also fixed, while $u_{,x}$, $w_{,x}$,
+$u_{,xz}$ and $w_{,xz}$ remain free. Fixing all eight mechanical
+degrees of freedom imposes additional restrictions, including
+$\varepsilon_{xx}=0$ and zero root rotation. The effect of this
+stiffer condition is compared with the classical clamp in
+Section~\ref{sec:rootbc}. The other edges are traction-free.
+The bottom electrode ($z=0$) is grounded, $\phi=0$, and the top face
 ($z=h$) is an electrically floating equipotential electrode. Its nodes
 share one potential, with the sum of their charges constrained to zero.
 The prescribed steady temperature varies linearly through the thickness,
@@ -832,7 +842,26 @@ $80\times40$ & 29{,}564 & $-1.49798$ & $+0.19346$ & $-1.49833$ & $+0.19339$ \\
 \end{tabular}
 \end{table}
 
-Case~D is independent of the mechanical mesh because its electrical response does not involve the mechanical solution. With the classical clamp the BFS voltages of Cases~A and~E change by less than 0.06\% from the $8\times4$ mesh to the $80\times40$ mesh (relative changes between successive meshes: $-0.056$, $+0.029$, $+0.009$, $+0.004$, $+0.002$\% for Case~A). The approach is not monotone on the coarsest levels, and the observed order from~\eqref{eq:pobs} is $p_{\mathrm{obs}}\approx0.9$--$1.2$ (Case~A and~E alike), so the Aitken $\Delta^2$ limits are used only as an indication: $-1.4976$ and $-1.4981$~V for Case~A and $+0.19353$ and $+0.19344$~V for Case~E, from the triplets $8\times4\to16\times8\to32\times16$ and $16\times8\to32\times16\to64\times32$. The Q9 discretization converges from the other side ($-1.4983$~V and $+0.19339$~V on $80\times40$) and differs from the BFS result by 0.02\% (Case~A) and 0.03\% (Case~E). The spread among the two discretizations and the extrapolated limits is 0.05\% for Case~A and 0.07\% for Case~E; these values are quoted as the discretization uncertainty in Table~\ref{tab:results}.
+Case~D is mesh independent because its electrical response does not
+involve the mechanical solution. With the classical clamp, the BFS
+voltages for Cases~A and~E vary by less than 0.06\% between the
+$8\times4$ and $80\times40$ meshes. For Case~A, the successive
+relative changes are $-0.056$, $+0.029$, $+0.009$, $+0.004$ and
+$+0.002$\%. The convergence is not monotone on the coarsest meshes.
+
+The observed order from~\eqref{eq:pobs} is
+$p_{\mathrm{obs}}\approx0.9$--$1.2$ for both cases. We therefore
+treat the Aitken $\Delta^2$ estimates as indicative. The mesh
+triplets $8\times4\to16\times8\to32\times16$ and
+$16\times8\to32\times16\to64\times32$ give estimates of
+$-1.4976$ and $-1.4981$~V for Case~A, and $+0.19353$ and
+$+0.19344$~V for Case~E. The Q9 solution approaches these values
+from the other side. On the $80\times40$ mesh it gives
+$-1.4983$~V and $+0.19339$~V, differing from BFS by 0.02\%
+and 0.03\%, respectively. The spread between the two methods and
+the extrapolated values is 0.05\% for Case~A and 0.07\% for
+Case~E. These are used as the discretization uncertainties in
+Table~\ref{tab:results}.
 \begin{equation}
 p_{\mathrm{obs}}
 =\log_2\left|\frac{V(4h)-V(2h)}{V(2h)-V(h)}\right|.
@@ -879,12 +908,25 @@ Top-electrode potential variation (V)
 \end{tabularx}
 \end{table}
 
-Table~\ref{tab:verify} gives the numerical consistency checks. Additional tests covered the thermal-load kernel, linear electric potential, the zero-$p_3$ limit and linearity in $p_3$. These checks are not experimental validation. The unscaled global matrix has condition number $2.5\times10^{31}$ on the $16\times8$ mesh, reduced to $4.7\times10^{6}$ after diagonal scaling. These algebraic and limiting-case checks do not by themselves verify the full coupled thermo-electro-mechanical solution, which is examined in the following two subsections.
+Table~\ref{tab:verify} lists the numerical consistency checks.
+We also tested the thermal-load kernel, linear electric potential,
+the zero-$p_3$ limit and linearity in $p_3$. On the $16\times8$
+mesh, diagonal scaling reduces the global matrix condition number
+from $2.5\times10^{31}$ to $4.7\times10^{6}$.
+These checks test the implementation, but they are not experimental
+validation of the coupled model.
 
 \subsection{Analytical traction-free interior solution}
 \label{sec:midspan}
 
-In the traction-free interior limit of a long beam, the strain, stress and electric fields can depend on $z$ alone, even though the compatible displacement field may depend on both $x$ and $z$. A stress-free interior solution has $\sigma_{xx}=\sigma_{zz}=0$ and, from the open-circuit condition, $D_z=0$. For the prescribed linear temperature field, a compatible strain field of this form also has zero axial force and zero bending moment. The unknowns $\varepsilon_{xx}$, $\varepsilon_{zz}$ and $E_z$ then satisfy, per unit $\theta$,
+Far from the ends of a long beam, the strain, stress and electric
+fields may depend on $z$ alone. The compatible displacement field
+can still depend on both $x$ and $z$. For a stress-free interior,
+$\sigma_{xx}=\sigma_{zz}=0$; the open-circuit condition gives
+$D_z=0$. Under the prescribed linear temperature field, this
+compatible strain field also has zero axial force and bending
+moment. The remaining unknowns $\varepsilon_{xx}$,
+$\varepsilon_{zz}$ and $E_z$ satisfy, per unit $\theta$,
 \begin{equation}
 \begin{bmatrix}C_{11}&C_{13}&-e_{31}\\ C_{13}&C_{33}&-e_{33}\\ e_{31}&e_{33}&\kappa_{33}\end{bmatrix}
 \begin{Bmatrix}\varepsilon_{xx}\\ \varepsilon_{zz}\\ E_z\end{Bmatrix}/\theta
@@ -898,7 +940,15 @@ Solving~\eqref{eq:midspan} with the data of Table~\ref{tab:materials} gives $V_E
 \subsection{Root constraint and independent discretization}
 \label{sec:rootbc}
 
-For $\ell=0$ and $\mu_{ijkl}=0$ the variational problem contains only first derivatives of $\bm u$. The classical clamp is therefore $u=w=0$ on $x=0$, which for the Hermite basis implies $u_{,z}=w_{,z}=0$ and leaves $u_{,x}$, $w_{,x}$, $u_{,xz}$ and $w_{,xz}$ free. Constraining all eight root degrees of freedom additionally imposes $\varepsilon_{xx}=0$ and zero rotation on the root edge. Table~\ref{tab:rootbc} compares the two conditions on the $80\times40$ mesh with the independent Q9 discretization, which has no derivative degrees of freedom and a displacement clamp only.
+The classical model ($\ell=0$, $\mu_{ijkl}=0$) involves first
+derivatives of displacement only. Its root condition is $u=w=0$
+at $x=0$. In the Hermite discretization, $u_{,z}=w_{,z}=0$
+follows along the root, while $u_{,x}$, $w_{,x}$, $u_{,xz}$
+and $w_{,xz}$ remain free. Fixing all eight root degrees of freedom
+also imposes $\varepsilon_{xx}=0$ and zero rotation there.
+Table~\ref{tab:rootbc} compares these conditions on the
+$80\times40$ mesh with Q9 elements, which use displacement
+degrees of freedom and the classical clamp.
 
 \begin{table}[t]
 \centering
@@ -916,7 +966,19 @@ Q9, classical clamp & $-1.49833$ & $+0.19339$ & --- & --- \\
 \end{tabular}
 \end{table}
 
-The all-derivative constraint changes the voltages by 0.11\% (Case~A) and 0.13\% (Case~E) and the tip deflection by 0.3\%. The effect on the sign and magnitude of the results is therefore small, but the all-derivative condition is not the classical clamp, converges more slowly (Fig.~\ref{fig:fig02_mesh_convergence}) and is not used for the reported results. Figure~\ref{fig:rootspan} (a) shows the span dependence of Case~E, and panel (b) shows that the polarity change caused by the thermal-stress reduction is the same for all three discretizations of the root: $V_E$ changes from $-0.2155$~V to $+0.1932$~V (all derivatives fixed), from $-0.2156$~V to $+0.1935$~V (classical clamp) and from $-0.2156$~V to $+0.1934$~V (Q9).
+The all-derivative constraint changes the voltage by 0.11\% in
+Case~A and 0.13\% in Case~E; the change in tip deflection is
+0.3\%. Its convergence is slower than that of the classical
+clamp (Fig.~\ref{fig:fig02_mesh_convergence}), so it is not
+used for the main results.
+
+Figure~\ref{fig:rootspan}(a) shows the span dependence of Case~E.
+Panel (b) compares the polarity change for three treatments of
+the root. The simplified and full thermal-stress reductions give,
+respectively, $-0.2155$ and $+0.1932$~V with all derivatives
+fixed, $-0.2156$ and $+0.1935$~V with the classical clamp, and
+$-0.2156$ and $+0.1934$~V with Q9 elements. The polarity
+reversal is unchanged by the root treatment.
 
 \begin{figure}[t]
   \centering
