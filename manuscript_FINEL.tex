@@ -899,7 +899,7 @@ Table~\ref{tab:verify} lists the checks. They test the basis, the symmetry of th
 \subsection{Exact mid-span solution of the coupled problem}
 \label{sec:midspan}
 
-Away from the ends of a long beam the fields depend on $z$ only. Equilibrium with traction-free faces gives $\sigma_{zz}=0$, and Gauss's law with zero net charge on the floating electrode gives $D_z=0$. With $\theta$ linear in $z$, the in-plane strain $\varepsilon_{xx}(z)$ can be chosen so that $\sigma_{xx}\equiv0$, which satisfies zero axial force and zero bending moment. The unknowns $\varepsilon_{xx}$, $\varepsilon_{zz}$ and $E_z$ then satisfy, per unit $\theta$,
+In the traction-free interior limit of a long beam, the strain, stress and electric fields can depend on $z$ alone, even though the compatible displacement field may depend on both $x$ and $z$. A stress-free interior solution has $\sigma_{xx}=\sigma_{zz}=0$ and, from the open-circuit condition, $D_z=0$. For the prescribed linear temperature field, a compatible strain field of this form also has zero axial force and zero bending moment. The unknowns $\varepsilon_{xx}$, $\varepsilon_{zz}$ and $E_z$ then satisfy, per unit $\theta$,
 \begin{equation}
 \begin{bmatrix}C_{11}&C_{13}&-e_{31}\\ C_{13}&C_{33}&-e_{33}\\ e_{31}&e_{33}&\kappa_{33}\end{bmatrix}
 \begin{Bmatrix}\varepsilon_{xx}\\ \varepsilon_{zz}\\ E_z\end{Bmatrix}/\theta
@@ -908,7 +908,7 @@ Away from the ends of a long beam the fields depend on $z$ only. Equilibrium wit
 V_{\mathrm{oc}}=-\frac{\Delta T\,h}{2}\,\frac{E_z}{\theta}.
 \label{eq:midspan}
 \end{equation}
-Solving~\eqref{eq:midspan} with the data of Table~\ref{tab:materials} gives $V_E=+0.19754$~V for Case~E and $V_A=-1.47652$~V for Case~A; with the simplified $\beta$ it gives $-0.21635$~V for Case~E. This solution involves no discretization and is independent of the finite-element code. The finite-element voltages with the classical clamp approach it as the span grows (Section~\ref{sec:clamp}); the remaining difference is an end effect proportional to $1/L$. The mid-span solution confirms the thermal-stress model, the sign convention for $p_3$ and the sign of the Case~E voltage, but it cannot represent the clamp region, so it does not replace the finite-element calculation for the short cantilever.
+Solving~\eqref{eq:midspan} with the data of Table~\ref{tab:materials} gives $V_E=+0.19754$~V for Case~E and $V_A=-1.47652$~V for Case~A; with the simplified $\beta$ it gives $-0.21635$~V for Case~E. This analytical interior solution involves no discretization and is independent of the finite-element code. The finite-element voltages with the classical clamp approach it as the span grows (Section~\ref{sec:clamp}); the finite-length difference is consistent with an end effect that decreases approximately as $1/L$ over the spans examined. Agreement checks the thermal-stress implementation, the sign convention for $p_3$ and the sign of the Case~E voltage in this interior limit. The solution does not satisfy the clamped-root condition and cannot replace the finite-element calculation for the short cantilever.
 
 \subsection{Root constraint and independent discretization}
 \label{sec:rootbc}
@@ -1332,10 +1332,17 @@ No.~14/66-2026 SPD/HSHEC/HSRF-38).
 \subsection*{Declaration of competing interest}
 The authors declare that they have no known competing financial interests or personal relationships that could have appeared to influence the work reported in this paper.
 \subsection*{Data availability}
-The finite-element solvers, input data, analysis scripts and figure-generation code
-needed to reproduce every number and figure in this paper are provided in a
-reproducibility archive. \textbf{[Public repository and DOI to be inserted by the authors
-before submission.]}
+The numerical inputs are specified in the manuscript. The finite-element scripts,
+calculated output data and figure-generation programs used for this study are
+retained in the project source files and are available from the corresponding
+author upon reasonable request.
+
+% Authors must confirm the description of the AI-assisted preparation and their review.
+\section*{Declaration of generative AI and AI-assisted technologies in the manuscript preparation process}
+During manuscript preparation, ChatGPT (OpenAI) and Claude (Anthropic) were used to
+assist with language editing, code-consistency checks and manuscript formatting.
+The authors are responsible for reviewing the resulting content and for the
+accuracy of the submitted manuscript.
 
 \bibliographystyle{elsarticle-num}
 \bibliography{references_FINEL}
