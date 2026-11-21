@@ -27,8 +27,7 @@ An historical all-derivative simulation is also accessible through `tpfem.solve_
 - `verification/conv_stats.py`: convergence statistics.
 - `verification/run_alpha_grid.py`: the parameter sensitivity grid.
 - `verification/results/*.csv`: **checked-in reference CSVs** (not promised bit-identical across BLAS implementations).
-- `../figures/Fig7_alpha_surface.tex`: 3D Case E plot that reads the nine existing solutions directly from `verification/results/alpha_grid.csv` (path relative to repository root).
-- `../figures/Fig8_polarity_boundary.tex`: polarity-zero line derived from the affine nine-point response, plotted against the sample points and the coordinatewise ±1-SE rectangle. The dashed boundary outside the grid is a model extrapolation, not an additional numerical solve.
+- `../figures/Fig8_polarity_boundary.tex`: two-panel, CSV-backed polarity diagnostic. Panel (a) shows all nine simulated points and the model's zero-voltage line; panel (b) shows the three solved points at nominal alpha1 and the linear-response zero crossing. Dashed curves beyond the sampled parameter interval are algebraic extensions, not FE runs. No covariance ellipse or joint confidence region is claimed.
 - `figure_code/make_fig1.py`: Fig. 1 generator.
 - `figure_code/make_figures.py`: Figs. 2, 3, 4, 5, 6 and 9 generators from the checked-in CSVs and numeric scripts.
 - `figures/*.pdf`: figure assets matching the root manuscript.
@@ -61,10 +60,10 @@ The production inputs are defined directly in `verification/tpfem.py` (BaTiO3 4m
 
 - Manuscript: `../manuscript_FINEL.tex`
 - Bibliography: `../references_FINEL.bib`
-- Journal figures actually used: seven PDFs in `../figures/` plus two LaTeX/PGFPlots figures (`../figures/Fig7_alpha_surface.tex`, `../figures/Fig8_polarity_boundary.tex`), for **nine manuscript figure environments**. The new figures read the authoritative checked-in `verification/results/alpha_grid.csv`; they require `pgfplots` in LaTeX.
+- Journal figures actually used: seven PDFs in `../figures/` plus one two-panel LaTeX/PGFPlots figure (`../figures/Fig8_polarity_boundary.tex`), for **eight figure environments**. It reads checked-in `verification/results/alpha_grid.csv` and requires `pgfplots`; figure source filenames are historical labels, while printed numbers come from LaTeX.
 - Full detailed audit/history (kept outside the streamlined Overleaf branch): branch `revision/finel-submission-2026-11`, path `audit/`; especially `audit/ORIGINAL_PROGRAM_VS_FINEL_REVIEW_2026-11-21.md` and `audit/P6_FINAL_SUBMISSION_AUDIT.md`.
 
 No equations or numerical outcomes have been changed in order to populate this folder. The historical all-derivative code's authoritative input ZIP remains with the author; a copy would be needed only to reproduce that **historical independent implementation**, rather than the current paper's results.
 
-### Scientific provenance of Figs. 7 and 8
-The 48×24 classical-clamp sample values come directly from the stored 3×3 alpha grid. An affine least-squares regression of the nine points yields `V_E = 0.01529186*alpha1 + 0.03253166*alpha3` V (alpha quantities expressed in 1e-6 K^-1); the largest fit residual is approximately 2.3e-14 V, as expected for a linear model. The zero-voltage boundary `alpha3 = -0.4700607985*alpha1` and the nominal ±1 standard-error rectangle are interpretations of existing data; no additional FEM solves were performed to draw them. The compiler must be started at the repository root, so the CSV relative paths in the figure sources resolve correctly.
+### Scientific provenance of the two-panel polarity figure
+The 48x24 classical-clamp sample values come from the stored 3x3 alpha grid. An affine fit gives `V_E = 0.01529186*alpha1 + 0.03253166*alpha3` V (alpha quantities in units of 1e-6 K^-1); the largest fit residual is approximately 2.3e-14 V. The model's zero-voltage line is `alpha3 = -0.4700607985*alpha1`. The zero crossing at nominal `alpha1 = 21.8` occurs near `alpha3 = -10.2473` (in the same scaled units), outside the original 3-point alpha3 grid. This is an exact affine fixed-mesh model consequence, NOT an independently performed FE run. No 3D alpha surface or joint uncertainty ellipse is included. The compiler must be started at repository root to resolve figure CSV paths. This presentation follows a separate independent-referee assessment that rejected using a fixed figure count as a scientific target.
