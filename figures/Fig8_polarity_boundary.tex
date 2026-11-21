@@ -1,0 +1,43 @@
+% FINEL Fig. 8. Nine dots from alpha_grid.csv.
+% The zero boundary derives from a least-squares fit V_E =
+% 0.01529186 alpha1 + 0.03253166 alpha3 (alpha in 1e-6 K^-1; V in volts).
+% Max residual on the nine points: approximately 2.3e-14 V.
+% Hence alpha3 = -0.4700607985298136 alpha1 at V_E=0.
+% Dashed extension OUTSIDE the 3x3 grid represents affine-model extrapolation.
+% Dotted rectangle is nominal alpha1,alpha3 +/- marginal regression SEs.
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+  width=0.86\linewidth,height=7.8cm,
+  xmin=9,xmax=34,ymin=-16.5,ymax=0,
+  xlabel={$\alpha_1$ ($10^{-6}$ K$^{-1}$)},
+  ylabel={$\alpha_3$ ($10^{-6}$ K$^{-1}$)},
+  grid=both,tick label style={font=\small},
+  xlabel style={font=\small},ylabel style={font=\small},
+]
+\addplot[only marks,mark=*,mark size=2pt,blue]
+  table[x expr=\thisrow{alpha1}*1e6,
+        y expr=\thisrow{alpha3}*1e6,col sep=comma]
+  {program/verification/results/alpha_grid.csv};
+\addplot[only marks,mark=square*,mark size=2.6pt,red]
+  coordinates {(10.9,-6.45)};
+\addplot[thick,red,dashed,domain=9:34,samples=2]
+  {-0.4700607985298136*x};
+\draw[thick,black,densely dotted]
+  (axis cs:20.1540792821,-7.5610834927)
+  rectangle (axis cs:23.4459207179,-1.0389165073);
+\addplot[mark=star,mark size=3pt,only marks,black]
+  coordinates {(21.8,-4.3)};
+\end{axis}
+\end{tikzpicture}
+\caption{Case E polarity boundary inferred from the affine fit to the
+nine finite-element values in Fig.~\ref{fig:alphagrid}. Blue dots denote
+solved parameter pairs; the red square is their sole negative-voltage
+case. The dashed $V_E=0$ line is extrapolated beyond the original
+$3\times3$ grid and is not an additional finite-element run.
+The black star is the fitted thermal-expansion pair. The dotted rectangle
+shows the joint coordinatewise $\pm1$ standard-error range, not a
+statistical confidence region.}
+\label{fig:alpha-polarity}
+\end{figure}
