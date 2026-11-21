@@ -26,7 +26,7 @@
 \affiliation[aff4]{organization={School of Basic and Applied Sciences, K.R. Mangalam University},city={Gurugram},country={India}}
 \affiliation[aff5]{organization={Department of Computer Science and Engineering, Amrita School of Artificial Intelligence Bengaluru, Amrita Vishwa Vidyapeetham},city={Bengaluru},country={India}}
 \begin{abstract}
-This paper studies the influence of anisotropic thermal expansion on the coupled piezoelectric--pyroelectric response of a tetragonal barium titanate microcantilever subjected to a steady through-thickness temperature difference. A plane-strain finite-element model is formulated from a single electric enthalpy, retaining the full three-dimensional thermal-stress contraction and the fixed-strain pyroelectric coefficient. The analysis separates the direct pyroelectric and thermally induced piezoelectric mechanisms to examine their contributions to the open-circuit voltage. The results show that neglecting constrained transverse thermal expansion substantially underestimates the thermal loading and can predict the wrong voltage polarity. Retaining this contribution changes the piezoelectric-thermal voltage from approximately $-0.22$~V to $+0.19$~V. The coupled response also demonstrates that piezoelectric feedback modifies the direct pyroelectric contribution, so the separately computed limiting cases cannot simply be added. The numerical solution is checked against the exact one-dimensional pyroelectric limit, an exact mid-span solution of the full coupled problem, an independent biquadratic discretization, mesh convergence and algebraic consistency checks, and the effect of the root constraint is quantified. A sensitivity analysis examines the dependence of voltage polarity on the thermal-expansion coefficients. The findings highlight the role of mechanical compatibility and constitutive consistency in predicting the electrical response of anisotropic thermopiezoelectric microstructures.
+This paper studies the influence of anisotropic thermal expansion on the coupled piezoelectric--pyroelectric response of a tetragonal barium titanate microcantilever subjected to a steady through-thickness temperature difference. A plane-strain finite-element model is formulated from a single electric enthalpy, retaining the full three-dimensional thermal-stress contraction and the fixed-strain pyroelectric coefficient. The analysis separates the direct pyroelectric and thermally induced piezoelectric mechanisms to examine their contributions to the open-circuit voltage. The results show that neglecting constrained transverse thermal expansion substantially underestimates the thermal loading and can predict the wrong voltage polarity. Retaining this contribution changes the piezoelectric-thermal voltage from approximately $-0.22$~V to $+0.19$~V. The coupled response also demonstrates that piezoelectric feedback modifies the direct pyroelectric contribution, so the separately computed limiting cases cannot simply be added. The numerical solution is checked against the exact one-dimensional pyroelectric limit, an analytical traction-free interior limit of the coupled problem, an independent biquadratic discretization, mesh convergence and algebraic consistency checks, and the effect of the root constraint is quantified. A sensitivity analysis examines the dependence of voltage polarity on the thermal-expansion coefficients. These calculations show why the plane-strain constraint and constitutive reduction must be treated consistently when computing voltage in anisotropic thermopiezoelectric structures.
 \end{abstract}
 \begin{keyword}
 Anisotropic thermoelasticity \sep Plane strain \sep Thermopiezoelectricity \sep Voltage polarity \sep Barium titanate \sep Finite element method
@@ -896,7 +896,7 @@ Spread of top-electrode potential (V) & equipotential & exact 0 & $<10^{-12}$ \\
 
 Table~\ref{tab:verify} lists the checks. They test the basis, the symmetry of the coupled system implied by the single enthalpy, the quadrature, the exact one-dimensional pyroelectric limit, the null limits and the electrode conditions. The unscaled global matrix has condition number $2.5\times10^{31}$ on the $16\times8$ mesh, and $4.7\times10^{6}$ after diagonal scaling, so the scaling of Section~\ref{sec:assembly} is required. None of these checks tests the coupled thermo-electro-mechanical solution as a whole; this is done in the next two subsections.
 
-\subsection{Exact mid-span solution of the coupled problem}
+\subsection{Analytical traction-free interior solution}
 \label{sec:midspan}
 
 In the traction-free interior limit of a long beam, the strain, stress and electric fields can depend on $z$ alone, even though the compatible displacement field may depend on both $x$ and $z$. A stress-free interior solution has $\sigma_{xx}=\sigma_{zz}=0$ and, from the open-circuit condition, $D_z=0$. For the prescribed linear temperature field, a compatible strain field of this form also has zero axial force and zero bending moment. The unknowns $\varepsilon_{xx}$, $\varepsilon_{zz}$ and $E_z$ then satisfy, per unit $\theta$,
@@ -936,7 +936,7 @@ The all-derivative constraint changes the voltages by 0.11\% (Case~A) and 0.13\%
 \begin{figure}[t]
   \centering
   \includegraphics[width=\linewidth]{Fig9_root_constraint_and_span}
-  \caption{(a) Case~E voltage against span with the classical clamp, and the exact mid-span value from~\eqref{eq:midspan}. (b) Case~E voltage with the simplified and the full thermal-stress contraction for three treatments of the root ($80\times40$ mesh).}
+  \caption{(a) Case~E voltage against span with the classical clamp, and the analytical interior-limit value from~\eqref{eq:midspan}. (b) Case~E voltage with the simplified and the full thermal-stress contraction for three treatments of the root ($80\times40$ mesh).}
   \label{fig:rootspan}
 \end{figure}
 
@@ -1091,7 +1091,7 @@ To this end, Case~E was solved with the classical clamp for spans
 $L\in\{10,20,50,100\}\,\mu\text{m}$ with the thickness, thermal load and element length
 (0.125~$\mu$m along $x$) kept fixed. The voltage increases from $+0.1935$~V at
 $L=10\,\mu\text{m}$ to $+0.1971$~V at $100\,\mu\text{m}$, an increase of about 2\%, and
-approaches the exact mid-span value $+0.19754$~V of Section~\ref{sec:midspan}. The
+approaches the analytical interior-limit value $+0.19754$~V of Section~\ref{sec:midspan}. The
 remaining difference from that value is $4.1\times10^{-3}$, $2.0\times10^{-3}$,
 $8.1\times10^{-4}$ and $4.0\times10^{-4}$~V for the four spans, i.e. it decreases in
 proportion to $1/L$, consistent with a correction confined to a region of fixed size
@@ -1114,7 +1114,7 @@ The simplified reduction is not an admissible plane-strain model: it replaces th
 Table~\ref{tab:beta} gives $V_A=-1.9069$~V and $V_E=-0.2156$~V, whereas the full
 contraction \eqref{eq:betaPS} gives $V_A=-1.4979$~V and $V_E=+0.1935$~V; the
 converged values are those of Table~\ref{tab:results}. The result is the same with the
-independent biquadratic discretization ($80\times40$: $V_E=-0.2156$~V and $+0.1934$~V) and with the exact mid-span solution ($-0.2164$~V and $+0.1975$~V), so it is not caused by the root constraint or by the element type. Both voltages shift by the same
+independent biquadratic discretization ($80\times40$: $V_E=-0.2156$~V and $+0.1934$~V) and with the analytical interior solution ($-0.2164$~V and $+0.1975$~V), so it is not caused by the root constraint or by the element type. Both voltages shift by the same
 amount, $+0.409$~V, while Case~D, which does not involve $\beta_{\mathrm{PS}}$, is
 unchanged. The equal shift follows from linearity: $\beta_{\mathrm{PS}}$ enters only
 the mechanical load vector, so changing $\beta_{\mathrm{PS}}$ produces the same
@@ -1276,7 +1276,7 @@ simply adding the separately computed Case~D and Case~E voltages.
 \item The piezoelectric-thermal voltage is produced primarily by the non-uniform strain
 associated with the temperature gradient under plane strain rather than by the local
 root constraint. It changes by only about 2\% when the span is increased from
-$10$ to $100\,\mu\text{m}$ and approaches the exact mid-span value $+0.1975$~V. Within the terminology used for pyroelectric effects, this
+$10$ to $100\,\mu\text{m}$ and approaches the analytical interior-limit value $+0.1975$~V. Within the terminology used for pyroelectric effects, this
 response corresponds to a tertiary pyroelectric contribution for the present specimen
 and support, and it cannot be obtained from the free-sample secondary coefficient
 alone.
@@ -1312,7 +1312,7 @@ for assessing these effects before experimental device-level characterization.
 The polarity predictions apply to the stated linear constitutive model,
 plane-strain kinematics, prescribed steady temperature field and ideal electrode
 conditions. They should not be interpreted as geometry-independent material
-properties. The exact pyroelectric limit, the exact mid-span solution, the independent biquadratic
+properties. The exact pyroelectric limit, the analytical interior solution, the independent biquadratic
 discretization and the discrete consistency checks verify the implementation of the stated
 model, but they do not validate the model against experiment or against a
 three-dimensional or commercial-code solution, and the root region is checked only against
