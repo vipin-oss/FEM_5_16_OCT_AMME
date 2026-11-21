@@ -32,3 +32,19 @@ Branch: `revision/finel-submission-2026-11`
 - CRediT, funding/conflict/AI-use content, data archive DOI, author details intentionally untouched. Journal-specific line numbering, mandatory graphical abstract, and exact declaration upload fields **not conclusively verified** due 403.
 - **Files changed:** audit report only; no manuscript, values, or journal placeholders touched.
 - **Status:** PARTIAL (do not claim full guide compliance).
+
+## T3 — Seven FINEL reference audit (publisher metadata / authors' PDFs)
+
+| BibTeX key | Source check | Authors, publication data | Nearby Introduction statement |
+|---|---|---|---|
+| FINELPanda2008 | https://www.sciencedirect.com/science/article/abs/pii/S0168874X08000024 | Panda, Ray; 44(8), 493–504 (2008), DOI 10.1016/j.finel.2008.01.001: **confirmed** | Nonlinear *static* FE of FG plates with piezoelectric-fibre actuators in thermal/nonthermal environments: **abstract supports** |
+| FINELDash2009 | https://www.sciencedirect.com/science/article/pii/S0168874X09000663 | Dash, Singh; 45(10), 686–694 (2009), DOI 10.1016/j.finel.2009.05.004: **confirmed** | Nonlinear free vibration of piezoelectric laminated composite plate: **supported** |
+| FINELZhou2015 | https://www.sciencedirect.com/science/article/abs/pii/S0168874X15000670 | Yong Zhou, Si Li, Hongbo Zhou (2015), DOI 10.1016/j.finel.2015.04.010, volume 102–103/pages 85–94 as recorded in existing Crossref-based P3: **title/authors/DOI publisher confirmed; volume/pages not independently re-fetched in this check** | State-space FE treatment of piezoelectric precision positioning including secondary converse piezoelectricity: **abstract supports** |
+| FINELPalma2017 | https://www.sciencedirect.com/science/article/pii/S0168874X16301123 | Palma, Moliner, Pérez-Aparicio; 129, 32–41 (2017), DOI 10.1016/j.finel.2017.02.001: **confirmed** | Elasto-thermoelectric beam / reduced vs 3D formulations: **supported** |
+| FINELHassan2026 | https://www.sciencedirect.com/science/article/pii/S0168874X25001775 | Hassan, Stoyanov, Rajaguru, Bailey; **January 2026**, 253, 104488, DOI 10.1016/j.finel.2025.104488: **confirmed** | Reduced-order thermal–mechanical analysis of power electronic modules: **supported** |
+| FINELGupta2026 | https://www.sciencedirect.com/science/article/pii/S0168874X2600171X | Gupta, Kumawat, Yadav, Maruyama, Almohsen; **2027**, 263, 104681: **confirmed**, including author-supplied final published PDF | Anisotropic ellipsoidal nonlocal strain-gradient FE: **supported**, NOT thermo-piezo validation |
+| FINELRezk2027 | DOI https://doi.org/10.1016/j.finel.2026.104685; author's uploaded 22-page published PDF | Rezk, Kumawat, Lotfy, Yadav, Gupta; **2027**, 263, 104685: **confirmed from published PDF** | BFS / Mindlin II / anisotropic boundary-layer mechanics: **supported**, NOT thermo-piezo validation |
+
+**No BibTeX changes needed** for these seven on the verified facts. No citation added or fabricated. The manuscript's grouped sentence says these works demonstrate constitutive consistency/verification generally; this is a broad synthesis, not a claim of direct experimental validation. Final published PDF statements for the two co-authored items have been checked against their abstracts. Complete full-text checks for the other five were not done.
+
+**Status:** METADATA CHECK COMPLETE for 6/7 independently in this pass; Zhou volume/pages retained from earlier Crossref verification (not newly corroborated). No technical edits.
