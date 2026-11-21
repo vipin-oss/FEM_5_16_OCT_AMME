@@ -67,8 +67,7 @@ used in infrared detectors, thermal imaging and devices that harvest energy from
 ambient or waste-heat temperature fluctuations ~\cite{Lang2005Pyro,Whatmore1986,Lubomirsky2012}.
 A microcantilever is mechanically compliant, so a small temperature difference
 across its thickness can produce a measurable bending response. Cantilevers of this
-type are also widely used as test structures for piezoelectric energy harvesting. Pyroelectric crystals lack a centre of symmetry and can therefore also exhibit
-piezoelectricity. A non-uniform temperature field in a pyroelectric device consequently
+type are also widely used as test structures for piezoelectric energy harvesting. Pyroelectric crystals also exhibit piezoelectricity because their crystal classes are non-centrosymmetric. A non-uniform temperature field in a pyroelectric device consequently
 acts in two ways: directly, through the pyroelectric coefficient, and indirectly,
 through the thermal strain it produces, which the piezoelectric effect converts into
 charge. Separating these two
@@ -94,7 +93,7 @@ semiconductors ~\cite{Gupta2024WRCM,Gupta2025HFF} and in porous piezo-thermoelas
 solids ~\cite{Das2026KG}.
 
 
-Related finite-element studies have examined coupled-field problems using different formulations. Panda and Ray studied nonlinear static finite-element analysis of functionally graded plates with piezoelectric fibre-composite actuators, with and without a thermal environment \cite{FINELPanda2008}, while Dash and Singh examined nonlinear vibration of piezoelectric laminates \cite{FINELDash2009}. Zhou and co-workers developed a state-space finite-element treatment of piezoelectric precision positioning that includes the secondary converse piezoelectric effect \cite{FINELZhou2015}. Palma and co-workers formulated coupled elasto-thermoelectric beam elements and compared reduced and three-dimensional solutions \cite{FINELPalma2017}; their thermoelectric transport setting differs from the pyroelectric--piezoelectric coupling studied here. More recent work includes reduced-order thermal--mechanical analysis of electronic modules \cite{FINELHassan2026}, and a second-order strain-gradient finite-element formulation with ellipsoidal nonlocal characteristic lengths by Gupta and co-workers \cite{FINELGupta2026}. Related $C^1$ Bogner--Fox--Schmit analysis of anisotropic strain-gradient boundary layers has also been reported by Rezk and co-workers \cite{FINELRezk2027}. Both strain-gradient studies concern higher-order mechanical models; neither is used as evidence for the classical thermopiezoelectric voltage calculated here. These studies use different numerical models and physical couplings. Here, we examine the voltage-polarity error caused by omitting constrained transverse thermal expansion in the plane-strain reduction of a tetragonal crystal.
+Finite-element studies of related coupled-field problems include the work of Panda and Ray, who examined nonlinear static finite-element analysis of functionally graded plates with piezoelectric fibre-composite actuators, with and without a thermal environment \cite{FINELPanda2008}, while Dash and Singh examined nonlinear vibration of piezoelectric laminates \cite{FINELDash2009}. Zhou and co-workers developed a state-space finite-element treatment of piezoelectric precision positioning that includes the secondary converse piezoelectric effect \cite{FINELZhou2015}. Palma and co-workers formulated coupled elasto-thermoelectric beam elements and compared reduced and three-dimensional solutions \cite{FINELPalma2017}; their thermoelectric transport setting differs from the pyroelectric--piezoelectric coupling studied here. More recent work includes reduced-order thermal--mechanical analysis of electronic modules \cite{FINELHassan2026}, and a second-order strain-gradient finite-element formulation with ellipsoidal nonlocal characteristic lengths by Gupta and co-workers \cite{FINELGupta2026}. Related $C^1$ Bogner--Fox--Schmit analysis of anisotropic strain-gradient boundary layers has also been reported by Rezk and co-workers \cite{FINELRezk2027}. Both strain-gradient studies concern higher-order mechanical models and do not validate the thermopiezoelectric voltage calculated here. This study examines the voltage-polarity error caused by omitting constrained transverse thermal expansion in the plane-strain reduction of a tetragonal crystal.
 
 Barium titanate (BaTiO$_3$) is a suitable material for such a study. Its
 room-temperature tetragonal phase has a complete, independently measured set of
@@ -111,8 +110,8 @@ tetragonal crystal requires retaining the constrained transverse thermal expansi
 If the thermal expansion in the constrained out-of-plane direction is dropped before
 the three-dimensional thermal stress is formed, the thermal load that drives both the
 mechanical and the electrical response is misrepresented (Section~\ref{sec:planestrain}).
-The effect is not represented in a strictly one-dimensional reduction; in the present
-tetragonal plane-strain problem, however, the constrained out-of-plane expansion
+A one-dimensional reduction does not capture this contribution. In the
+plane-strain tetragonal model, the constrained out-of-plane expansion
 contributes through the coupling terms involving the off-diagonal elastic constants.
 
 A second point concerns the pyroelectric coefficient itself. Pyroelectricity consists
@@ -160,7 +159,7 @@ gradient produce a strain field that varies in space in a way that a one-dimensi
 lumped model cannot represent, and this non-uniform strain controls the sign of the
 piezoelectric-thermal voltage. Finite-element formulations have been developed for such
 coupled-field problems ~\cite{ZienkiewiczTaylor2005,Hughes2000,Belytschko2000,Bathe1996}.
-Its piezoelectric form goes back to Allik and Hughes ~\cite{AllikHughes1970}, and it was
+Finite-element analysis of piezoelectric structures goes back to Allik and Hughes ~\cite{AllikHughes1970}, and it was
 followed by two- and three-dimensional device models ~\cite{Lerch1990,Tzou1993} and
 reviewed by Benjeddou ~\cite{Benjeddou2000a}. Studies of layered piezoelectric
 composites have further shown how material gradation and interface conditions control
@@ -1028,10 +1027,9 @@ another in the coupled response.
   \label{fig:fig03_cases_and_decomposition}
 \end{figure}
 
-Figure~\ref{fig:fig03_cases_and_decomposition}(a) presents the converged voltages as
-stems from zero. The pyroelectric-only stem is the longest and points downward, the
-combined stem also points downward but reaches less than half as far, and the
-piezoelectric-thermal stem is short and points upward. The zero-temperature case
+Figure~\ref{fig:fig03_cases_and_decomposition}(a) compares the converged voltages.
+Case~D gives the largest negative voltage, Case~A is less negative, and Case~E
+produces a smaller positive voltage. The zero-temperature case
 remains exactly at zero. This confirms that the reported voltages arise from the
 prescribed temperature field rather than from a residual numerical offset. Panel~(b)
 repeats the comparison on a common $16\times8$ mesh and includes the sum $V_D+V_E$.
@@ -1099,8 +1097,7 @@ near the ends. The non-uniform strain therefore persists because of the temperat
 gradient itself. Each layer would undergo a different thermal strain if unconstrained,
 since its temperature differs from that of adjacent layers. Compatibility between the
 layers, together with the plane-strain condition $\varepsilon_{yy}=0$, produces a strain
-field that varies through the thickness even away from the clamp. In the exact
-mid-span solution of Section~\ref{sec:midspan} the stresses $\sigma_{xx}$ and
+field that varies through the thickness even away from the clamp. In the analytical traction-free interior solution of Section~\ref{sec:midspan} the stresses $\sigma_{xx}$ and
 $\sigma_{zz}$ vanish identically. This is
 consistent with the classical result that a linear temperature field leaves a free
 beam or plate nearly stress-free ~\cite{BoleyWeiner1997}. Within the span range
@@ -1314,8 +1311,9 @@ and support, and it cannot be obtained from the free-sample secondary coefficien
 alone.
 
 \item Fixing all eight root degrees of freedom is stiffer than a classical displacement clamp.
-The classical clamp changes the voltages by about 0.1\% and converges faster, and the
-polarity change caused by the thermal-stress reduction is the same with both root conditions
+Replacing the all-derivative constraint with the classical clamp changes the voltages
+by about 0.1\% and improves convergence. The polarity reversal caused by the
+thermal-stress reduction persists under both root conditions
 and with an independent biquadratic discretization.
 
 \item The positive polarity of the piezoelectric-thermal voltage is preserved over one
