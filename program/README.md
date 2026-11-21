@@ -27,6 +27,8 @@ An historical all-derivative simulation is also accessible through `tpfem.solve_
 - `verification/conv_stats.py`: convergence statistics.
 - `verification/run_alpha_grid.py`: the parameter sensitivity grid.
 - `verification/results/*.csv`: **checked-in reference CSVs** (not promised bit-identical across BLAS implementations).
+- `../figures/Fig7_alpha_surface.tex`: 3D Case E plot that reads the nine existing solutions directly from `verification/results/alpha_grid.csv` (path relative to repository root).
+- `../figures/Fig8_polarity_boundary.tex`: polarity-zero line derived from the affine nine-point response, plotted against the sample points and the coordinatewise ±1-SE rectangle. The dashed boundary outside the grid is a model extrapolation, not an additional numerical solve.
 - `figure_code/make_fig1.py`: Fig. 1 generator.
 - `figure_code/make_figures.py`: Figs. 2, 3, 4, 5, 6 and 9 generators from the checked-in CSVs and numeric scripts.
 - `figures/*.pdf`: figure assets matching the root manuscript.
@@ -59,7 +61,10 @@ The production inputs are defined directly in `verification/tpfem.py` (BaTiO3 4m
 
 - Manuscript: `../manuscript_FINEL.tex`
 - Bibliography: `../references_FINEL.bib`
-- Journal figures actually used: `../figures/Fig1_model_schematic.pdf` through `../figures/Fig9_root_constraint_and_span.pdf` (seven explicitly referenced files, not a continuous sequence).
+- Journal figures actually used: seven PDFs in `../figures/` plus two LaTeX/PGFPlots figures (`../figures/Fig7_alpha_surface.tex`, `../figures/Fig8_polarity_boundary.tex`), for **nine manuscript figure environments**. The new figures read the authoritative checked-in `verification/results/alpha_grid.csv`; they require `pgfplots` in LaTeX.
 - Full detailed audit/history (kept outside the streamlined Overleaf branch): branch `revision/finel-submission-2026-11`, path `audit/`; especially `audit/ORIGINAL_PROGRAM_VS_FINEL_REVIEW_2026-11-21.md` and `audit/P6_FINAL_SUBMISSION_AUDIT.md`.
 
 No equations or numerical outcomes have been changed in order to populate this folder. The historical all-derivative code's authoritative input ZIP remains with the author; a copy would be needed only to reproduce that **historical independent implementation**, rather than the current paper's results.
+
+### Scientific provenance of Figs. 7 and 8
+The 48×24 classical-clamp sample values come directly from the stored 3×3 alpha grid. An affine least-squares regression of the nine points yields `V_E = 0.01529186*alpha1 + 0.03253166*alpha3` V (alpha quantities expressed in 1e-6 K^-1); the largest fit residual is approximately 2.3e-14 V, as expected for a linear model. The zero-voltage boundary `alpha3 = -0.4700607985*alpha1` and the nominal ±1 standard-error rectangle are interpretations of existing data; no additional FEM solves were performed to draw them. The compiler must be started at the repository root, so the CSV relative paths in the figure sources resolve correctly.
