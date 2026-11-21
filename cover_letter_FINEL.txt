@@ -1,0 +1,14 @@
+Dear Editor,
+
+We submit the manuscript entitled “Influence of anisotropic thermal expansion on voltage polarity in a thermopiezoelectric microcantilever” for consideration as a research article in Finite Elements in Analysis and Design.
+
+The manuscript uses a coupled finite-element formulation derived from a single electric enthalpy to analyse the open-circuit response of a tetragonal barium titanate microcantilever under a steady temperature gradient. Its central finding is that a plane-strain reduction which omits constrained transverse thermal expansion can reverse the predicted polarity of the piezoelectric-thermal voltage. The simplified calculation gives -0.22 V and the full contraction gives +0.19 V for the configuration examined.
+
+The study separates pyroelectric and strain-mediated piezoelectric effects, checks the exact one-dimensional pyroelectric limit, and reports mesh convergence and algebraic consistency checks. Its contribution concerns the consequences of constitutive reduction for numerical response predictions rather than a new element interpolation. We believe this is relevant to the journal’s interest in verifiable finite-element analysis of coupled boundary-value problems.
+
+Thank you for considering this manuscript.
+
+Sincerely,
+Anjali Patel
+Corresponding author
+p_anjali@blr.amrita.edu
