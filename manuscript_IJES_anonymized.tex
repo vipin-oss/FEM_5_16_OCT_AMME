@@ -81,14 +81,15 @@ elastic, piezoelectric and dielectric constants ~\cite{Zgonik1994,Berlincourt195
 heating, the $a$ axis of the tetragonal cell expands while the $c$ axis contracts, as
 shown by variable-temperature diffraction ~\cite{Nakatani2016} and by thermal-expansion
 measurements on related barium titanate-based ceramics ~\cite{Han2015,He2015Thermal}.
-Standard thermoelasticity accounts for anisotropic expansion
-~\cite{BoleyWeiner1997,Nowacki1975}. In the plane-strain reduction of a tetragonal
-crystal, the expansion in the constrained transverse direction must still be included
-when forming the thermal stress. Removing that term before contracting the
-three-dimensional tensors changes the mechanical load and, consequently, the
-calculated electrical response (Section~\ref{sec:planestrain}).
-The constraint sets transverse strain to zero, but the transverse expansion
-continues to contribute to in-plane stress through the off-diagonal elastic constants.
+The anisotropic expansion enters the mechanical problem through standard
+thermoelasticity ~\cite{BoleyWeiner1997,Nowacki1975}, but its plane-strain form for a
+tetragonal crystal requires retaining the constrained transverse thermal expansion.
+If the thermal expansion in the constrained out-of-plane direction is dropped before
+the three-dimensional thermal stress is formed, the thermal load that drives both the
+mechanical and the electrical response is misrepresented (Section~\ref{sec:planestrain}).
+A one-dimensional reduction misses this contribution. Even though transverse
+strain is zero under plane strain, transverse thermal expansion enters the
+in-plane stresses through the off-diagonal elastic constants.
 
 The constitutive equations require a distinction between primary and
 secondary pyroelectricity. The primary coefficient is defined at fixed
@@ -618,10 +619,11 @@ $p_3$ & $-3.41\times10^{-4}$ & C\,m$^{-2}$K$^{-1}$ & primary (fixed strain), 300
 \end{tabular}
 \end{table}
 
-The off-diagonal elastic constants $C_{12}$ and $C_{13}$ are roughly
-half of $C_{11}$. Constraining expansion along one axis therefore produces
-appreciable stresses along the other axes. We retain this transverse
-contribution in the plane-strain thermal-stress vector. Among the normal piezoelectric constants, $e_{33}$ is
+Several material constants control the response.
+The off-diagonal elastic constants $C_{12}$ and $C_{13}$ are about half of $C_{11}$,
+so thermal expansion constrained in one direction produces appreciable stress
+contributions in the other directions. The transverse contribution is retained when the plane-strain
+thermal-stress vector is formed. Among the normal piezoelectric constants, $e_{33}$ is
 positive and substantially larger in magnitude than $e_{31}$, so the strain component
 along the poling direction provides the larger direct contribution to the electric
 displacement. The through-thickness permittivity $\kappa_{33}$ is about forty times
@@ -965,12 +967,13 @@ Figure~\ref{fig:fig08_p3_sensitivity}(a) shows the computed voltage varying line
 with the $p_3$ scale factor, from a small positive value at zero pyroelectric
 coefficient to about $-3.2$~V at twice the nominal value. The value at zero scale
 factor is the Case~E voltage on this mesh, because Case~A without the pyroelectric
-term reduces to Case~E. The intercept corresponds to the piezoelectric--thermal part of
-the Case~A voltage, while the remaining term varies with $p_3$. At the nominal
-coefficient, that term is $-1.69$~V, compared with $-3.44$~V in Case~D,
-where piezoelectric coupling is absent. In Case~A, the pyroelectric field
-also causes converse piezoelectric deformation. The associated charge
-partly offsets the direct pyroelectric response. The residuals in panel~(b) fluctuate around zero at approximately
+term reduces to Case~E. The line therefore separates the Case~A voltage into an
+intercept associated with the piezoelectric-thermal contribution and a term proportional
+to $p_3$. At the nominal coefficient, the latter is $-1.69$~V, about half of the
+Case~D voltage of $-3.44$~V obtained without piezoelectric coupling. In Case~A, the
+pyroelectric field also contributes to the converse piezoelectric response; the
+resulting deformation generates an additional piezoelectric charge that partially
+opposes the direct pyroelectric contribution. The residuals in panel~(b) fluctuate around zero at approximately
 $10^{-15}$~V. No systematic departure from a straight line is visible.
 The affine dependence follows because $p_3$ enters the load vector; it need
 not hold when the varied parameter also changes $K$, as flexoelectric
@@ -1095,10 +1098,10 @@ amount, $+0.409$~V, while Case~D, which does not involve $\beta_{\mathrm{PS}}$, 
 unchanged. The equal shift follows from linearity: $\beta_{\mathrm{PS}}$ enters only
 the mechanical load vector, so changing $\beta_{\mathrm{PS}}$ produces the same
 mechanically generated voltage shift in the cases that contain piezoelectric coupling.
-Both omitted thermal-stress terms are positive. Including them
-increases the thermal load and shifts the piezoelectric--thermal voltage
-toward positive values. For these material parameters, this correction
-is enough to reverse the predicted voltage polarity.
+The terms omitted by the simplified reduction are positive in both components, so the
+full contraction increases the thermal load and shifts the resulting
+piezoelectric-thermal voltage toward the positive direction. For the chosen parameters, the thermal-stress reduction determines
+the sign of the piezoelectric-thermal voltage.
 
 No single material coefficient determines the sign of the voltage. The
 vector $\beta_{\mathrm{PS}}$ combines the positive $a$-axis coefficient and the
@@ -1168,8 +1171,8 @@ the corner farthest from the fitted coefficients. In Case~A all values are negat
 between $-1.735$ and $-1.261$~V. The difference $V_A-V_E=-1.691$~V is the same in all
 nine cells, so over this grid the pyroelectric part of Case~A does not depend on the
 thermal-expansion coefficients and the variation of the combined voltage enters through
-the piezoelectric-thermal part. Within the sampled grid, the sign of the voltage changes with the
-chosen pair of thermal-expansion coefficients.
+the piezoelectric-thermal part. The calculated polarity depends on the chosen pair of thermal-expansion
+coefficients within this grid.
 
 Figure~\ref{fig:alpha-polarity} locates the sign change in the
 thermal-expansion parameter plane.
@@ -1248,11 +1251,11 @@ applied. The simplified reduction omits the contribution associated with the blo
 out-of-plane expansion and underestimates the axial and through-thickness thermal
 stresses by about 35\% and 58\%, respectively.
 
-\item With the simplified reduction, the piezoelectric--thermal voltage is
-$-0.22$~V; the full contraction instead gives $+0.19$~V. The simplified
-calculation also overestimates the magnitude of the combined voltage by about
-27\%. Both coupled cases undergo the same voltage shift because their response
-is linear in the thermal load.
+\item This difference reverses the sign of the piezoelectric-thermal voltage, from
+$-0.22$~V with the simplified reduction to $+0.19$~V with the full contraction, and
+makes the combined voltage about 27\% too large in magnitude. The same thermal-stress
+change produces the same voltage shift in the coupled cases because the system is
+linear in the thermal load.
 
 \item The pyroelectric-only voltage, $-3.44$~V, agrees with the exact one-dimensional
 result to round-off. Using the fixed-strain coefficient rather than the total
