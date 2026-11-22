@@ -15,10 +15,10 @@
 \graphicspath{{figures/}}
 \emergencystretch=2em
 \raggedbottom
-\journal{Finite Elements in Analysis and Design}
+\journal{International Journal of Engineering Science}
 \begin{document}
 \begin{frontmatter}
-\title{Effect of constrained transverse thermal expansion on voltage polarity in a tetragonal BaTiO$_3$ microcantilever}
+\title{Thermopiezoelectric voltage polarity in a BaTiO$_3$ microcantilever: Influence of constrained transverse thermal expansion}
 \author[aff1]{Vipin Gupta}
 \author[aff2]{Sandeep Kumar}
 \author[aff3]{Mohd Vasiulla}
@@ -82,39 +82,14 @@ piezoelectric-thermal voltage. Coupled formulations in
 which temperature enters as an independent field together with strain and electric
 field, known as thermopiezoelectricity, were developed by Mindlin and by Nowacki
 ~\cite{Mindlin1972,Nowacki1975}. These formulations provide the basis for device models
-in which a prescribed temperature field is the load, and they have since been used to
-study coupled thermo-piezoelectric waves and vibrations in orthotropic
-hygro-thermo-piezoelastic media ~\cite{Gupta2024JNMP}, in piezo-thermo-electric
-semiconductors ~\cite{Gupta2024WRCM,Gupta2025HFF} and in porous piezo-thermoelastic
-solids ~\cite{Das2026KG}.
+in which a prescribed temperature field acts as a load. Related variational treatments of thermopiezoelectric fields provide a useful basis for the coupled boundary-value formulation \cite{IJESAltay1996}.
 
 
-Panda and Ray analysed functionally graded plates with piezoelectric fibre-composite
-actuators under static loading, with and without thermal effects \cite{FINELPanda2008}.
-Dash and Singh studied nonlinear free vibration of piezoelectric laminated plates
-\cite{FINELDash2009}. Zhou and co-workers developed a state-space finite-element
-formulation for piezoelectric precision positioning that accounts for the secondary
-converse piezoelectric effect \cite{FINELZhou2015}. Palma and co-workers compared
-reduced and three-dimensional coupled elasto-thermoelectric beam models
-\cite{FINELPalma2017}. That formulation deals with thermoelectric
-transport; the electrical response considered here arises from
-pyroelectricity and piezoelectricity.
-
-Other finite-element applications include reduced-order thermal--mechanical analysis
-of electronic modules \cite{FINELHassan2026}, strain-gradient formulations with
-ellipsoidal nonlocal lengths \cite{FINELGupta2026}, and $C^1$ Bogner--Fox--Schmit
-analysis of anisotropic strain-gradient boundary layers \cite{FINELRezk2027}.
-The latter two studies address higher-order mechanical effects.
-Our calculations instead examine the voltage error caused by
-omitting transverse thermal expansion when imposing plane strain
-on a tetragonal crystal.
+Coupled engineering models have also examined interactions among thermal, elastic and electrical fields. Qu and co-workers developed a thermodynamically based description of thermoelectric effects in piezoelectric semiconductors \cite{IJESQu2023}. Singh and co-workers used finite-element homogenization to evaluate elastic, thermal, piezoelectric and pyroelectric properties of photostrictive composites \cite{IJESSingh2022}. These studies concern different materials and coupling mechanisms; the present work addresses thermal-stress reduction and voltage polarity in a single tetragonal crystal.
 
 Barium titanate (BaTiO$_3$) is a suitable material for such a study. Its
 room-temperature tetragonal phase has a complete, independently measured set of
-elastic, piezoelectric and dielectric constants ~\cite{Zgonik1994,Berlincourt1958}. Its
-ferroelectric phase transitions were established in classical single-crystal studies
-~\cite{Merz1949,KayVousden1949} and explained by Devonshire's phenomenological theory
-~\cite{Devonshire1949,Devonshire1951}. The crystal is also thermally anisotropic: on
+elastic, piezoelectric and dielectric constants ~\cite{Zgonik1994,Berlincourt1958}. Its ferroelectric behaviour is consistent with Devonshire's phenomenological description \cite{Devonshire1949}. The crystal is also thermally anisotropic: on
 heating, the $a$ axis of the tetragonal cell expands while the $c$ axis contracts, as
 shown by variable-temperature diffraction ~\cite{Nakatani2016} and by thermal-expansion
 measurements on related barium titanate-based ceramics ~\cite{Han2015,He2015Thermal}.
@@ -162,25 +137,16 @@ and cantilever geometries similar to the present one
 internal material length scale, which rests on the strain-gradient theories of Toupin
 and Mindlin ~\cite{Toupin1962,Mindlin1964,MindlinEshel1968}. The formulation below
 contains this term for generality, while the voltages reported here are computed
-without it. Size-dependent flexoelectric and flexomagnetic
-effects have also been shown to change the dispersion and attenuation of shear waves in
-layered structures with imperfect or irregular interfaces
-~\cite{Meghana2025,Gupta2026AMM}.
+without it. Recent continuum treatments have examined converse flexoelectricity in thin plates, strain-gradient/electric-current coupling in semiconductors and flexoelectric composites with imperfect interfaces \cite{IJESYurkov2023,IJESQu2025,IJESSerpilli2026}. These are related higher-order settings, whereas flexoelectric coupling is disabled in the numerical results reported here.
 
 Once realistic boundary conditions are imposed, the coupled problem has no simple
 closed-form solution. The plane-strain constraint and the through-thickness temperature
 gradient produce a strain field that varies in space in a way that a one-dimensional or
 lumped model cannot represent, and this non-uniform strain controls the sign of the
-piezoelectric-thermal voltage. Finite-element formulations have been developed for such
-coupled-field problems ~\cite{ZienkiewiczTaylor2005,Hughes2000,Belytschko2000,Bathe1996}.
+piezoelectric-thermal voltage. Finite-element treatment of coupled boundary-value problems builds on established variational and discretization principles \cite{Bathe1996}.
 Finite-element analysis of piezoelectric structures goes back to Allik and Hughes ~\cite{AllikHughes1970}, and it was
 followed by two- and three-dimensional device models ~\cite{Lerch1990,Tzou1993} and
-reviewed by Benjeddou ~\cite{Benjeddou2000a}. Studies of layered piezoelectric
-composites have further shown how material gradation and interface conditions control
-the coupled electromechanical response ~\cite{Gupta2025CS}.
-Thermopiezoelectric beam elements have also been used for vibration
-and active control under thermal loading ~\cite{Sanbi2014ThermoPyroBeam}.
-The present calculations are static and concern a single crystal. The higher-order extension of the formulation requires $C^1$
+reviewed by Benjeddou ~\cite{Benjeddou2000a}. The present calculations are static and concern a single crystal. The higher-order extension of the formulation requires $C^1$
 continuous mechanical interpolation. We use the classical
 Bogner--Fox--Schmit (BFS) rectangular element ~\cite{Bogner1965}, which supplies this continuity without the extra
 interface unknowns of mixed or penalty-based $C^0$ formulations. Flexoelectric coupling is disabled in all reported calculations. The BFS
