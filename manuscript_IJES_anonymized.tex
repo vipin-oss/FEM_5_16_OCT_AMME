@@ -53,106 +53,129 @@ $e_{kij}$ & Piezoelectric tensor & &\\
 The spontaneous polarization of a pyroelectric material changes with
 temperature, producing an electrical response. This effect is used in
 infrared detectors, thermal imaging and devices that harvest energy
-from temperature fluctuations ~\cite{Lang2005Pyro,Whatmore1986,Lubomirsky2012}.
+from temperature fluctuations~\cite{Lang2005Pyro,Whatmore1986,Lubomirsky2012}.
 A temperature gradient across a compliant cantilever also induces
 deformation. Since pyroelectric crystals are piezoelectric, the resulting
 strain contributes to the electric displacement alongside the direct
-pyroelectric term. We compute these contributions in a coupled
-thermo-electro-mechanical model and report the voltage between the
-electrodes under the open-circuit condition.
+pyroelectric term. These contributions are computed in a coupled
+thermo-electro-mechanical model, and the voltage between the electrodes
+is reported under the open-circuit condition.
 
-The two contributions are sometimes estimated separately:
-the pyroelectric voltage from a one-dimensional electrical model and
-the strain-mediated term from a simplified thermal-stress calculation.
-Such a calculation may omit parts of the anisotropic thermal expansion.
-For the cantilever studied here, this omission reverses the predicted
-piezoelectric-thermal voltage. Coupled formulations in
-which temperature enters as an independent field together with strain and electric
-field, known as thermopiezoelectricity, were developed by Mindlin and by Nowacki
-~\cite{Mindlin1972,Nowacki1975}. These formulations provide the basis for device models
-in which a prescribed temperature field acts as a load. Related variational treatments of thermopiezoelectric fields provide a useful basis for the coupled boundary-value formulation \cite{IJESAltay1996}.
+The two contributions are sometimes estimated separately, with the
+pyroelectric voltage obtained from a one-dimensional electrical model
+and the strain-mediated term from a simplified thermal-stress calculation.
+Coupled formulations in which temperature enters as an independent
+field together with strain and electric field, known as
+thermopiezoelectricity, were developed by Mindlin and by
+Nowacki~\cite{Mindlin1972,Nowacki1975}. These formulations provide the
+basis for device models in which a prescribed temperature field acts
+as a load. Related variational treatments of thermopiezoelectric fields
+provide a basis for the coupled boundary-value formulation~\cite{IJESAltay1996}.
 
-
-Coupled engineering models have also examined interactions among thermal, elastic and electrical fields. Qu and co-workers developed a thermodynamically based description of thermoelectric effects in piezoelectric semiconductors \cite{IJESQu2023}. Singh and co-workers used finite-element homogenization to evaluate elastic, thermal, piezoelectric and pyroelectric properties of photostrictive composites \cite{IJESSingh2022}. These studies concern different materials and coupling mechanisms; the present work addresses thermal-stress reduction and voltage polarity in a single tetragonal crystal.
+Coupled engineering models have also examined interactions among thermal,
+elastic and electrical fields. Qu and co-workers developed a
+thermodynamically based description of thermoelectric effects in
+piezoelectric semiconductors~\cite{IJESQu2023}. Singh and co-workers used
+finite-element homogenization to evaluate elastic, thermal, piezoelectric
+and pyroelectric properties of photostrictive composites~\cite{IJESSingh2022}.
+These studies concern different materials and coupling mechanisms. The
+present work addresses thermal-stress reduction and voltage polarity in
+a single tetragonal crystal.
 
 Barium titanate (BaTiO$_3$) is a suitable material for such a study. Its
-room-temperature tetragonal phase has a complete, independently measured set of
-elastic, piezoelectric and dielectric constants ~\cite{Zgonik1994,Berlincourt1958}. Its ferroelectric behaviour is consistent with Devonshire's phenomenological description \cite{Devonshire1949}. The crystal is also thermally anisotropic: on
-heating, the $a$ axis of the tetragonal cell expands while the $c$ axis contracts, as
-shown by variable-temperature diffraction ~\cite{Nakatani2016} and by thermal-expansion
-measurements on related barium titanate-based ceramics ~\cite{Han2015,He2015Thermal}.
+room-temperature tetragonal phase has a complete, independently measured
+set of elastic, piezoelectric and dielectric constants~\cite{Zgonik1994,Berlincourt1958}.
+Its ferroelectric behaviour is consistent with Devonshire's
+phenomenological description~\cite{Devonshire1949}. The crystal is also
+thermally anisotropic. On heating, the $a$ axis of the tetragonal cell
+expands while the $c$ axis contracts, as shown by variable-temperature
+diffraction~\cite{Nakatani2016} and by thermal-expansion measurements on
+related barium titanate-based ceramics~\cite{Han2015,He2015Thermal}.
 The anisotropic expansion enters the mechanical problem through standard
-thermoelasticity ~\cite{BoleyWeiner1997,Nowacki1975}, but its plane-strain form for a
-tetragonal crystal requires retaining the constrained transverse thermal expansion.
-If the thermal expansion in the constrained out-of-plane direction is dropped before
-the three-dimensional thermal stress is formed, the thermal load that drives both the
-mechanical and the electrical response is misrepresented (Section~\ref{sec:planestrain}).
-A one-dimensional reduction misses this contribution. Even though transverse
-strain is zero under plane strain, transverse thermal expansion enters the
-in-plane stresses through the off-diagonal elastic constants.
+thermoelasticity~\cite{BoleyWeiner1997,Nowacki1975}. Under plane strain,
+the transverse strain is zero. The transverse thermal expansion still
+contributes to the in-plane stresses through the off-diagonal elastic
+constants. For the cantilever studied here, omitting this expansion
+before forming the three-dimensional thermal-stress vector reverses
+the predicted piezoelectric--thermal voltage
+(Section~\ref{sec:planestrain}).
 
 The constitutive equations require a distinction between primary and
 secondary pyroelectricity. The primary coefficient is defined at fixed
 strain. The secondary response arises from thermal expansion and
-piezoelectric coupling in a mechanically free specimen. Their
-sum is the total (free) coefficient usually reported from bulk measurements
-~\cite{Lang2005Pyro,Tagantsev1991,Lubomirsky2012}. A constitutive law written in terms
-of strain, electric field and temperature requires the primary coefficient, because the
-secondary part is produced by the piezoelectric term acting on the computed strain
-field; using the total coefficient would count this part twice. The total coefficient
-is commonly tabulated for ceramics, whereas the primary coefficient requires a more
-specialized measurement or calculation. A recent first-principles study of tetragonal
-BaTiO$_3$ reports the primary, secondary and total coefficients from one consistent
-calculation ~\cite{EklundKarttunen2023}, and it provides the primary coefficient used here.
+piezoelectric coupling in a mechanically free specimen. Their sum is
+the total (free) coefficient usually reported from bulk
+measurements~\cite{Lang2005Pyro,Tagantsev1991,Lubomirsky2012}. A
+constitutive law written in terms of strain, electric field and
+temperature requires the primary coefficient because the piezoelectric
+term acting on the computed strain field already supplies the secondary
+contribution. Using the total coefficient would count this contribution
+twice. The total coefficient is commonly tabulated for ceramics, whereas
+the primary coefficient requires a more specialized measurement or
+calculation. A first-principles study of tetragonal BaTiO$_3$ reports
+the primary, secondary and total coefficients from one consistent
+calculation~\cite{EklundKarttunen2023}. The primary coefficient from that
+study is used here.
 
-Both the primary and the secondary effects assume a uniform change of temperature. A
-non-uniform temperature field, and the non-uniform strain it produces, gives rise to
-what is called the tertiary pyroelectric effect ~\cite{Lang2005Pyro}. One of the cases
-studied below (Case~E), in which a through-thickness temperature gradient acts on the
-crystal with only the piezoelectric coupling active, is a finite-element treatment of
-this tertiary mechanism for a specific geometry. Thermal-stress enhancement of the
-pyroelectric response has recently been demonstrated experimentally in a polymer/mica
-bimorph ~\cite{Su2026ThermalStressPyro}, where the stress comes from the
-thermal-expansion mismatch between two layers. Here the specimen is a single tetragonal crystal under a through-thickness
-temperature gradient, and the quantity of interest is voltage polarity.
+The conventional primary and secondary responses are defined for a
+uniform temperature change. A non-uniform temperature field, and the
+non-uniform strain it produces, gives rise to what is called the
+tertiary pyroelectric effect~\cite{Lang2005Pyro}. One of the cases
+studied below (Case~E), in which a through-thickness temperature
+gradient acts on the crystal with only the piezoelectric coupling
+active, is a finite-element treatment of this tertiary mechanism for
+a specific geometry. Thermal-stress enhancement of the pyroelectric
+response has recently been demonstrated experimentally in a polymer/mica
+bimorph~\cite{Su2026ThermalStressPyro}, where the stress comes from
+the thermal-expansion mismatch between two layers. Here the specimen
+is a single tetragonal crystal under a through-thickness temperature
+gradient, and the quantity of interest is voltage polarity.
 
-Flexoelectricity couples polarization to strain gradients and can become important
-at small structural length scales. It is therefore
-relevant to the strongly curved bending fields of microcantilevers
-~\cite{Tagantsev1986,Cross2006,Zubko2013}, including barium titanate ~\cite{MaCross2006}
-and cantilever geometries similar to the present one
-~\cite{Huang2007,Mao2016,Abdollahi2014}. A consistent flexoelectric term requires an
-internal material length scale, which rests on the strain-gradient theories of Toupin
-and Mindlin ~\cite{Toupin1962,Mindlin1964,MindlinEshel1968}. The formulation below
-contains this term for generality, while the voltages reported here are computed
-without it. Recent continuum treatments have examined converse flexoelectricity in thin plates, strain-gradient/electric-current coupling in semiconductors and flexoelectric composites with imperfect interfaces \cite{IJESYurkov2023,IJESQu2025,IJESSerpilli2026}. These are related higher-order settings, whereas flexoelectric coupling is disabled in the numerical results reported here.
+Flexoelectricity couples polarization to strain gradients and can
+become important at small structural length scales. It is relevant to
+bending in microcantilevers~\cite{Tagantsev1986,Cross2006,Zubko2013}
+and has been investigated in barium titanate~\cite{MaCross2006} and in
+cantilever geometries similar to the present one~\cite{Huang2007,Mao2016,Abdollahi2014}.
+The higher-order extension of the present formulation uses an internal
+material length scale within the strain-gradient framework of Toupin
+and Mindlin~\cite{Toupin1962,Mindlin1964,MindlinEshel1968}. Recent
+continuum treatments have examined converse flexoelectricity in thin
+plates, strain-gradient/electric-current coupling in semiconductors
+and flexoelectric composites with imperfect
+interfaces~\cite{IJESYurkov2023,IJESQu2025,IJESSerpilli2026}.
+Flexoelectric coupling is included in the general formulation and set
+to zero in all reported voltage calculations.
 
-Once realistic boundary conditions are imposed, the coupled problem has no simple
-closed-form solution. The plane-strain constraint and the through-thickness temperature
-gradient produce a strain field that varies in space in a way that a one-dimensional or
-lumped model cannot represent, and this non-uniform strain controls the sign of the
-piezoelectric-thermal voltage. Finite-element treatment of coupled boundary-value problems builds on established variational and discretization principles \cite{Bathe1996}.
-Finite-element analysis of piezoelectric structures goes back to Allik and Hughes ~\cite{AllikHughes1970}, and it was
-followed by two- and three-dimensional device models ~\cite{Lerch1990,Tzou1993} and
-reviewed by Benjeddou ~\cite{Benjeddou2000a}. The present calculations are static and concern a single crystal. The higher-order extension of the formulation requires $C^1$
-continuous mechanical interpolation. We use the classical
-Bogner--Fox--Schmit (BFS) rectangular element ~\cite{Bogner1965}, which supplies this continuity without the extra
-interface unknowns of mixed or penalty-based $C^0$ formulations. Flexoelectric coupling is disabled in all reported calculations. The BFS
-element is retained for compatibility with the higher-order formulation,
-although classical piezoelectricity does not require $C^1$ interpolation.
+The plane-strain constraint and the through-thickness temperature
+gradient produce a spatially varying strain field. A two-dimensional
+finite-element model is used to resolve this field and compute its
+contribution to the voltage. The finite-element treatment of the coupled
+boundary-value problem builds on established variational and
+discretization principles~\cite{Bathe1996}. Finite-element analysis of
+piezoelectric structures goes back to Allik and Hughes~\cite{AllikHughes1970}.
+Their work was followed by two- and three-dimensional device
+models~\cite{Lerch1990,Tzou1993} and reviewed by Benjeddou~\cite{Benjeddou2000a}.
+The present calculations are static and concern a single crystal.
+The classical Bogner--Fox--Schmit (BFS) rectangular
+element~\cite{Bogner1965} supplies the $C^1$ mechanical continuity
+required by the higher-order extension without the extra interface
+unknowns of mixed or penalty-based $C^0$ formulations. Classical
+piezoelectricity can be treated with $C^0$ interpolation. The BFS
+element is retained for compatibility with the higher-order formulation.
 
-The calculation focuses on the voltage generated by anisotropic thermal
-expansion when transverse strain is constrained. The thermal
-load is obtained by contracting the full three-dimensional stiffness and expansion
-tensors before imposing plane strain. A fixed-strain pyroelectric coefficient is used
-to avoid counting the strain-mediated contribution twice. The expansion coefficients
-are fitted to single-crystal diffraction data, and their uncertainties are propagated
-to the voltage. Mesh convergence, an exact pyroelectric limit and independent
-discretization checks are used to assess the numerical solution. Coupled and uncoupled
-calculations then identify the contribution responsible for the voltage polarity.
-Neither the thermal-stress contraction nor the distinction between fixed-strain and
-free pyroelectric coefficients is a new constitutive law.
-
+The calculation focuses on the open-circuit voltage generated by
+anisotropic thermal expansion when transverse strain is constrained.
+The thermal load is obtained by contracting the full three-dimensional
+stiffness and thermal-expansion tensors before imposing plane strain.
+A fixed-strain pyroelectric coefficient is used to avoid counting the
+strain-mediated contribution twice. The expansion coefficients are
+fitted to single-crystal diffraction data, and their uncertainties
+are propagated to the voltage. Mesh refinement, an exact
+one-dimensional pyroelectric limit and an independent discretization
+are used to assess the numerical solution. The limiting and fully
+coupled cases are then compared to determine how the plane-strain
+thermal-stress reduction affects the magnitude and polarity of the
+voltage.
 
 %======================================================================
 \section{Mathematical Formulation}
