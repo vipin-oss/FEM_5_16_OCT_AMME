@@ -65,40 +65,38 @@ $e_{kij}$ & Piezoelectric tensor & &\\
 The spontaneous polarization of a pyroelectric material changes with
 temperature, producing an electrical response. This effect is used in
 infrared detectors, thermal imaging and devices that harvest energy
-from temperature fluctuations ~\cite{Lang2005Pyro,Whatmore1986,Lubomirsky2012}.
+from temperature fluctuations~\cite{Lang2005Pyro,Whatmore1986,Lubomirsky2012}.
 A temperature gradient across a compliant cantilever also induces
 deformation. Since pyroelectric crystals are piezoelectric, the resulting
 strain contributes to the electric displacement alongside the direct
-pyroelectric term. We compute these contributions in a coupled
-thermo-electro-mechanical model and report the voltage between the
-electrodes under the open-circuit condition.
+pyroelectric term. These contributions are computed in a coupled
+thermo-electro-mechanical model, and the voltage between the
+electrodes is reported under the open-circuit condition.
 
 The two contributions are sometimes estimated separately:
 the pyroelectric voltage from a one-dimensional electrical model and
 the strain-mediated term from a simplified thermal-stress calculation.
 Such a calculation may omit parts of the anisotropic thermal expansion.
 For the cantilever studied here, this omission reverses the predicted
-piezoelectric-thermal voltage. Coupled formulations in
+piezoelectric--thermal voltage. Coupled formulations in
 which temperature enters as an independent field together with strain and electric
-field, known as thermopiezoelectricity, were developed by Mindlin and by Nowacki
-~\cite{Mindlin1972,Nowacki1975}. These formulations provide the basis for device models
+field, known as thermopiezoelectricity, were developed by Mindlin and by Nowacki~\cite{Mindlin1972,Nowacki1975}. These formulations provide the basis for device models
 in which a prescribed temperature field acts as a load. Related variational treatments of thermopiezoelectric fields provide a useful basis for the coupled boundary-value formulation \cite{IJESAltay1996}.
-
 
 Coupled engineering models have also examined interactions among thermal, elastic and electrical fields. Qu and co-workers developed a thermodynamically based description of thermoelectric effects in piezoelectric semiconductors \cite{IJESQu2023}. Singh and co-workers used finite-element homogenization to evaluate elastic, thermal, piezoelectric and pyroelectric properties of photostrictive composites \cite{IJESSingh2022}. These studies concern different materials and coupling mechanisms; the present work addresses thermal-stress reduction and voltage polarity in a single tetragonal crystal.
 
 Barium titanate (BaTiO$_3$) is a suitable material for such a study. Its
 room-temperature tetragonal phase has a complete, independently measured set of
-elastic, piezoelectric and dielectric constants ~\cite{Zgonik1994,Berlincourt1958}. Its ferroelectric behaviour is consistent with Devonshire's phenomenological description \cite{Devonshire1949}. The crystal is also thermally anisotropic: on
+elastic, piezoelectric and dielectric constants~\cite{Zgonik1994,Berlincourt1958}. Its ferroelectric behaviour is consistent with Devonshire's phenomenological description \cite{Devonshire1949}. The crystal is also thermally anisotropic: on
 heating, the $a$ axis of the tetragonal cell expands while the $c$ axis contracts, as
-shown by variable-temperature diffraction ~\cite{Nakatani2016} and by thermal-expansion
-measurements on related barium titanate-based ceramics ~\cite{Han2015,He2015Thermal}.
+shown by variable-temperature diffraction~\cite{Nakatani2016} and by thermal-expansion
+measurements on related barium titanate-based ceramics~\cite{Han2015,He2015Thermal}.
 The anisotropic expansion enters the mechanical problem through standard
-thermoelasticity ~\cite{BoleyWeiner1997,Nowacki1975}, but its plane-strain form for a
+thermoelasticity~\cite{BoleyWeiner1997}, but its plane-strain form for a
 tetragonal crystal requires retaining the constrained transverse thermal expansion.
 If the thermal expansion in the constrained out-of-plane direction is dropped before
 the three-dimensional thermal stress is formed, the thermal load that drives both the
-mechanical and the electrical response is misrepresented (Section~\ref{sec:planestrain}).
+mechanical and the electrical response is misrepresented.
 A one-dimensional reduction misses this contribution. Even though transverse
 strain is zero under plane strain, transverse thermal expansion enters the
 in-plane stresses through the off-diagonal elastic constants.
@@ -107,35 +105,32 @@ The constitutive equations require a distinction between primary and
 secondary pyroelectricity. The primary coefficient is defined at fixed
 strain. The secondary response arises from thermal expansion and
 piezoelectric coupling in a mechanically free specimen. Their
-sum is the total (free) coefficient usually reported from bulk measurements
-~\cite{Lang2005Pyro,Tagantsev1991,Lubomirsky2012}. A constitutive law written in terms
+sum is the total (free) coefficient usually reported from bulk measurements~\cite{Tagantsev1991}. A constitutive law written in terms
 of strain, electric field and temperature requires the primary coefficient, because the
 secondary part is produced by the piezoelectric term acting on the computed strain
 field; using the total coefficient would count this part twice. The total coefficient
 is commonly tabulated for ceramics, whereas the primary coefficient requires a more
 specialized measurement or calculation. A recent first-principles study of tetragonal
 BaTiO$_3$ reports the primary, secondary and total coefficients from one consistent
-calculation ~\cite{EklundKarttunen2023}, and it provides the primary coefficient used here.
+calculation~\cite{EklundKarttunen2023}, which provides the primary coefficient used here.
 
 Both the primary and the secondary effects assume a uniform change of temperature. A
 non-uniform temperature field, and the non-uniform strain it produces, gives rise to
-what is called the tertiary pyroelectric effect ~\cite{Lang2005Pyro}. One of the cases
-studied below (Case~E), in which a through-thickness temperature gradient acts on the
+what is called the tertiary pyroelectric effect. One of the cases
+studied here, in which a through-thickness temperature gradient acts on the
 crystal with only the piezoelectric coupling active, is a finite-element treatment of
 this tertiary mechanism for a specific geometry. Thermal-stress enhancement of the
 pyroelectric response has recently been demonstrated experimentally in a polymer/mica
-bimorph ~\cite{Su2026ThermalStressPyro}, where the stress comes from the
+bimorph~\cite{Su2026ThermalStressPyro}, where the stress comes from the
 thermal-expansion mismatch between two layers. Here the specimen is a single tetragonal crystal under a through-thickness
 temperature gradient, and the quantity of interest is voltage polarity.
 
 Flexoelectricity couples polarization to strain gradients and can become important
 at small structural length scales. It is therefore
-relevant to the strongly curved bending fields of microcantilevers
-~\cite{Tagantsev1986,Cross2006,Zubko2013}, including barium titanate ~\cite{MaCross2006}
-and cantilever geometries similar to the present one
-~\cite{Huang2007,Mao2016,Abdollahi2014}. A consistent flexoelectric term requires an
+relevant to the strongly curved bending fields of microcantilevers~\cite{Tagantsev1986,Cross2006,Zubko2013}, including barium titanate~\cite{MaCross2006}
+and cantilever geometries similar to the present one~\cite{Huang2007,Mao2016,Abdollahi2014}. A consistent flexoelectric term requires an
 internal material length scale, which rests on the strain-gradient theories of Toupin
-and Mindlin ~\cite{Toupin1962,Mindlin1964,MindlinEshel1968}. The formulation below
+and Mindlin~\cite{Toupin1962,Mindlin1964,MindlinEshel1968}. The formulation
 contains this term for generality, while the voltages reported here are computed
 without it. Recent continuum treatments have examined converse flexoelectricity in thin plates, strain-gradient/electric-current coupling in semiconductors and flexoelectric composites with imperfect interfaces \cite{IJESYurkov2023,IJESQu2025,IJESSerpilli2026}. These are related higher-order settings, whereas flexoelectric coupling is disabled in the numerical results reported here.
 
@@ -143,12 +138,12 @@ Once realistic boundary conditions are imposed, the coupled problem has no simpl
 closed-form solution. The plane-strain constraint and the through-thickness temperature
 gradient produce a strain field that varies in space in a way that a one-dimensional or
 lumped model cannot represent, and this non-uniform strain controls the sign of the
-piezoelectric-thermal voltage. Finite-element treatment of coupled boundary-value problems builds on established variational and discretization principles \cite{Bathe1996}.
-Finite-element analysis of piezoelectric structures goes back to Allik and Hughes ~\cite{AllikHughes1970}, and it was
-followed by two- and three-dimensional device models ~\cite{Lerch1990,Tzou1993} and
-reviewed by Benjeddou ~\cite{Benjeddou2000a}. The present calculations are static and concern a single crystal. The higher-order extension of the formulation requires $C^1$
-continuous mechanical interpolation. We use the classical
-Bogner--Fox--Schmit (BFS) rectangular element ~\cite{Bogner1965}, which supplies this continuity without the extra
+piezoelectric--thermal voltage. Finite-element treatment of coupled boundary-value problems builds on established variational and discretization principles \cite{Bathe1996}.
+Finite-element analysis of piezoelectric structures goes back to Allik and Hughes~\cite{AllikHughes1970}, and it was
+followed by two- and three-dimensional device models~\cite{Lerch1990,Tzou1993} and
+reviewed by Benjeddou~\cite{Benjeddou2000a}. The present calculations are static and concern a single crystal. The higher-order extension of the formulation requires $C^1$
+continuous mechanical interpolation. The classical
+Bogner--Fox--Schmit (BFS) rectangular element~\cite{Bogner1965} is used, which supplies this continuity without the extra
 interface unknowns of mixed or penalty-based $C^0$ formulations. Flexoelectric coupling is disabled in all reported calculations. The BFS
 element is retained for compatibility with the higher-order formulation,
 although classical piezoelectricity does not require $C^1$ interpolation.
@@ -180,7 +175,7 @@ $\theta=T-T_0$, with $E_i=-\phi_{,i}$ and small-strain kinematics
 $\varepsilon_{ij}=\tfrac12(u_{i,j}+u_{j,i})$. Plane strain imposes
 $\varepsilon_{yy}=\varepsilon_{xy}=\varepsilon_{yz}=0$ and $\partial_y(\cdot)\equiv0$,
 which leaves the active strains $\varepsilon_{xx}=u_{,x}$, $\varepsilon_{zz}=w_{,z}$
-and $\gamma_{xz}=u_{,z}+w_{,x}$. In Voigt notation ~\cite{Nye1985,IEEE176} the active
+and $\gamma_{xz}=u_{,z}+w_{,x}$. In Voigt notation~\cite{Nye1985,IEEE176} the active
 strain vector is $\bm\varepsilon=[\varepsilon_{xx},\varepsilon_{zz},\gamma_{xz}]^\top$,
 where the shear component is the engineering strain $\gamma_{xz}=2\varepsilon_{xz}$.
 The factor of two appears once, in the strain vector, and the reduced stiffness and
@@ -213,14 +208,13 @@ H(\varepsilon,E,\theta)=\tfrac12 C_{ijkl}\varepsilon_{ij}\varepsilon_{kl}
 where $\beta_{ij}:=C_{ijkl}\alpha_{kl}$ is the thermal-stress coefficient and
 $\alpha_{ij}$ the linear thermal-expansion tensor. The independent variables are the
 total strain $\varepsilon$, the electric field $E$ and the temperature increment
-$\theta$, which is the electric-enthalpy form used in piezoelectricity
-~\cite{Tiersten1969b,Yang2005b}. Differentiation gives
+$\theta$, which is the electric-enthalpy form used in piezoelectricity~\cite{Tiersten1969b,Yang2005b}. Differentiation gives
 \begin{equation}
 \sigma_{ij}=\frac{\partial H}{\partial\varepsilon_{ij}}
 =C_{ijkl}(\varepsilon_{kl}-\alpha_{kl}\theta)-e_{kij}E_k,
 \qquad
 D_i=-\frac{\partial H}{\partial E_i}
-=e_{ikl}\varepsilon_{kl}+\kappa_{ij}E_j+p_i\theta,
+=e_{ikl}\varepsilon_{kl}+\kappa_{ij}E_j+p_i\theta.
 \label{eq:constitutive}
 \end{equation}
 The thermal term appears as an eigenstrain in the stress, so that the material responds
@@ -326,16 +320,11 @@ $A=C_{44}\ell^2\mathbb{I}$ of Mindlin form~II, where $\ell$ is an internal mater
 length. Both are implemented reciprocally, as cross-derivatives of one enthalpy
 augmented with the terms
 $\tfrac12A_{jklmno}\eta_{jkl}\eta_{mno}-\mu_{kjkl}\eta_{jkl}E_k$, following the
-strain-gradient theories of Toupin, Mindlin and Koiter
-~\cite{Toupin1962,Mindlin1964,MindlinEshel1968} and their later engineering forms
-~\cite{FleckHutchinson1997,Lam2003,AskesAifantis2011}, in line with recent flexoelectric
-finite-element frameworks
-~\cite{Mao2016,MaoPurohit2014,Abdollahi2014}. Effective flexoelectric tensors have
+strain-gradient theories of Toupin, Mindlin and Koiter~\cite{Toupin1962,Mindlin1964,MindlinEshel1968} and their later engineering forms~\cite{FleckHutchinson1997,Lam2003,AskesAifantis2011}, in line with recent flexoelectric
+finite-element frameworks~\cite{Mao2016,MaoPurohit2014,Abdollahi2014}. Effective flexoelectric tensors have
 been obtained from first-principles and atomistic calculations for several perovskites
-and other dielectrics
-~\cite{MarangantiSharma2009,HongVanderbilt2011,Stengel2013}, and length scales have
-been measured in flexoelectric barium titanate ceramics
-~\cite{MaCross2006,Huang2007}. All voltages reported in this paper are computed with
+and other dielectrics~\cite{MarangantiSharma2009,HongVanderbilt2011,Stengel2013}, and length scales have
+been measured in flexoelectric barium titanate ceramics~\cite{MaCross2006,Huang2007}. All voltages reported in this paper are computed with
 $\mu_{ijkl}=0$ and $\ell=0$, so that they reflect the piezoelectric and pyroelectric
 mechanisms only. The flexoelectric term is retained in the formulation so that the
 same $C^1$-conforming discretization can be used when strain-gradient terms are
@@ -411,8 +400,8 @@ $\delta E_i=-\delta\phi_{,i}$ gives the coupled virtual-work statement
 \label{eq:weakform}
 \end{equation}
 With the interpolations $\bm u\approx N_uq_u$ and
-$\phi\approx N_\phi q_\phi$ over each Bogner--Fox--Schmit element
-, the strain and electric field are
+$\phi\approx N_\phi q_\phi$ over each Bogner--Fox--Schmit element,
+the strain and electric field are
 $\bm\varepsilon\approx B_\varepsilon q_u$ and
 $\bm E\approx-B_\phi q_\phi$. Substituting these relations and the matrix form of
 \eqref{eq:constitutive},
@@ -456,7 +445,7 @@ mixed derivatives is also verified numerically.
 \label{sec:discretization}
 
 The mechanical fields are interpolated with the 16-function Bogner--Fox--Schmit
-basis ~\cite{Bogner1965}. On the reference element
+basis~\cite{Bogner1965}. On the reference element
 $\xi,\eta\in[-1,1]$, each mechanical component ($u$ or $w$) is represented by a
 tensor-product cubic Hermite interpolation,
 \begin{align}
@@ -477,7 +466,7 @@ reference-element construction and provide the required nodal value and derivati
 properties. Explicitly,
 \begin{equation}
 H_0(s)=\tfrac14(2-3s+s^3),\qquad
-H_1(s)=\tfrac14(1-s-s^2+s^3),
+H_1(s)=\tfrac14(1-s-s^2+s^3).
 \label{eq:hermite}
 \end{equation}
 Each node therefore carries the field value, the two first derivatives, and the mixed
@@ -510,7 +499,7 @@ $N_{,x}=J_x^{-1}N_{,\xi}$ and $N_{,z}=J_z^{-1}N_{,\eta}$:
 (B_\varepsilon)_{2,\,0:15}&=\bm0,\quad
 (B_\varepsilon)_{2,\,16:31}=N_{,z}^\top;\notag\\
 (B_\varepsilon)_{3,\,0:15}&=N_{,z}^\top,\quad
-(B_\varepsilon)_{3,\,16:31}=N_{,x}^\top,
+(B_\varepsilon)_{3,\,16:31}=N_{,x}^\top.
 \label{eq:Beps}
 \end{align}
 Row~1 ($\varepsilon_{xx}=u_{,x}$) acts only on the $u$ degrees of freedom,
@@ -528,8 +517,7 @@ applied during assembly.
 \subsection{Element matrices and Gauss--Legendre quadrature}
 
 Every element integral in \eqref{eq:elementmats} is evaluated on the reference square
-$[-1,1]^2$ with a $4\times4$ Gauss--Legendre rule
-~\cite{AbramowitzStegun1965,Gautschi2004},
+$[-1,1]^2$ with a $4\times4$ Gauss--Legendre rule~\cite{AbramowitzStegun1965,Gautschi2004},
 \begin{equation}
 \int_{\Omega_e}f\,dx\,dz
 =\sum_{g=1}^{16}f(\xi_g,\eta_g)\,w_g\,J_xJ_z,
@@ -579,7 +567,7 @@ the prescribed pyroelectric term in \eqref{eq:constitutive}.
 \label{sec:assembly}
 
 The element blocks are assembled into the global sparse system through the usual
-connectivity map ~\cite{Bathe1996}. The unknowns contain displacements, displacement
+connectivity map~\cite{Bathe1996}. The unknowns contain displacements, displacement
 derivatives, and electric potentials, whose magnitudes differ by several orders.
 The unscaled system is poorly conditioned. Before solution, the
 reduced system is scaled by a diagonal congruence transformation,
@@ -599,16 +587,15 @@ sparse solver.
 
 Table~\ref{tab:materials} lists the material parameters and their sources. The elastic,
 piezoelectric and dielectric constants are the room-temperature single-crystal values
-reported by Zgonik et al.\ ~\cite{Zgonik1994}. The thermal-expansion coefficients were
-obtained in this work by fitting the lattice parameters reported by Nakatani et al.\
-~\cite{Nakatani2016}, and the primary pyroelectric coefficient is the 300~K value
-reported by Eklund and Karttunen ~\cite{EklundKarttunen2023}.
+reported by Zgonik et al.~\cite{Zgonik1994}. The thermal-expansion coefficients were
+obtained in this work by fitting the lattice parameters reported by Nakatani et al.~\cite{Nakatani2016}, and the primary pyroelectric coefficient is the 300~K value
+reported by Eklund and Karttunen~\cite{EklundKarttunen2023}.
 
 \begin{table}[t]
 \centering
 \small
 \caption{Material constants of tetragonal $4mm$ BaTiO$_3$ poled along $z$ used in
-the model ~\cite{Zgonik1994,Nakatani2016,EklundKarttunen2023}.}
+the model~\cite{Zgonik1994,Nakatani2016,EklundKarttunen2023}.}
 \label{tab:materials}
 \begin{tabular}{@{}llll@{}}
 \toprule
@@ -648,7 +635,7 @@ has the corresponding sign for a positive temperature increment.
 \begin{table}[t]
 \centering
 \caption{Tetragonal-phase lattice parameters of BaTiO$_3$ directly reported by
-Nakatani et al. ~\cite{Nakatani2016}, Table 1, used as the raw regression data for
+Nakatani et al.~\cite{Nakatani2016}, Table 1, used as the raw regression data for
 $\alpha_1$ and $\alpha_3$.}
 \label{tab:nakatani-raw}
 \begin{tabular}{@{}rrr@{}}
@@ -664,8 +651,7 @@ $T$ (K) & $a$ (\AA) & $c$ (\AA) \\
 \end{table}
 
 The thermal-expansion coefficients were obtained by ordinary least-squares fits to the
-tetragonal-phase lattice parameters $a(T)$ and $c(T)$ reported by Nakatani et al.\
-~\cite{Nakatani2016} at 298, 303, 323 and 343~K, all below the 413~K
+tetragonal-phase lattice parameters $a(T)$ and $c(T)$ reported by Nakatani et al.~\cite{Nakatani2016} at 298, 303, 323 and 343~K, all below the 413~K
 tetragonal-to-cubic transition reported for that specimen
 (Table~\ref{tab:nakatani-raw}). For each axis $\ell\in\{a,c\}$, the fit
 $\ell(T)=\ell_0+s_\ell T$ gives $\alpha_\ell=s_\ell/\bar\ell$, where $\bar\ell$ is the
@@ -688,8 +674,7 @@ thermal-stress response through the anisotropic elastic coupling.
 
 The primary pyroelectric coefficient
 $p_3=-3.41\times10^{-4}\,\text{C m}^{-2}\text{K}^{-1}$
-is taken directly from the Supporting Information of Eklund and Karttunen
-~\cite{EklundKarttunen2023} (Table~S3), which gives at 300~K the primary value
+is taken directly from the Supporting Information of Eklund and Karttunen~\cite{EklundKarttunen2023} (Table~S3), which gives at 300~K the primary value
 $p^{(1)}=-341$, the secondary value $p^{(2)}=+72$ and the total
 $p^{(1)}+p^{(2)}=-269$ (all in $\mu$C\,m$^{-2}$K$^{-1}$) for tetragonal BaTiO$_3$.
 The primary value is the one required by \eqref{eq:constitutive}. Using the total value
@@ -698,7 +683,7 @@ $-3.44$~V, while in the coupled cases the strain-mediated contribution would als
 included separately through the computed strain field. The secondary coefficient can
 also be estimated from
 $p^{(2)}=2e_{31}\alpha_1+e_{33}\alpha_3$
-with the present data ~\cite{Zgonik1994,Nakatani2016}, which gives
+with the present data~\cite{Zgonik1994,Nakatani2016}, which gives
 $-59\,\mu\text{C\,m}^{-2}\text{K}^{-1}$. This estimate differs from the
 first-principles value because the latter is obtained from the elastic, piezoelectric
 and thermal-expansion tensors of the same density-functional calculation at 0~K,
@@ -708,8 +693,7 @@ the coupled solution, and only the primary coefficient enters as material data.
 
 \paragraph{Clamped and free permittivity}
 The stress--charge form of \eqref{eq:constitutive} requires the \emph{clamped}
-permittivity $\kappa^S$, defined at constant strain. Zgonik et al.\
-~\cite{Zgonik1994} report both clamped and free values, in units of $\varepsilon_0$:
+permittivity $\kappa^S$, defined at constant strain. Zgonik et al.~\cite{Zgonik1994} report both clamped and free values, in units of $\varepsilon_0$:
 $\varepsilon_{11}^S=2180\pm300$, $\varepsilon_{11}^T=4400\pm400$,
 $\varepsilon_{33}^S=56\pm3$ and $\varepsilon_{33}^T=130\pm5$. The relative
 permittivities $\kappa_{11}^r=2200$ (within the quoted range of the clamped value)
@@ -776,7 +760,7 @@ p_3\bar\theta h
 \notag\\
 V_{\mathrm{pyro}}^{\mathrm{1D}}
 &=\frac{-1.705\times10^{-9}}{4.95834517752\times10^{-10}}
-=-3.438647248\,\text{V},
+=-3.438647248\,\text{V}.
 \label{eq:Vpyronum}
 \end{align}
 The units
@@ -821,8 +805,8 @@ relative changes are $-0.056$, $+0.029$, $+0.009$, $+0.004$ and
 $+0.002$\%. The convergence is not monotone on the coarsest meshes.
 
 The observed order from~\eqref{eq:pobs} is
-$p_{\mathrm{obs}}\approx0.9$--$1.2$ for both cases. We therefore
-treat the Aitken $\Delta^2$ estimates as indicative. The mesh
+$p_{\mathrm{obs}}\approx0.9$--$1.2$ for both cases. The
+Aitken $\Delta^2$ estimates are therefore treated as indicative. The mesh
 triplets $8\times4\to16\times8\to32\times16$ and
 $16\times8\to32\times16\to64\times32$ give estimates of
 $-1.4976$ and $-1.4981$~V for Case~A, and $+0.19353$ and
@@ -880,8 +864,8 @@ Top-electrode potential variation (V)
 \end{table}
 
 Table~\ref{tab:verify} lists the numerical consistency checks.
-We also tested the thermal-load kernel, linear electric potential,
-the zero-$p_3$ limit and linearity in $p_3$. On the $16\times8$
+The thermal-load kernel, linear electric potential,
+the zero-$p_3$ limit and linearity in $p_3$ were also tested. On the $16\times8$
 mesh, diagonal scaling reduces the global matrix condition number
 from $2.5\times10^{31}$ to $4.7\times10^{6}$.
 These checks test the implementation, but they are not experimental
@@ -980,7 +964,7 @@ with the $p_3$ scale factor, from a small positive value at zero pyroelectric
 coefficient to about $-3.2$~V at twice the nominal value. The value at zero scale
 factor is the Case~E voltage on this mesh, because Case~A without the pyroelectric
 term reduces to Case~E. The line therefore separates the Case~A voltage into an
-intercept associated with the piezoelectric-thermal contribution and a term proportional
+intercept associated with the piezoelectric--thermal contribution and a term proportional
 to $p_3$. At the nominal coefficient, the latter is $-1.69$~V, about half of the
 Case~D voltage of $-3.44$~V obtained without piezoelectric coupling. In Case~A, the
 pyroelectric field also contributes to the converse piezoelectric response; the
@@ -1017,14 +1001,12 @@ E & piezoelectric + thermal (no pyroelectric) & $+0.19346$ & $\pm0.07\%$ \\
 \end{tabularx}
 \end{table}
 
-The three coupling cases give different voltages (Table~\ref{tab:results}).
-Case~D, with only the direct pyroelectric term, yields $-3.43865$~V.
-Case~E gives $+0.19346$~V from thermally induced strain and the
-piezoelectric effect. The coupled Case~A voltage is $-1.49798$~V.
-Adding the separately calculated Case~D and Case~E voltages
-instead gives $V_D+V_E\approx-3.25$~V. This sum cannot reproduce
-Case~A because the Case~D calculation excludes the converse
-piezoelectric coupling present in the full model.
+The open-circuit voltages of the three coupling cases are listed in Table~\ref{tab:results}.
+Case~D, with only the direct pyroelectric term, gives $-3.43865$~V, and Case~E gives
+$+0.19346$~V from the thermally induced strain and the piezoelectric effect. The coupled
+Case~A voltage is $-1.49798$~V. The sum of the separately calculated Case~D and Case~E
+voltages is $V_D+V_E\approx-3.25$~V, which cannot reproduce Case~A because the Case~D
+calculation excludes the converse piezoelectric coupling present in the full model.
 
 \begin{figure}[t]
   \centering
@@ -1033,15 +1015,13 @@ piezoelectric coupling present in the full model.
   \label{fig:fig03_cases_and_decomposition}
 \end{figure}
 
-Figure~\ref{fig:fig03_cases_and_decomposition}(a) includes the
-zero-temperature calculation, which gives zero voltage.
-Panel~(b) uses the same $16\times8$ mesh for the separate-case
-sum and the fully coupled result. Their difference is about
-$1.75$~V. In Case~A, the field generated by the pyroelectric
-term also induces converse piezoelectric deformation and charge.
-The Case~A response can therefore be separated into Case~E and a
-pyroelectric contribution calculated with piezoelectric coupling
-active, but not into the independently solved Cases~D and~E.
+Figure~\ref{fig:fig03_cases_and_decomposition}(a) includes the zero-temperature calculation,
+which gives zero voltage. Panel~(b) compares the separate-case sum and the fully coupled
+result on the same $16\times8$ mesh, and their difference is about $1.75$~V. In Case~A, the
+field generated by the pyroelectric term also induces converse piezoelectric deformation
+and charge. The Case~A response can therefore be separated into Case~E and a pyroelectric
+contribution calculated with piezoelectric coupling active, but not into the independently
+solved Cases~D and~E.
 
 \subsection{Solved fields}
 \label{sec:fields}
@@ -1053,91 +1033,97 @@ active, but not into the independently solved Cases~D and~E.
   \label{fig:fig04_solved_fields}
 \end{figure}
 
-Figure~\ref{fig:fig04_solved_fields} shows the solved fields for Case~A over the
-specimen. In panel (a), the potential is zero on the grounded bottom face and reaches
-about $-1.5$~V on the top face. Along the span, the top surface is at a single potential, as required by the floating equipotential electrode condition (the computed nodal potentials on the top face agree to round-off). Through the thickness, the potential is
-nonlinear: its variation is smaller near the bottom and larger near the top. Panel
-(b) shows the corresponding $E_z$ field. The field forms approximately horizontal
-bands, increasing from nearly zero at the cool bottom face to about
-$3\times10^{6}$~V\,m$^{-1}$ near the hot top face, with little variation along the
-span. This follows the linear temperature dependence of the pyroelectric charge
+Figure~\ref{fig:fig04_solved_fields} depicts the solved fields for Case~A over the specimen.
+In panel~(a), the potential is zero on the grounded bottom face and reaches about $-1.5$~V on
+the top face. Along the span, the top surface is at a single potential, as required by the
+floating equipotential electrode condition; the computed nodal potentials on the top face
+agree to round-off. Through the thickness, the potential is nonlinear, with smaller variation
+near the bottom and larger variation near the top. Panel~(b) shows the corresponding $E_z$
+field, which forms approximately horizontal bands increasing from nearly zero at the cool
+bottom face to about $3\times10^{6}$~V\,m$^{-1}$ near the hot top face, with little variation
+along the span. This follows the linear temperature dependence of the pyroelectric charge
 density $p_3\theta$. The top-field magnitude is somewhat less than half of the value
-$-p_3\theta/\kappa_{33}$ obtained from the pyroelectric-only response, consistent with
-the reduced response associated with piezoelectric coupling. Panel (c) shows the longitudinal
-strain. Away from the root, $\varepsilon_{xx}$ varies approximately linearly from
-nearly zero at the bottom to about $1.4\times10^{-4}$ at the top and is nearly uniform
-along the span. The hotter upper region therefore undergoes greater longitudinal
-strain than the cooler lower region. Near the clamped root, the strain develops a
-localized boundary layer: at the top face $\varepsilon_{xx}$ overshoots to about $2.1\times10^{-4}$ at $x=0.25~\mu$m and returns to within 6\% of its far-field value by $x=1~\mu$m. The nodal value at the root corner itself ($-3.3\times10^{-4}$) depends on the mesh and is not a converged result. Panel (d) shows the displacement
-magnitude, increasing from zero at the clamp to about 7~nm at the free end and
-remaining nearly uniform through the thickness. The beam therefore undergoes overall
-bending under the imposed temperature difference. The four fields together show that
-the electrical response follows the through-thickness temperature variation, while
-the mechanical response produces a non-uniform strain field that contributes to the
-piezoelectric charge.
+$-p_3\theta/\kappa_{33}$ obtained from the pyroelectric-only response, consistent with the
+reduced response associated with piezoelectric coupling.
+
+Panel~(c) shows the longitudinal strain. Away from the root, $\varepsilon_{xx}$ varies
+approximately linearly from nearly zero at the bottom to about $1.4\times10^{-4}$ at the top
+and is nearly uniform along the span, so the hotter upper region undergoes greater
+longitudinal strain than the cooler lower region. Near the clamped root, the strain develops
+a localized boundary layer: at the top face $\varepsilon_{xx}$ overshoots to about
+$2.1\times10^{-4}$ at $x=0.25~\mu$m and returns to within 6\% of its far-field value by
+$x=1~\mu$m. The nodal value at the root corner itself ($-3.3\times10^{-4}$) depends on the
+mesh and is not a converged result. Panel~(d) shows the displacement magnitude, which
+increases from zero at the clamp to about 7~nm at the free end and remains nearly uniform
+through the thickness, so the beam undergoes overall bending under the imposed temperature
+difference. It is noticed that the electrical response follows the through-thickness
+temperature variation, while the mechanical response produces a non-uniform strain field that
+contributes to the piezoelectric charge.
 
 \subsection{Origin of the non-uniform strain}
 \label{sec:clamp}
 
-To determine whether the root clamp controls the non-uniform strain
-in Case~E, we repeated the calculation with the classical clamp for spans
-$L\in\{10,20,50,100\}\,\mu\text{m}$ with the thickness, thermal load and element length
-(0.125~$\mu$m along $x$) kept fixed. The voltage increases from $+0.1935$~V at
-$L=10\,\mu\text{m}$ to $+0.1971$~V at $100\,\mu\text{m}$, an increase of about 2\%, and
-approaches the analytical interior-limit value of $+0.19754$~V. The
-remaining difference from that value is $4.1\times10^{-3}$, $2.0\times10^{-3}$,
-$8.1\times10^{-4}$ and $4.0\times10^{-4}$~V for the four spans, i.e. it decreases in
-proportion to $1/L$, consistent with a correction confined to a region of fixed size
-near the ends. The temperature gradient gives neighbouring layers different free
-thermal strains. Compatibility and the condition $\varepsilon_{yy}=0$
-produce a through-thickness strain variation even away from the root. In the analytical traction-free interior solution, the stresses $\sigma_{xx}$ and
-$\sigma_{zz}$ vanish identically. This is
-consistent with the classical result that a linear temperature field leaves a free
-beam or plate nearly stress-free ~\cite{BoleyWeiner1997}. Over the spans examined, the non-uniform strain associated with the
-temperature gradient has a larger effect on Case~E voltage than the
-local root constraint.
+The effect of the root clamp on the non-uniform strain in Case~E was examined by repeating
+the calculation with the classical clamp for spans $L\in\{10,20,50,100\}\,\mu\text{m}$, with
+the thickness, thermal load and element length (0.125~$\mu$m along $x$) kept fixed. It is
+found that the voltage increases from $+0.1935$~V at $L=10\,\mu\text{m}$ to $+0.1971$~V at
+$100\,\mu\text{m}$, an increase of about 2\%, and approaches the analytical interior-limit
+value of $+0.19754$~V. The remaining difference from that value is $4.1\times10^{-3}$,
+$2.0\times10^{-3}$, $8.1\times10^{-4}$ and $4.0\times10^{-4}$~V for the four spans, i.e. it
+decreases in proportion to $1/L$, consistent with a correction confined to a region of fixed
+size near the ends. The temperature gradient gives neighbouring layers different free thermal
+strains, and compatibility together with the condition $\varepsilon_{yy}=0$ produces a
+through-thickness strain variation even away from the root. In the analytical traction-free
+interior solution, the stresses $\sigma_{xx}$ and $\sigma_{zz}$ vanish identically, which is
+consistent with the classical result that a linear temperature field leaves a free beam or
+plate nearly stress-free~\cite{BoleyWeiner1997}. Over the spans examined, the non-uniform
+strain associated with the temperature gradient has a larger effect on the Case~E voltage than
+the local root constraint.
 
 \subsection{Effect of the thermal-stress reduction on polarity}
 \label{sec:polarity}
 
-The simplified reduction is not an admissible plane-strain model: it replaces the stress produced by the blocked $y$-expansion by zero, and it violates $\varepsilon_{yy}=0$ in the constitutive relation. We compare the simplified and full reductions to quantify the resulting
-voltage error. On a common $48\times24$ mesh, the simplified thermal-stress vector of
-Table~\ref{tab:beta} gives $V_A=-1.9069$~V and $V_E=-0.2156$~V, whereas the full
-contraction \eqref{eq:betaPS} gives $V_A=-1.4979$~V and $V_E=+0.1935$~V; the
-converged values are those of Table~\ref{tab:results}. The result is the same with the
-independent biquadratic discretization ($80\times40$: $V_E=-0.2156$~V and $+0.1934$~V) and with the analytical interior solution ($-0.2164$~V and $+0.1975$~V), so it is not caused by the root constraint or by the element type. Both voltages shift by the same
-amount, $+0.409$~V, while Case~D, which does not involve $\beta_{\mathrm{PS}}$, is
-unchanged. The equal shift follows from linearity: $\beta_{\mathrm{PS}}$ enters only
-the mechanical load vector, so changing $\beta_{\mathrm{PS}}$ produces the same
-mechanically generated voltage shift in the cases that contain piezoelectric coupling.
-The terms omitted by the simplified reduction are positive in both components, so the
-full contraction increases the thermal load and shifts the resulting
-piezoelectric-thermal voltage toward the positive direction. For the chosen parameters, the thermal-stress reduction determines
-the sign of the piezoelectric-thermal voltage.
+The simplified reduction is not an admissible plane-strain model: it replaces the stress
+produced by the blocked $y$-expansion by zero, and it violates $\varepsilon_{yy}=0$ in the
+constitutive relation. The simplified and full reductions are compared to quantify
+the resulting voltage error. On a common $48\times24$ mesh, the simplified thermal-stress
+vector of Table~\ref{tab:beta} gives $V_A=-1.9069$~V and $V_E=-0.2156$~V, whereas the full
+contraction \eqref{eq:betaPS} gives $V_A=-1.4979$~V and $V_E=+0.1935$~V; the converged values
+are those of Table~\ref{tab:results}. The same result is obtained with the independent
+biquadratic discretization ($80\times40$: $V_E=-0.2156$~V and $+0.1934$~V) and with the
+analytical interior solution ($-0.2164$~V and $+0.1975$~V), so it is not caused by the root
+constraint or by the element type.
 
-No single material coefficient determines the sign of the voltage. The
-vector $\beta_{\mathrm{PS}}$ combines the positive $a$-axis coefficient and the
-negative $c$-axis coefficient, weighted by elastic constants of similar magnitude
-(Eq.~\eqref{eq:betaPS}). The resulting strain is then coupled through the
-piezoelectric constants $e_{31}$ and $e_{33}$, which also have opposite signs. The
-net voltage consequently results from the difference between several contributions,
-and the full three-dimensional thermal contraction is required to determine it in the
-present plane-strain formulation. The vector $\beta_{\mathrm{PS}}$ itself retains the
-same sign under the two reductions (Table~\ref{tab:beta}); it is the voltage generated
-through the resulting non-uniform strain that changes sign.
-For the combined device response, $|V_D|$ is much larger than $|V_E|$, so $V_A$
-remains negative under both reductions, while the simplified reduction makes its
-magnitude about 27\% too large. Only the piezoelectric-thermal contribution reverses sign.
+Both voltages shift by the same amount, $+0.409$~V, while Case~D, which does not involve
+$\beta_{\mathrm{PS}}$, is unchanged. The equal shift follows from linearity:
+$\beta_{\mathrm{PS}}$ enters only the mechanical load vector, so changing $\beta_{\mathrm{PS}}$
+produces the same mechanically generated voltage shift in the cases that contain piezoelectric
+coupling. The terms omitted by the simplified reduction are positive in both components, so the
+full contraction increases the thermal load and shifts the resulting piezoelectric--thermal
+voltage toward the positive direction. For the chosen parameters, the thermal-stress reduction
+determines the sign of the piezoelectric--thermal voltage.
+
+No single material coefficient determines the sign of the voltage. The vector
+$\beta_{\mathrm{PS}}$ combines the positive $a$-axis coefficient and the negative $c$-axis
+coefficient, weighted by elastic constants of similar magnitude (Eq.~\eqref{eq:betaPS}), and
+the resulting strain is coupled through the piezoelectric constants $e_{31}$ and $e_{33}$,
+which also have opposite signs. The net voltage results from the difference between several
+contributions, and the full three-dimensional thermal contraction is required to determine it
+in the present plane-strain formulation. The vector $\beta_{\mathrm{PS}}$ itself retains the
+same sign under the two reductions (Table~\ref{tab:beta}); it is the voltage generated through
+the resulting non-uniform strain that changes sign. For the combined device response, $|V_D|$
+is much larger than $|V_E|$, so $V_A$ remains negative under both reductions, while the
+simplified reduction makes its magnitude about 27\% too large. Only the
+piezoelectric--thermal contribution reverses sign.
 
 \subsection{Sensitivity to the thermal-expansion coefficients}
 \label{sec:alpha}
 
-To assess sensitivity to the fitted expansion coefficients, the
-Case~E voltage was recalculated after perturbing $\alpha_1$ and $\alpha_3$. The two coefficients are
-fitted separately to the $a(T)$ and $c(T)$ data. The reported marginal standard
-errors are used for coordinatewise perturbations; a joint covariance matrix
-is not inferred from these fits.
-Perturbations are propagated as
+The sensitivity to the fitted expansion coefficients was assessed by recalculating the
+Case~E voltage after perturbing $\alpha_1$ and $\alpha_3$. The two coefficients are fitted
+separately to the $a(T)$ and $c(T)$ data, so the reported marginal standard errors are used
+for coordinatewise perturbations; a joint covariance matrix is not inferred from these fits.
+The perturbations are propagated as
 \begin{equation}
 V_E(\alpha_1+\delta_1,\alpha_3+\delta_3)\approx
 V_E(\alpha_1,\alpha_3)
@@ -1158,12 +1144,12 @@ about 0.11~V, compared with about 0.025~V for $\alpha_1$. The Case~E voltage bec
 negative only when $\alpha_3$ is taken about 1.8 standard deviations more negative
 than the fitted value, $\alpha_3\approx-10.3\times10^{-6}\,\text{K}^{-1}$ at the nominal $\alpha_1$. The fit rests on four lattice-parameter points, and $\alpha_3$ is only about 1.3 standard deviations from zero, so this margin is modest.
 
-To examine the dependence over a wider range, the model was also solved on a $3\times3$
-grid in which $\alpha_1$ and $\alpha_3$ are each scaled by 0.5, 1 and 1.5
-($48\times24$ mesh). This grid extends well beyond the uncertainty band; for example,
-its lowest value of $\alpha_1$ lies about 6.6 standard deviations below the fitted
-value. Figure~\ref{fig:alphagrid} shows the nine solved points. The Case~D voltage is
-the same at all nine points, $-3.43865$~V, because it does not involve thermal expansion.
+A wider range was examined by solving the model on a $3\times3$ grid in which $\alpha_1$ and
+$\alpha_3$ are each scaled by 0.5, 1 and 1.5 ($48\times24$ mesh). This grid extends well
+beyond the uncertainty band; for example, its lowest value of $\alpha_1$ lies about 6.6
+standard deviations below the fitted value. Figure~\ref{fig:alphagrid} shows the nine solved
+points. The Case~D voltage is the same at all nine points, $-3.43865$~V, because it does not
+involve thermal expansion.
 
 \begin{figure}[t]
   \centering
@@ -1175,16 +1161,16 @@ the same at all nine points, $-3.43865$~V, because it does not involve thermal e
 Because $\beta_{\mathrm{PS}}$ is linear in $\alpha$ and the coupled system is linear in
 $\beta_{\mathrm{PS}}$, $V_E$ is a linear function of the two coefficients:
 $V_E=0.01529\,\alpha_1+0.03253\,\alpha_3$ (V, with $\alpha$ in $10^{-6}\,\text{K}^{-1}$).
-Per unit change, the voltage is about twice as sensitive to $\alpha_3$ as to $\alpha_1$,
-and increasing $\alpha_1$ raises the voltage whereas a more negative $\alpha_3$ lowers
-it. Eight of the nine Case~E values are positive, up to $+0.430$~V; the single negative
-value, $-0.043$~V, occurs for the pair with halved $\alpha_1$ and enlarged $|\alpha_3|$,
-the corner farthest from the fitted coefficients. In Case~A all values are negative,
-between $-1.735$ and $-1.261$~V. The difference $V_A-V_E=-1.691$~V is the same in all
-nine cells, so over this grid the pyroelectric part of Case~A does not depend on the
-thermal-expansion coefficients and the variation of the combined voltage enters through
-the piezoelectric-thermal part. The calculated polarity depends on the chosen pair of thermal-expansion
-coefficients within this grid.
+Per unit change, the voltage is about twice as sensitive to $\alpha_3$ as to $\alpha_1$;
+increasing $\alpha_1$ raises the voltage, whereas a more negative $\alpha_3$ lowers it. Eight
+of the nine Case~E values are positive, up to $+0.430$~V, and the single negative value,
+$-0.043$~V, occurs for the pair with halved $\alpha_1$ and enlarged $|\alpha_3|$, the corner
+farthest from the fitted coefficients. In Case~A all values are negative, between $-1.735$ and
+$-1.261$~V. The difference $V_A-V_E=-1.691$~V is the same in all nine cells, so over this grid
+the pyroelectric part of Case~A does not depend on the thermal-expansion coefficients, and the
+variation of the combined voltage enters through the piezoelectric--thermal part. The
+calculated polarity depends on the chosen pair of thermal-expansion coefficients within this
+grid.
 
 Figure~\ref{fig:alpha-polarity} locates the sign change in the
 thermal-expansion parameter plane.
@@ -1210,7 +1196,7 @@ solutions nor statistical confidence bounds.
 \subsection{Comparison with a one-dimensional estimate}
 \label{sec:estimate}
 
-A simple estimate of the piezoelectric-thermal voltage replaces $p_3$ in
+A simple estimate of the piezoelectric--thermal voltage replaces $p_3$ in
 \eqref{eq:Vpyro} by the free-sample secondary combination
 $2e_{31}\alpha_1+e_{33}\alpha_3$
 ($-59\,\mu\text{C\,m}^{-2}\text{K}^{-1}$):
@@ -1222,7 +1208,7 @@ V_{\mathrm{piezo\text{-}th}}^{\mathrm{1D}}
 =
 \frac{(-5.933\times10^{-5})(5)(1.0\times10^{-6})}
 {4.95834517752\times10^{-10}}
-=-0.598\,\text{V},
+=-0.598\,\text{V}.
 \label{eq:Vpt}
 \end{equation}
 }
@@ -1236,10 +1222,9 @@ layers produce a non-uniform strain field, and the strain
 entering the piezoelectric constitutive relation therefore differs from the free
 thermal strain in both magnitude and spatial distribution. Within the terminology
 used for pyroelectric effects, Case~E can therefore be viewed as a
-finite-element realization of the tertiary pyroelectric effect
-~\cite{Lang2005Pyro} for this specimen and support, distinct from the primary
+finite-element realization of the tertiary pyroelectric effect~\cite{Lang2005Pyro} for this specimen and support, distinct from the primary
 mechanism represented by Case~D and from the free-sample secondary estimate in
-\eqref{eq:Vpt}. The comparison shows that the piezoelectric-thermal voltage of this
+\eqref{eq:Vpt}. The comparison shows that the piezoelectric--thermal voltage of this
 temperature-gradient device cannot be obtained from the free-sample secondary
 coefficient alone; the coupled strain field is required to determine both its
 magnitude and, in this case, its sign.
@@ -1249,55 +1234,49 @@ magnitude and, in this case, its sign.
 \label{sec:conclusions}
 %======================================================================
 
-We used a coupled finite-element model based on electric enthalpy
-and a $C^1$ Bogner--Fox--Schmit element to calculate the open-circuit
-voltage of a plane-strain tetragonal BaTiO$_3$ cantilever subject to a
-through-thickness temperature difference. The model treats the pyroelectric and piezoelectric-thermal mechanisms
-together, forms the plane-strain thermal stress from the full three-dimensional
-contraction, and uses the fixed-strain pyroelectric coefficient. The main numerical findings are as follows.
+A coupled finite-element model based on electric enthalpy and a $C^1$ Bogner--Fox--Schmit
+element was used to calculate the open-circuit voltage of a plane-strain tetragonal BaTiO$_3$
+cantilever subject to a through-thickness temperature difference. The model treats the
+pyroelectric and piezoelectric--thermal mechanisms together, forms the plane-strain thermal
+stress from the full three-dimensional contraction, and uses the fixed-strain pyroelectric
+coefficient. The following conclusions are drawn from the research:
 
 \begin{itemize}
-\item The plane-strain thermal-stress vector of a tetragonal crystal must be formed
-from the full three-dimensional contraction before the plane-strain condition is
-applied. The simplified reduction omits the contribution associated with the blocked
-out-of-plane expansion and underestimates the axial and through-thickness thermal
-stresses by about 35\% and 58\%, respectively.
+\item The plane-strain thermal-stress vector of a tetragonal crystal must be formed from
+the full three-dimensional contraction before plane strain is imposed. The simplified
+reduction omits the blocked out-of-plane expansion and underestimates the axial and
+through-thickness thermal stresses by about 35\% and 58\%, respectively.
 
-\item This difference reverses the sign of the piezoelectric-thermal voltage, from
-$-0.22$~V with the simplified reduction to $+0.19$~V with the full contraction, and
-makes the combined voltage about 27\% too large in magnitude. The same thermal-stress
-change produces the same voltage shift in the coupled cases because the system is
-linear in the thermal load.
+\item This reverses the sign of the piezoelectric--thermal voltage, from $-0.22$~V with
+the simplified reduction to $+0.19$~V with the full contraction, and makes the combined
+voltage about 27\% too large in magnitude. The shift is the same in the coupled cases
+because the system is linear in the thermal load.
 
 \item The pyroelectric-only voltage, $-3.44$~V, agrees with the exact one-dimensional
-result to round-off. Using the fixed-strain coefficient rather than the total
-coefficient gives a magnitude about 27\% larger for the pyroelectric-only voltage and
-avoids including the strain-mediated secondary contribution separately through the
-material coefficient in the coupled formulation.
+result to round-off. The fixed-strain coefficient gives a magnitude about 27\% larger than
+the total coefficient and avoids counting the strain-mediated contribution twice.
 
-\item When both mechanisms act, the voltage is $-1.50$~V. The piezoelectric-thermal
-part opposes the pyroelectric part, while the piezoelectric coupling also modifies the
-pyroelectric contribution itself. The separately computed Case~D and Case~E voltages cannot be added
-to recover the coupled result.
+\item With both mechanisms active, the voltage is $-1.50$~V. The piezoelectric--thermal
+part opposes the pyroelectric part, and the piezoelectric coupling also modifies the
+pyroelectric contribution, so the separately computed Case~D and Case~E voltages cannot be
+added to recover the coupled result.
 
-\item The piezoelectric-thermal voltage is produced primarily by the non-uniform strain
-associated with the temperature gradient under plane strain rather than by the local
-root constraint. It changes by only about 2\% when the span is increased from
-$10$ to $100\,\mu\text{m}$ and approaches the analytical interior-limit value $+0.1975$~V. Within the terminology used for pyroelectric effects, this
-response corresponds to a tertiary pyroelectric contribution for the present specimen
-and support, and it cannot be obtained from the free-sample secondary coefficient
-alone.
+\item The piezoelectric--thermal voltage arises mainly from the non-uniform strain produced
+by the temperature gradient under plane strain, not from the root constraint: it changes by
+only about 2\% as the span increases from $10$ to $100\,\mu\text{m}$ and approaches the
+analytical interior-limit value $+0.1975$~V. This corresponds to a tertiary pyroelectric
+contribution for the present specimen and support, which the free-sample secondary
+coefficient cannot give.
 
-\item Fixing all eight root degrees of freedom is stiffer than a classical displacement clamp.
-Replacing the all-derivative constraint with the classical clamp changes the voltages
-by about 0.1\% and improves convergence. The polarity reversal caused by the
-thermal-stress reduction persists under both root conditions
-and with an independent biquadratic discretization.
+\item Fixing all eight root degrees of freedom is stiffer than the classical clamp;
+replacing it changes the voltages by about 0.1\% and improves convergence. The polarity
+reversal persists under both root conditions and with an independent biquadratic
+discretization.
 
-\item The positive polarity of the piezoelectric-thermal voltage is preserved over one
-standard deviation of the fitted thermal-expansion coefficients. Over the wider parameter grid examined, the piezoelectric-thermal voltage depends
-linearly on both thermal-expansion coefficients, with the $c$-axis coefficient
-producing the larger change per unit variation.
+\item The positive polarity of the piezoelectric--thermal voltage is preserved over one
+standard deviation of the fitted thermal-expansion coefficients. Over the wider grid, it
+depends linearly on both coefficients, the $c$-axis coefficient giving the larger change per
+unit variation.
 \end{itemize}
 
 The out-of-plane constraint affects the predicted voltage even in this
